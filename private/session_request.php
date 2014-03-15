@@ -4,7 +4,7 @@ include_once __DIR__ . "/request.php";
 
 echo "request included fine\n";
 
-class SessionRequest extends Request {
+abstract class SessionRequest extends Request {
 
 	// private $session_token;
 
