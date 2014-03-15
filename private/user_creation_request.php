@@ -10,6 +10,7 @@ class UserCreationRequest extends Request {
 	private $last_name;
 
 	public function __construct($username, $password, $first_name, $last_name) {
+		parent::__construct();
 		$this->username = $this->db->escape_string($username);
 		$this->password = $this->db->escape_string($password);
 		$this->first_name = $this->db->escape_string($first_name);
