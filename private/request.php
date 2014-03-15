@@ -4,8 +4,8 @@ include_once(__DIR__ . "/fbhmysqli.php");
 
 abstract class Request {
 
-// 	protected $db;
-// 	protected $json;
+	protected $db;
+	protected $json;
 
 // 	function __construct {
 // 		// error_reporting(0);
