@@ -17,11 +17,9 @@ class UserLinkFBRequest extends SessionRequest {
 			return false;
 		}
 
-		echo "Getting fb profile at " . "https://graph.facebook.com/me?access_token=" . $this->fb_auth_token . "\n";
 		$fb_profile = json_decode(file_get_contents("https://graph.facebook.com/me?access_token=" . $this->fb_auth_token), true);
-		var_dump($fb_profile);
 		
-		$fb_user_id = "123";
+		$fb_user_id = $fb_profile["id"];
 
 		$query = $this->db->query("UPDATE user.user SET fb_id = " .
 			$fb_user_id . " WHERE user_id = " .
