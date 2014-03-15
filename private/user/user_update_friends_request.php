@@ -4,11 +4,8 @@ include_once __DIR__ . "/../request/session_request.php";
 
 class UserUpdateFriendsRequest extends SessionRequest {
 
-	private $friend_list;
-
-	public function __construct($session_token, $friend_list) {
+	public function __construct($session_token) {
 		parent::__construct($session_token);
-		$this->friend_list = $this->db->escape_string($friend_list);
 	}
 
 	public function request() {
@@ -17,9 +14,24 @@ class UserUpdateFriendsRequest extends SessionRequest {
 			return false;
 		}
 
-		$friends = json_decode($this->friend_list, true);
+		/* Check their fb account is linked. */
 
-		var_dump($friends);
+		$query = $this->db->query("SELECT fb_auth_token FROM user.user WHERE user_id = " .
+			$this->user_id);
+		if (!$query) {
+			return $this->error(NULL);
+		}
+		if (!$query->num_rows) {
+			return $this->error("not linked with facebook");
+		}
+
+		$result = $query->fetch_assoc();
+
+		$query->close();
+
+		$fb_auth_token = $result["fb_auth_token"];
+
+		$friend_list = json_decode(file_get_contents("https://graph.facebook.com/me/friends?access_token=" . $fb_auth_token), true);
 
 		/* Ensure the fb ids match. */
 
@@ -36,15 +48,15 @@ class UserUpdateFriendsRequest extends SessionRequest {
 		
 		$fb_user_id = $result["fb_id"];
 
-		// if ($friends["id"] != $fb_user_id) {
-		// 	return $this->error("invalid facebook id");
-		// }
+		if ($friend_list != $fb_user_id) {
+			return $this->error("invalid facebook auth token");
+		}
 
 		/* do the update */
 
 		$values = "(";
 
-		foreach ($friends["friends"]["data"] as $friend) {
+		foreach ($friend_list["friends"]["data"] as $friend) {
 			echo $friend["first_name"] . "\n";
 		}
 
