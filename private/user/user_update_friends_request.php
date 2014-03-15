@@ -8,7 +8,7 @@ class UserUpdateFriendsRequest extends SessionRequest {
 
 	public function __construct($session_token, $friend_list) {
 		parent::__construct($session_token);
-		$this->friend_list = $this->db->escape_string($friend_list);
+		$this->friend_list = $friend_list;
 	}
 
 	public function request() {
