@@ -2,15 +2,17 @@
 
 include_once __DIR__ . "/../request/session_request.php";
 
-class SongRemoveRequest extends SessionRequest {
+class SongSwapRequest extends SessionRequest {
 
 	private $playlist_id;
-	private $position;
+	private $position1;
+	private $position2;
 
-	public function __construct($session_token, $playlist_id, $position) {
+	public function __construct($session_token, $playlist_id, $position1, $position2) {
 		parent::__construct($session_token);
 		$this->playlist_id = $this->db->escape_string($playlist_id);
-		$this->position = $this->db->escape_string($position);
+		$this->position1 = $this->db->escape_string($position1);
+		$this->position2 = $this->db->escape_string($position2);
 	}
 
 	public function request() {
@@ -39,21 +41,10 @@ class SongRemoveRequest extends SessionRequest {
 			return $this->error("playlist not owned by user");
 		}
 
-		/* Do remove */
-		$query = $this->db->query("DELETE FROM music.song WHERE playlist_id = " .
-			$this->playlist_id . " AND position = " .
-			$this->position);
-		if (!$query) {
-			return $this->error(NULL);
-		}
-		if (!$this->db->affected_rows) {
-			return $this->error("song not in playlist");
-		}
-
 		/* update positions */
-		$query = $this->db->query("UPDATE music.song SET position = position - 1 WHERE playlist_id = " .
-			$this->playlist_id . " AND position > " .
-			$this->position);
+		$query = $this->db->query("UPDATE music.song AS song1 JOIN music.song AS song2 ON (song1.position = " .
+			$this->position1 . " AND song2.position = " .
+			$this->position2 . ") SET song1.position = song2.position, song2.position = song1.position");
 
 		if (!$query) {
 			return $this->error(NULL);
