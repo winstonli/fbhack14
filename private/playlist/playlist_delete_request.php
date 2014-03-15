@@ -12,14 +12,15 @@ class PlaylistDeleteRequest extends SessionRequest {
 	}
 
 	public function request() {
+		if (!$this->valid_session()) {
+			return false;
+		}
 		$query = $this->db->query("DELETE FROM music.playlist WHERE user_id = " .
 			$this->user_id . " AND playlist_id = " .
 			$this->playlist_id);
 
 		if (!$query) {
-			return $this->error("DELETE FROM music.playlist WHERE user_id = " .
-			$this->user_id . " AND playlist_id = " .
-			$this->playlist_id);
+			return $this->error("playlist not owned by user");
 		}
 
 		return $this->success(NULL);
