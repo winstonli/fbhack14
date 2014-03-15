@@ -2,6 +2,8 @@
 
 include_once(__DIR__ . "/fbhmysqli.php");
 
+echo 'got to bottom\n';
+
 // abstract class Request {
 
 // 	protected $db;
