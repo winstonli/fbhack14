@@ -8,7 +8,7 @@ constants= {
 
 
 $(document).ready( function() {
-	songInsert("66d5ee2f8d75fd84f78ac62ddbb93a40", "114", "1", "https://www.youtube.com/watch?v=4o4HN9gFsho", "randomName");
+	songInsert("66d5ee2f8d75fd84f78ac62ddbb93a40", "114", "1", "https://www.youtube.com/watch?v=4o4HN5gFsho", "random2Name");
 });
 
 
