@@ -7,12 +7,12 @@ abstract class Request {
 	protected $db;
 	protected $json;
 
-	public function __construct {
-		// error_reporting(0);
-		// $this->db = new FBHmysqli();
-		// $this->json = array();
-		// $this->db->autocommit(false);
-	}
+	// public function __construct {
+	// 	// error_reporting(0);
+	// 	// $this->db = new FBHmysqli();
+	// 	// $this->json = array();
+	// 	// $this->db->autocommit(false);
+	// }
 
 // 	public function output() {
 // 		header("Content-type: application/json");
