@@ -27,7 +27,7 @@ class PlaylistGetRequest extends Request {
 
 		$query->close();
 
-		return $this->success(array("playlist" => array("playlist_id" => $playlist_id,
+		return $this->success(array("playlist" => array("playlist_id" => $this->playlist_id,
 													    "songs" => array("list" => $song_list))));
 	}
 
