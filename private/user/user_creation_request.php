@@ -25,7 +25,7 @@ class UserCreationRequest extends Request {
 			$this->first_name . "', '" .
 			$this->last_name . "')");
 		if (!$query) {
-			return $this->error(NULL);
+			return $this->error("user already exists");
 		}
 
 		return $this->success(NULL);
