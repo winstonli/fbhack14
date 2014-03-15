@@ -1,10 +1,11 @@
 <?php
 
-include_once __DIR__ . "/../../../private/song/song_remove_request.php";
+include_once __DIR__ . "/../../../private/song/song_swap_request.php";
 
-$request = new SongRemoveRequest($_POST["session_token"],
+$request = new SongSwapRequest($_POST["session_token"],
 								 $_POST["playlist_id"],
-								 $_POST["position"]);
+								 $_POST["position1"],
+								 $_POST["position2"]);
 $request->request();
 $request->output();
 
