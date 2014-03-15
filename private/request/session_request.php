@@ -24,7 +24,7 @@ abstract class SessionRequest extends Request {
 			return $this->error("invalid session");
 		}
 		$result = $query->fetch_assoc();
-		$this->userID = $result["user_id"];
+		$this->user_id = $result["user_id"];
 		
 		$query->close();
 		return true;
