@@ -17,7 +17,7 @@ function playlistCreate(sessionToken, name) {
 	$.post(
 		constants.playlist_create,
 		{
-			session_token: sessionToken, 
+			session_token: sessionToken,
 			name: name
 		},
 		function(returnedData) {
@@ -34,7 +34,7 @@ function playlistDelete(sessionToken, playlistId) {
 	$.post(
 		constants.playlist_delete,
 		{
-			session_token: sessionToken, 
+			session_token: sessionToken,
 			playlist_id: playlistId
 		},
 		function(returnedData) {
@@ -53,7 +53,7 @@ function playlistUpdate(sessionToken, playlistId, name) {
 	$.post(
 		constants.playlist_update,
 		{
-			session_token: sessionToken, 
+			session_token: sessionToken,
 			playlist_id: playlistId,
 			name: name
 		},
@@ -75,7 +75,7 @@ function playlistGet(sessionToken, playlistId) {
 	$.post(
 		constants.playlist_get,
 		{
-			session_token: sessionToken, 
+			session_token: sessionToken,
 			playlist_id : playlistId
 		},
 		function(returnedData) {
