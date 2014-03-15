@@ -86,6 +86,6 @@ abstract class Request {
 		return $result;
 	}
 
-// }
+}
 
 ?>
