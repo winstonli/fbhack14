@@ -18,7 +18,7 @@ abstract class SessionRequest extends Request {
 				$this->session_token
 		);
 		if (!$query) {
-			return $this->error(NULL);
+			return $this->error("The null");
 		}
 		if (!$query->num_rows) {
 			return $this->error("invalid session");
