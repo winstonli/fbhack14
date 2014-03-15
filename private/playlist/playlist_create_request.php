@@ -36,7 +36,7 @@ class PlaylistCreateRequest extends SessionRequest {
 			return $this->error(NULL);
 		}
 
-		echo "got here 4\n";
+		return $this->success("got here4");
 
 		$result = $query->fetch_assoc();
 
