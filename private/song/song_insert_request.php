@@ -30,7 +30,7 @@ class SongInsertRequest extends SessionRequest {
 			$this->playlist_id);
 
 		if (!$query || !$query->num_rows) {
-			return $this->error(NULL);
+			return $this->error("1");
 		}
 
 		$result = $query->fetch_assoc();
@@ -50,7 +50,7 @@ class SongInsertRequest extends SessionRequest {
 				$this->position_id);
 
 			if (!$query || !$query->num_rows) {
-				return $this->error(NULL);
+				return $this->error("2");
 			}
 
 			$result = $query->fetch_assoc();
