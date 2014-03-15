@@ -1,27 +1,26 @@
 constants= {
-	"playlists" : "http://162.13.180.132/test.php",
+	"playlist_create" : "http://162.13.180.132/api/playlist/create.php",
 };
 
 
 $(document).ready( function() {
-	// requestJSON("12345", constants.playlists, "playlist");
+	playlistCreate("66d5ee2f8d75fd84f78ac62ddbb93a40", "asdddddsads");
 });
 
 
-$.post('test.php', 
-	{ asd: "hello", field2 : "hello2"}, 
-    function(returnedData){
-         console.log(returnedData);
-});
 
 
-function requestJSON(page, params) {
+function playlistCreate(sessionToken, name) {
 	$.post(
-		page, 
-		params, 
-	    function(returnedData){
-	         console.log(returnedData);
-		});
+		constants.playlist_create,
+		{
+			session_token: sessionToken, 
+			name: name
+		},
+		function(returnedData) {
+			console.log(returnedData);
+		}
+	);
 }
 
 
