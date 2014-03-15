@@ -16,7 +16,6 @@ abstract class Request {
 
 	public function output() {
 		header("Content-type: application/json");
-		// echo json_encode($this->json);
 		echo Request::prettyPrint(json_encode($this->json));
 	}
 	
