@@ -7,6 +7,7 @@ class SessionRequest extends Request {
 	private $session_token;
 
 	public function __construct($session_token) {
+		parent::__construct();
 		$this->session_token = $this->db->escape_string($session_token);
 	}
 
