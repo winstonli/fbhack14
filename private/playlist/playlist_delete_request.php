@@ -2,7 +2,7 @@
 
 include_once __DIR__ . "/../request/session_request.php";
 
-class PlaylistSessionRequest extends SessionRequest {
+class PlaylistDeleteRequest extends SessionRequest {
 
 	private $playlist_id;
 
