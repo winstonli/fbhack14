@@ -17,6 +17,8 @@ class PlaylistCreateRequest extends SessionRequest {
 			return false;
 		}
 
+		return $this->success("got here");
+
 		$query = $this->db->query("INSERT INTO music.playlist(user_id, name, likes, url) VALUES (" .
 			$this->user_id . ", '" .
 			$this->name . "', 0, NULL)");
