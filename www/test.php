@@ -14,13 +14,7 @@ if (count($_POST) == 0) {
 }
 
 
-echo '
-	{
-		"success" : 1
-	}
-
-';
-
+echo $_POST['asd'];
 
 
 ?>
