@@ -14,7 +14,7 @@ abstract class SessionRequest extends Request {
 
 	protected function valid_session() {
 		$query = $this->db->query(
-			"SELECT user_id, FROM user.session WHERE session_token = x'" .
+			"SELECT user_id FROM user.session WHERE session_token = x'" .
 				$this->session_token
 		);
 		if (!$query) {
@@ -27,6 +27,7 @@ abstract class SessionRequest extends Request {
 		$this->userID = $result["user_id"];
 		
 		$query->close();
+		return true;
 	}
 
 }
