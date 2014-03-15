@@ -1,4 +1,3 @@
-
 constants= {
 	"playlists" : "dummy.php",
 	"songs" : "dummy.php"
