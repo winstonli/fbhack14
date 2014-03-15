@@ -6,7 +6,7 @@ class SongInsertRequest extends SessionRequest {
 
 	private $playlist_id;
 	private $position;
-	private $youtube_url;y
+	private $youtube_url;
 	private $name;
 
 	public function __construct($session_token, $playlist_id, $position, $youtube_url, $name) {
