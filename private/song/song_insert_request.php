@@ -56,11 +56,11 @@ class SongInsertRequest extends SessionRequest {
 			$this->youtube_url . "', '" .
 			$this->name . "')");
 		if (!$query) {
-			return $this->error("3");
+			return $this->error("song already in playlist");
 		}
 
 		$query = $this->db->query("SELECT song_id, position, youtube_url, name FROM music.song WHERE playlist_id = " .
-			$this->playlist_id);
+			$this->playlist_id . " ORDER BY position ASC");
 		if (!$query || !$query->num_rows) {
 			return $this->error("4");
 		}
