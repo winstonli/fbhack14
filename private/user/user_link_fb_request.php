@@ -26,14 +26,11 @@ class UserLinkFBRequest extends SessionRequest {
 		}
 
 		$query = $this->db->query("UPDATE user.user SET fb_id = " .
-			$fb_user_id . ", fb_auth_token = " .
-			$this->fb_auth_token . " WHERE user_id = " .
+			$fb_user_id . ", fb_auth_token = '" .
+			$this->fb_auth_token . "' WHERE user_id = " .
 			$this->user_id);
 		if (!$query) {
-			return $this->error("UPDATE user.user SET fb_id = " .
-			$fb_user_id . ", fb_auth_token = " .
-			$this->fb_auth_token . " WHERE user_id = " .
-			$this->user_id);
+			return $this->error(NULL);
 		}
 
 		return $this->success(NULL);
