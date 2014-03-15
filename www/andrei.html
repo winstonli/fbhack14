@@ -63,12 +63,6 @@
   // Here we run a very simple test of the Graph API after login is successful.
   // This testAPI() function is only called in those cases.
   function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Good to see you, ' + response.name + '.');
-    });
-
-
     FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {
 
@@ -89,22 +83,6 @@
 
         console.log("We have submitted access_token: " + access_token);
       }
-    });
-
-
-          // get friends' ids
-    FB.getLoginStatus(function(response) {
-       if (response.session) {
-          FB.api('/me/friends', function(response) {
-            if(response.data) {
-              $.each(response.data,function(index,friend) {
-                alert(friend.name + ' has id:' + friend.id);
-              });
-            } else {
-                alert("Error!");
-              }
-           });
-       }
     });
   }
 </script>
