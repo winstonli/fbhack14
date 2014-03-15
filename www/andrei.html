@@ -70,7 +70,18 @@ FB.init(
     FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {
         access_token = response.authResponse.accessToken;
-        console.log(access_token);
+
+        $.post(
+          constants.access_token,
+          {
+            access_token: access_token
+          },
+          function(returnedData) {
+            console.log("Finished sending the auth token")
+          }
+        );
+
+        console.log("We have submitted access_token: " + access_token);
       }
     });
 

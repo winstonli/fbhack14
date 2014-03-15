@@ -6,6 +6,8 @@ constants= {
 	"song_insert" : "http://162.13.180.132/api/song/insert.php",
 	"song_remove" : "http://162.13.180.132/api/song/remove.php",
 	"song_swap" : "http://162.13.180.132/api/song/swap.php",
+	"access_token" : "http://162.13.180.132/api/user/link_fb.php",
+
 };
 
 
