@@ -27,10 +27,6 @@ class PlaylistCreateRequest extends SessionRequest {
 			$this->name . "', 0, NULL)");
 		}
 
-		$query->close();
-
-		return $this->success("got here4");
-
 		$query = $this->db->query("SELECT playlist_id FROM music.playlist WHERE user_id = " .
 			$this->user_id . " AND name = '" .
 			$this->name . "'");
