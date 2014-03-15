@@ -8,7 +8,7 @@ constants= {
 
 
 $(document).ready( function() {
-	songInsert("66d5ee2f8d75fd84f78ac62ddbb93a40", "114", "1", "https://www.youtube.com/watch?v=4o4HN5gFsho", "random2Name");
+	songPushFront("66d5ee2f8d75fd84f78ac62ddbb93a40", "114", "https://www.youtube.com/watch?v=4o3HN5gFsho", "randoms2Name");
 });
 
 
@@ -89,6 +89,10 @@ function songInsert(sessionToken, playlist_id, position, youtube_url, name) {
 			console.log(returnedData);
 		}
 	);
+}
+
+function songPushFront(sessionToken, playlist_id, youtube_url, name) {
+	songInsert(sessionToken, playlist_id, "1", youtube_url, name);
 }
 
 
