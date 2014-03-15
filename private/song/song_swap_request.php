@@ -49,6 +49,9 @@ class SongSwapRequest extends SessionRequest {
 		if (!$query) {
 			return $this->error(NULL);
 		}
+		if (!$this->db->affected_rows) {
+			return $this->error("invalid position");
+		}
 
 		/* get new list for output */
 		$query = $this->db->query("SELECT song_id, position, youtube_url, name FROM music.song WHERE playlist_id = " .
