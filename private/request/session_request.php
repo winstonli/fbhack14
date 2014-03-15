@@ -5,7 +5,7 @@ include_once __DIR__ . "/request.php";
 abstract class SessionRequest extends Request {
 
 	private $session_token;
-	private $user_id;
+	protected $user_id;
 
 	public function __construct($session_token) {
 		parent::__construct();
