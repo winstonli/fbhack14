@@ -10,7 +10,7 @@ constants= {
 
 
 $(document).ready( function() {
-	songRemove("66d5ee2f8d75fd84f78ac62ddbb93a40", "114", "2");
+	songSwap("66d5ee2f8d75fd84f78ac62ddbb93a40", "114", "1", "2");
 });
 
 
@@ -146,13 +146,14 @@ function songRemove(sessionToken, playlist_id, position) {
 }
 
 
-function songSwap(sessionToken, playlist_id, position) {
+function songSwap(sessionToken, playlist_id, position1, position2) {
 	$.post(
 		constants.song_swap,
 		{
 			session_token: sessionToken,
 			playlist_id: playlist_id,
-			position: position,
+			position1: position1,
+			position2: position2,
 		},
 		function(returnedData) {
 			checkForError(returnedData);
