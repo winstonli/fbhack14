@@ -2,6 +2,8 @@
 
 include_once(__DIR__ . "/fbhmysqli.php");
 
+echo "request to bottom\n";
+
 abstract class Request {
 
 	protected $db;
@@ -17,7 +19,7 @@ abstract class Request {
 	public function output() {
 		header("Content-type: application/json");
 		// echo json_encode($this->output);
-		echo 'hi' . json_encode($this->output);
+		echo json_encode($this->output);
 	}
 	
 	abstract public function request();
