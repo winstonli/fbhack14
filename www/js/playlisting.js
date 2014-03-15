@@ -4,38 +4,54 @@ constants= {
 
 
 $(document).ready( function() {
-	requestJSON("12345", constants.playlists, "playlist");
+	// requestJSON("12345", constants.playlists, "playlist");
 });
 
 
+$.post('test.php', 
+	{ asd: "hello", field2 : "hello2"}, 
+    function(returnedData){
+         console.log(returnedData);
+});
 
-function requestJSON(playlistNumber, page, divID) {
-	request = new ajaxRequest();
 
-	params = "";
-	// params  = "playlist=" + playlistNumber;
-	
-	request.open ("POST", page, true);
-	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-	request.onreadystatechange = function(){
-		if (this.readyState == 4 && this.status == 200) {
-
-			songs = $('#' + divID);
-
-			response = this.responseText;
-
-			playlist = jQuery.parseJSON(response);
-
-			songs.html(response);
-
-			// populateDivWithArray(songs, playlist.error);
-
-		}
-	}
-
-	request.send(params);
+function requestJSON(page, params) {
+	$.post(
+		page, 
+		params, 
+	    function(returnedData){
+	         console.log(returnedData);
+		});
 }
+
+
+// function requestJSON(playlistNumber, page, divID) {
+// 	request = new ajaxRequest();
+
+// 	params = "";
+// 	// params  = "playlist=" + playlistNumber;
+	
+// 	request.open ("POST", page, true);
+// 	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+// 	request.onreadystatechange = function(){
+// 		if (this.readyState == 4 && this.status == 200) {
+
+// 			songs = $('#' + divID);
+
+// 			response = this.responseText;
+
+// 			playlist = jQuery.parseJSON(response);
+
+// 			songs.html(response);
+
+// 			// populateDivWithArray(songs, playlist.error);
+
+// 		}
+// 	}
+
+// 	request.send(params);
+// }
 
 
 function populateDivWithArray(div, array) {
