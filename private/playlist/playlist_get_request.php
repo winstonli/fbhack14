@@ -28,7 +28,7 @@ class PlaylistGetRequest extends Request {
 
 		$playlist_name = $result["name"];
 
-		$query = $this->db->query("SELECT song_id, position, youtube_url FROM music.song WHERE playlist_id = " .
+		$query = $this->db->query("SELECT song_id, position, youtube_url, name FROM music.song WHERE playlist_id = " .
 			$this->playlist_id);
 
 		if (!$query) {
