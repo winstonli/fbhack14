@@ -14,6 +14,11 @@ class UserCreationRequest extends SessionRequest {
 	}
 
 	public function request() {
+		if (!$this->valid_session()) {
+			return $this->error("invalid session");
+		} else {
+			echo "YES VALID\n";
+		}
 		$query = $this->db->query("SELECT count(*) FROM user.user");
 		if (!$query) {
 			return $this->error("failed");
