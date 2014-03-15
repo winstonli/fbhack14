@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-		Welcome to playlister
-	</title>
+	<title></title>
 </head>
 <body>
+
+{playlist:["One","Two","Three"]}
+
 
 </body>
 </html>
