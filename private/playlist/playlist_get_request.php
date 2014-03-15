@@ -15,18 +15,18 @@ class PlaylistGetRequest extends Request {
 		$query = $this->db->query("SELECT name FROM music.playlist WHERE playlist_id = " .
 			$this->playlist_id);
 
-		// if (!$query) {
-		// 	return $this->error(NULL);
-		// }
-		// if (!$query->num_rows) {
-		// 	return $this->error("no such playlist");
-		// }
+		if (!$query) {
+			return $this->error(NULL);
+		}
+		if (!$query->num_rows) {
+			return $this->error("no such playlist");
+		}
 
-		// $result = $query->fetch_assoc();
+		$result = $query->fetch_assoc();
 
-		// $query->close();
+		$query->close();
 
-		// $playlist_name = $result["name"];
+		$playlist_name = $result["name"];
 
 		$query = $this->db->query("SELECT song_id, position, youtube_url FROM music.song WHERE playlist_id = " .
 			$this->playlist_id);
@@ -44,7 +44,7 @@ class PlaylistGetRequest extends Request {
 		$query->close();
 
 		return $this->success(array("playlist" => array("playlist_id" => $this->playlist_id,
-													    "name" => $playlist_name;
+													    "name" => $playlist_name,
 													    "songs" => array("list" => $song_list))));
 	}
 
