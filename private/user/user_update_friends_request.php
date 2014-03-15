@@ -31,7 +31,7 @@ class UserUpdateFriendsRequest extends SessionRequest {
 
 		$fb_auth_token = $result["fb_auth_token"];
 
-		$friend_list = json_decode(file_get_contents("https://graph.facebook.com/me/friends?access_token=" . $fb_auth_token), true);
+		$friend_list = json_decode(file_get_contents("https://graph.facebook.com/me/friends?fields=friends.limit(5000).fields(first_name,middle_name,last_name)&access_token=" . $fb_auth_token), true);
 
 		/* Ensure the fb ids match. */
 
