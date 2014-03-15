@@ -16,7 +16,8 @@ class PlaylistGetRequest extends Request {
 			$this->playlist_id);
 
 		if (!$query) {
-			return $this->error(NULL);
+			return $this->error("SELECT song_id, position, youtube_url FROM music.song WHERE playlist_id = " .
+			$this->playlist_id);
 		}
 
 		$song_list = array();
