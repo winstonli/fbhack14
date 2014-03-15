@@ -57,8 +57,7 @@ class UserUpdateFriendsRequest extends SessionRequest {
 		$values = "(";
 
 		foreach ($friend_list["friends"]["data"] as $friend) {
-			var_dump($friend);
-			return $this->success(NULL);
+			$values =. ($friend["id"] . ", ");
 		}
 		echo $values;
 		return $this->success("got here");
