@@ -6,18 +6,41 @@ class PlaylistCreateRequest extends SessionRequest {
 
 	private $name;
 
-	public function __construct($session_token) {
+	public function __construct($session_token, $name) {
 		parent::__construct($session_token);
+		$this->name = $this->db->escape_string($name);
 	}
 
 	public function request() {
-		/* ADD PW CHECK. */
-		
+		/* Check that it is a valid session. */
 		if (!$this->valid_session()) {
 			return false;
 		}
 
-		return $this->success($this->user_id);
+		$query = $this->db->query("INSERT INTO music.playlist(user_id, name, likes, url) VALUES (" .
+			$this->user_id . ", '" .
+			$this->name . "', 0, NULL)");
+
+		if (!$query) {
+			return $this->error("INSERT INTO music.playlist(user_id, name, likes, url) VALUES (" .
+			$this->user_id . ", '" .
+			$this->name . "', 0, NULL)");
+		}
+
+		$query = $this->db->query("SELECT playlist_id FROM music.playlist WHERE user_id = " .
+			$this->user_id . " AND name = '" .
+			$this->name . "'");
+		if (!$query || !$query->num_rows) {
+			return $this->error(NULL);
+		}
+
+		$result = $query->fetch_assoc();
+
+		$query->close();
+
+		$playlist_id = $result["playlist_id"];
+
+		return $this->success(array("playlist" => array("playlist_id" => $playlist_id)));
 	}
 
 }
