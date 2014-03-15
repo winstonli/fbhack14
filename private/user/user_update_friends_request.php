@@ -48,6 +48,8 @@ class UserUpdateFriendsRequest extends SessionRequest {
 		
 		$fb_user_id = $result["fb_id"];
 
+		var_dump($friend_list);
+
 		if ($fb_user_id != $friend_list["id"]) {
 			return $this->error("stored: " . $fb_user_id . ", fetched: " . $friend_list["id"]);
 		}
