@@ -10,10 +10,14 @@
 
 
 <div id="playlist" class="left">
-	
+
 </div>
 
 <div id="songs" class="right">
+
+</div>
+
+<div id="rightCol">
 
 </div>
 
