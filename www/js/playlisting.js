@@ -1,19 +1,29 @@
+
+constants= {
+	"playlists" : "dummy.php",
+	"songs" : "dummy.php"
+};
+
+
 $(document).ready( function() {
-	requestPlaylist();
+	requestJSON("12345", constants.songs, "songs");
+	requestJSON("12345", constants.playlists, "playlist");
 });
 
 
 
-function requestPlaylist() {
-	params  = "playlist=12345";
+function requestJSON(playlistNumber, page, divID) {
 	request = new ajaxRequest();
-	request.open ("POST", "dummy.php", true);
+
+	params  = "playlist=" + playlistNumber;
+	
+	request.open ("POST", page, true);
 	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
 
 	request.onreadystatechange = function(){
 		if (this.readyState == 4 && this.status == 200) {
 
-			songs = $('#songs');
+			songs = $('#' + divID);
 
 			response = this.responseText;
 
