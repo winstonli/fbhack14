@@ -68,7 +68,7 @@ class SongInsertRequest extends SessionRequest {
 			$song_list[] = $result;
 		}
 
-		return $this->success(array("playlist" => array("playlist_id" => $playlist_id),
+		return $this->success(array("playlist" => array("playlist_id" => $this->playlist_id),
 							        "songs" => array("list" => $song_list)));
 	}
 
