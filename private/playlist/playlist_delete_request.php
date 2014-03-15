@@ -6,8 +6,8 @@ class PlaylistDeleteRequest extends SessionRequest {
 
 	private $playlist_id;
 
-	public function __construct($playlist_id) {
-		parent::__construct();
+	public function __construct($session_token, $playlist_id) {
+		parent::__construct($session_token);
 		$this->playlist_id = $this->db->escape_string($playlist_id);
 	}
 
