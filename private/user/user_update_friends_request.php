@@ -17,7 +17,7 @@ class UserUpdateFriendsRequest extends SessionRequest {
 			return false;
 		}
 
-		$friends = json_decode($friend_list, true);
+		$friends = json_decode($this->friend_list, true);
 
 		/* Ensure the fb ids match. */
 
