@@ -18,13 +18,17 @@ class UserCreationRequest extends Request {
 	}
 
 	public function request() {
-		$query = $this->db->query("SELECT count(*) FROM user.user");
+		/* ADD PW CHECK. */
+		$query = $this->db->query("INSERT INTO user.user(username, password, first_name, last_name) VALUES (" .
+			$this->username . ", " .
+			$this->password . ", " .
+			$this->first_name . ", " .
+			$this->last_name . ")");
 		if (!$query) {
-			return $this->error("failed");
+			return $this->error(NULL);
 		}
-		$result = $query->fetch_assoc();
 
-		return $this->success($result["count(*)"]);
+		return $this->success(NULL);
 	}
 
 }
