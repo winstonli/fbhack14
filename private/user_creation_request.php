@@ -5,6 +5,7 @@ include_once __DIR__ . "/request.php";
 class UserCreationRequest extends Request {
 
 	public function request() {
+		var_dump($this->db);
 		$query = $this->db->request("SELECT count(*) FROM user.user");
 		echo "requesting\n";
 		// if (!$query) {
