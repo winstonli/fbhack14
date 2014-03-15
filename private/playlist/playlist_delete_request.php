@@ -19,7 +19,7 @@ class PlaylistDeleteRequest extends SessionRequest {
 			$this->user_id . " AND playlist_id = " .
 			$this->playlist_id);
 
-		if (!$query || !$query->affected_rows()) {
+		if (!$query || !$this->db->affected_rows) {
 			return $this->error("playlist not owned by user");
 		}
 
