@@ -4,11 +4,12 @@ constants= {
 	"playlist_delete" : "http://162.13.180.132/api/playlist/delete.php",
 	"playlist_update" : "http://162.13.180.132/api/playlist/update.php",
 	"song_insert" : "http://162.13.180.132/api/song/insert.php",
+	"song_remove" : "http://162.13.180.132/api/song/remove.php",
 };
 
 
 $(document).ready( function() {
-	songPushFront("66d5ee2f8d75fd84f78ac62ddbb93a40", "114", "https://www.youtube.com/watch?v=4o3HN5gFsho", "randoms2Name");
+	songRemove("66d5ee2f8d75fd84f78ac62ddbb93a40", "114", "");
 });
 
 
@@ -79,6 +80,25 @@ function songInsert(sessionToken, playlist_id, position, youtube_url, name) {
 			position: position,
 			youtube_url: youtube_url,
 			name: name
+		},
+		function(returnedData) {
+			checkForError(returnedData);
+			if (!returnedData.error) {
+				console.log("Success songInsert");
+			}
+
+			console.log(returnedData);
+		}
+	);
+}
+
+function songRemove(sessionToken, playlist_id, position) {
+	$.post(
+		constants.song_remove,
+		{
+			session_token: sessionToken,
+			playlist_id: playlist_id,
+			position: position,
 		},
 		function(returnedData) {
 			checkForError(returnedData);
