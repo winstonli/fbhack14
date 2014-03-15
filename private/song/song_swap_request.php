@@ -41,6 +41,11 @@ class SongSwapRequest extends SessionRequest {
 			return $this->error("playlist not owned by user");
 		}
 
+		$query = $this->db->query("SELECT count(*) FROM music.song WHERE playlist_id = " .
+			$this->playlist_id . " AND position IN (" .
+			$this->position1 . ", " .
+			$this->position2 . ")");
+
 		/* update positions */
 		$query = $this->db->query("UPDATE music.song AS song1 JOIN music.song AS song2 ON (song1.position = " .
 			$this->position1 . " AND song2.position = " .
