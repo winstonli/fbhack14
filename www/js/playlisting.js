@@ -1,11 +1,10 @@
 constants= {
-	"playlists" : "dummy.php",
+	"playlists" : "test.php",
 	"songs" : "dummy.php"
 };
 
 
 $(document).ready( function() {
-	requestJSON("12345", constants.songs, "songs");
 	requestJSON("12345", constants.playlists, "playlist");
 });
 
@@ -28,7 +27,9 @@ function requestJSON(playlistNumber, page, divID) {
 
 			playlist = jQuery.parseJSON(response);
 
-			populateDivWithArray(songs, playlist.songs);
+			songs.html(response);
+
+			// populateDivWithArray(songs, playlist.error);
 
 		}
 	}
