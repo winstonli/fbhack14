@@ -15,33 +15,41 @@ class UserLoginRequest extends Request {
 
 	public function request() {
 		/* ADD PW CHECK. */
+		echo "9\n";
 		$query = $this->db->query("SELECT user_id FROM user.user WHERE username = '" .
 			$this->username . "' AND password = '" .
 			$this->password . "'");
+		echo "8\n";
 		if (!$query) {
 			return $this->error(NULL);
 		}
+		echo "7\n";
 		if (!$query->num_rows) {
 			return $this->error("invalid login");
 		}
+		echo "6\n";
 		$result = $query->fetch_assoc();
 
+		echo "5\n";
 		$query->close();
 
+		echo "4\n";
 		$user_id = $result["user_id"];
 
+		echo "3\n";
 		$session_token = md5($user_id . microtime());
 		
+		echo "2\n";
 		$query = $this->databaseConnection->query(
 			"INSERT INTO user.sessions VALUES (NULL, " . 
 				$user_id . ", x'" . 
 				$sessionToken . "')"
 		);
+		echo "1\n";
 		if (!$query) {
 			return $this->error(NULL);
 		}
 
-		echo "nearly req\n";
 		return $this->success(array("session_token" => $session_token));
 	}
 
