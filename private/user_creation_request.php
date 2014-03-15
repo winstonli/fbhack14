@@ -12,7 +12,7 @@ class UserCreationRequest extends Request {
 		}
 		echo "not null\n";
 		$result = $query->fetch_assoc();
-		echo "got result \n";
+		echo "got result: ". $result["count(*)"] . " \n";
 
 		return $this->success($result["count(*)"]);
 	}
