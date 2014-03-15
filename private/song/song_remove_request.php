@@ -56,14 +56,14 @@ class SongRemoveRequest extends SessionRequest {
 			$this->position);
 
 		if (!$query) {
-			return $this->error("1");
+			return $this->error(NULL);
 		}
 
 		/* get new list for output */
 		$query = $this->db->query("SELECT song_id, position, youtube_url, name FROM music.song WHERE playlist_id = " .
 			$this->playlist_id . " ORDER BY position ASC");
-		if (!$query || !$query->num_rows) {
-			return $this->error("2");
+		if (!$query) {
+			return $this->error(NULL);
 		}
 
 		$song_list = array();
