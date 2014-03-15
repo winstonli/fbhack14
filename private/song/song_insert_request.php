@@ -47,7 +47,8 @@ class SongInsertRequest extends SessionRequest {
 
 		if ($this->position != 1) {
 			$query = $this->db->query("SELECT count(*) FROM music.song WHERE playlist_id = " .
-				$this->playlist_id);
+				$this->playlist_id . " AND position = " .
+				$this->position);
 
 			if (!$query || !$query->num_rows) {
 				return $this->error(NULL);
