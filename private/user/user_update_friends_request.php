@@ -33,6 +33,9 @@ class UserUpdateFriendsRequest extends SessionRequest {
 
 		$friend_list = json_decode(file_get_contents("https://graph.facebook.com/me/friends?fields=friends.limit(5000).fields(first_name,middle_name,last_name)&access_token=" . $fb_auth_token), true);
 
+
+		var_dump($friend_list);
+		return $this->success(NULL);
 		/* Ensure the fb ids match. */
 
 		$query = $this->db->query("SELECT fb_id FROM user.user WHERE user_id = " .
@@ -47,8 +50,6 @@ class UserUpdateFriendsRequest extends SessionRequest {
 		$query->close();
 		
 		$fb_user_id = $result["fb_id"];
-
-		var_dump($friend_list);
 
 		if ($fb_user_id != $friend_list["id"]) {
 			return $this->error("stored: " . $fb_user_id . ", fetched: " . $friend_list["id"]);
