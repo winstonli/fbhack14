@@ -41,7 +41,7 @@ class UserLoginRequest extends Request {
 		
 		echo "2\n";
 		$query = $this->databaseConnection->query(
-			"INSERT INTO user.sessions VALUES (NULL, " . 
+			"INSERT INTO user.session VALUES (NULL, " . 
 				$user_id . ", x'" . 
 				$session_token . "')"
 		);
