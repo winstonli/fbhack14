@@ -19,11 +19,11 @@ class UserCreationRequest extends Request {
 
 	public function request() {
 		/* ADD PW CHECK. */
-		$query = $this->db->query("INSERT INTO user.user(username, password, first_name, last_name) VALUES (" .
-			$this->username . ", " .
-			$this->password . ", " .
-			$this->first_name . ", " .
-			$this->last_name . ")");
+		$query = $this->db->query("INSERT INTO user.user(username, password, first_name, last_name) VALUES ('" .
+			$this->username . "', '" .
+			$this->password . "', '" .
+			$this->first_name . "', '" .
+			$this->last_name . "'')");
 		if (!$query) {
 			return $this->error(NULL);
 		}
