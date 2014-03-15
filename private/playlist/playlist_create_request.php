@@ -22,9 +22,7 @@ class PlaylistCreateRequest extends SessionRequest {
 			$this->name . "', 0, NULL)");
 
 		if (!$query) {
-			return $this->error("INSERT INTO music.playlist(user_id, name, likes, url) VALUES (" .
-			$this->user_id . ", '" .
-			$this->name . "', 0, NULL)");
+			return $this->error("playlist name already used");
 		}
 
 		$query = $this->db->query("SELECT playlist_id FROM music.playlist WHERE user_id = " .
