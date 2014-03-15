@@ -8,12 +8,13 @@ constants= {
 	"song_swap" : "http://162.13.180.132/api/song/swap.php",
 	"access_token" : "http://162.13.180.132/api/user/link_fb.php",
 	"friends_update" : "http://162.13.180.132/api/user/update_friends.php",
+	"friends_get" : "http://162.13.180.132/api/user/get_friends.php",
 
 };
 
 
 $(document).ready( function() {
-	playlistGet("66d5ee2f8d75fd84f78ac62ddbb93a40", "77");
+	friendsGet("66d5ee2f8d75fd84f78ac62ddbb93a40", "77");
 });
 
 
@@ -173,7 +174,7 @@ function songSwap(sessionToken, playlist_id, position1, position2) {
 
 function friendsUpdate(sessionToken) {
 	$.post(
-		constants.update_friends,
+		constants.friends_update,
 		{
 			session_token: sessionToken,
 		},
@@ -181,6 +182,25 @@ function friendsUpdate(sessionToken) {
 			checkForError(returnedData);
 			if (!returnedData.error) {
 				console.log("Success friendsUpdate");
+			}
+
+			console.log(returnedData);
+		}
+	);
+}
+
+
+
+function friendsGet(sessionToken) {
+	$.post(
+		constants.friends_get,
+		{
+			session_token: sessionToken,
+		},
+		function(returnedData) {
+			checkForError(returnedData);
+			if (!returnedData.error) {
+				console.log("Success friendsGet");
 			}
 
 			console.log(returnedData);
