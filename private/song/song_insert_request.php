@@ -23,30 +23,53 @@ class SongInsertRequest extends SessionRequest {
 			return false;
 		}
 
-		return $this->success(NULL);
+		/* Check for owner of playlist */
 
-		$query = $this->db->query("INSERT INTO music.playlist(user_id, name, likes, url) VALUES (" .
-			$this->user_id . ", '" .
-			$this->name . "', 0, NULL)");
+		$query = $this->db->query("SELECT count(*) FROM music.playlist WHERE user_id = " .
+			$this->user_id . " AND playlist_id = " .
+			$this->playlist_id);
 
 		if (!$query) {
-			return $this->error("playlist name already used");
-		}
-
-		$query = $this->db->query("SELECT playlist_id FROM music.playlist WHERE user_id = " .
-			$this->user_id . " AND name = '" .
-			$this->name . "'");
-		if (!$query || !$query->num_rows) {
 			return $this->error(NULL);
+		}
+		if (!$query->num_rows) {
+			return $this->error("playlist not owned by user");
 		}
 
 		$result = $query->fetch_assoc();
 
 		$query->close();
 
-		$playlist_id = $result["playlist_id"];
+		$query = $this->db->query("UPDATE music.song SET position = position + 1 WHERE playlist_id = " .
+			$this->playlist_id . " AND position = " .
+			$this->position);
 
-		return $this->success(array("playlist" => array("playlist_id" => $playlist_id)));
+		if (!$query) {
+			return $this->error(NULL);
+		}
+
+		$query = $this->db->query("INSERT INTO music.song(playlist_id, position, youtube_url, name) VALUES (" .
+			$this->playlist_id . ", " .
+			$this->position . ", '" .
+			$this->youtube_url . "', '" .
+			$this->name . "')");
+		if (!$query) {
+			return $this->error(NULL);
+		}
+
+		$query = $this->db->query("SELECT song_id, position, youtube_url, name FROM music.song WHERE playlist_id = " .
+			$this->playlist_id);
+		if (!$query || !$query->num_rows) {
+			return $this->error(NULL);
+		}
+
+		$song_list = array();
+		while ($result = $query->fetch_assoc()) {
+			$song_list[] = $result;
+		}
+
+		return $this->success(array("playlist" => array("playlist_id" => $this->playlist_id),
+							        "songs" => array("list" => $song_list)));
 	}
 
 }
