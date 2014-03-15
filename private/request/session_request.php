@@ -19,7 +19,7 @@ abstract class SessionRequest extends Request {
 		);
 		if (!$query) {
 			return $this->error("SELECT user_id FROM user.session WHERE session_token = x'" .
-				$this->session_token);
+				$this->session_token . "'");
 		}
 		if (!$query->num_rows) {
 			return $this->error("invalid session");
