@@ -40,7 +40,7 @@ class UserLoginRequest extends Request {
 		$session_token = md5($user_id . microtime());
 		
 		echo "2\n";
-		$query = $this->databaseConnection->query(
+		$query = $this->db->query(
 			"INSERT INTO user.session VALUES (NULL, " . 
 				$user_id . ", x'" . 
 				$session_token . "')"
