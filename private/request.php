@@ -9,7 +9,7 @@ abstract class Request {
 
 	public function __construct {
 		// error_reporting(0);
-		this->db = new FBHmysqli();
+		$this->db = new FBHmysqli();
 		$this->json = array();
 		$this->db->autocommit(false);
 	}
