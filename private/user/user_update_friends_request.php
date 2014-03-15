@@ -55,11 +55,11 @@ class UserUpdateFriendsRequest extends SessionRequest {
 		/* do the update */
 
 		$values = "(";
-		echo "here\n";
 
 		foreach ($friend_list["friends"]["data"] as $friend) {
-			echo $friend["first_name"] . "\n";
+			$values =. $friend["id"] . ", ";
 		}
+		echo $values;
 		return $this->success("got here");
 
 		return $this->success(NULL);
