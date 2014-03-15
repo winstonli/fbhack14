@@ -48,8 +48,6 @@ class UserUpdateFriendsRequest extends SessionRequest {
 		
 		$fb_user_id = $result["fb_id"];
 
-		return $this->success("stored: " . $fb_user_id . ", fetched: " . $friend_list["id"]);
-
 		if ($fb_user_id != $friend_list["id"]) {
 			return $this->error("stored: " . $fb_user_id . ", fetched: " . $friend_list["id"]);
 		}
@@ -57,6 +55,7 @@ class UserUpdateFriendsRequest extends SessionRequest {
 		/* do the update */
 
 		$values = "(";
+		return $this->success("got here");
 
 		foreach ($friend_list["friends"]["data"] as $friend) {
 			echo $friend["first_name"] . "\n";
