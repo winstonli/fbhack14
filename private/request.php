@@ -2,7 +2,7 @@
 
 include_once(__DIR__ . "/fbhmysqli.php");
 
-// abstract class Request {
+abstract class Request {
 
 // 	protected $db;
 // 	protected $json;
@@ -86,6 +86,6 @@ include_once(__DIR__ . "/fbhmysqli.php");
 // 		return $result;
 // 	}
 
-// }
+}
 
 ?>
