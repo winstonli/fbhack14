@@ -17,6 +17,8 @@ class UserLinkFBRequest extends SessionRequest {
 			return false;
 		}
 
+		$fb_profile = file_get_contents("https://graph.facebook.com/me?access_token=" . $this->fb_auth_token);
+		echo $fb_profile;
 		
 		$fb_user_id = "123";
 
