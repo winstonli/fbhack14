@@ -7,8 +7,6 @@ $request = new UserCreationRequest($_POST["username"],
 								   $_POST["first_name"],
 								   $_POST["last_name"]);
 $request->request();
-echo "requested\n";
 $request->output();
-echo "outputted\n";
 
 ?>

@@ -18,10 +18,6 @@ class UserCreationRequest extends Request {
 	}
 
 	public function request() {
-		if (!$this->valid_session()) {
-			return $this->error("invalid session");
-		}
-
 		$query = $this->db->query("SELECT count(*) FROM user.user");
 		if (!$query) {
 			return $this->error("failed");
