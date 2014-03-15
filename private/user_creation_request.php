@@ -10,7 +10,7 @@ class UserCreationRequest extends SessionRequest {
 	private $last_name;
 
 	public function __construct($session_token, $username, $password, $first_name, $last_name) {
-
+		parent::__construct($session_token);
 	}
 
 	public function request() {
