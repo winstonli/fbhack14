@@ -46,6 +46,20 @@ class SongSwapRequest extends SessionRequest {
 			$this->position1 . ", " .
 			$this->position2 . ")");
 
+		if (!$query || !$query->num_rows) {
+			return $this->error(NULL);
+		}
+
+		$result = $query->fetch_assoc();
+
+		$query->close();
+
+		$count = $result["count(*)"];
+
+		if ($count != 2) {
+			return $this->error("invalid position");
+		}
+
 		/* update positions */
 		$query = $this->db->query("UPDATE music.song AS song1 JOIN music.song AS song2 ON (song1.position = " .
 			$this->position1 . " AND song2.position = " .
