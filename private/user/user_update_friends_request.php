@@ -65,12 +65,15 @@ class UserUpdateFriendsRequest extends SessionRequest {
 		$query = $this->db->query("DELETE FROM user.friend WHERE user_id = " .
 			$this->user_id);
 		if (!$query) {
-			return $this->error(NULL);
+			return $this->error("DELETE FROM user.friend WHERE user_id = " .
+			$this->user_id);
 		}
 
-		$query = $this->db->query("INSERT INTO user.friend(user_id, friend_fb_id) VALUES " . $values);
+		$query = $this->db->query("INSERT INTO user.friend(user_id, friend_fb_id) VALUES " .
+			$values);
 		if (!$query) {
-			return $this->error(NULL);
+			return $this->error("INSERT INTO user.friend(user_id, friend_fb_id) VALUES " .
+			$values);
 		}
 
 		return $this->success($values);
