@@ -4,15 +4,16 @@
 	<title>
 		Welcome to playlister
 	</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
 
 
-<div id="playlist">
+<div id="playlist" class="left">
 	
 </div>
 
-<div id="songs">
+<div id="songs" class="right">
 
 </div>
 
