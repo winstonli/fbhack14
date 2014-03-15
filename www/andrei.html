@@ -6,6 +6,8 @@
 
 <div id="fb-root"></div>
 
+<script type="text/javascript" src="js/jquery.js"></script>
+
 <script>
   window.fbAsyncInit = function() {
 FB.init(
@@ -66,11 +68,12 @@ FB.init(
 
 
     FB.getLoginStatus(function(response) {
-  if (response.status === 'connected') {
-  console.log(response.authResponse);
-    alert ("Your UID is " + response.authResponse.userID);
-  }
-});
+      if (response.status === 'connected') {
+        access_token = response.authResponse.accessToken;
+        console.log(access_token);
+      }
+    });
+
 
           // get friends' ids
 FB.getLoginStatus(function(response) {
