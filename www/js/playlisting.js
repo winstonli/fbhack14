@@ -71,6 +71,33 @@ function playlistUpdate(sessionToken, playlistId, name) {
 }
 
 
+function playlistGet(sessionToken, playlistId) {
+	$.post(
+		constants.playlist_get,
+		{
+			session_token: sessionToken,
+			playlist_id : playlistId
+		},
+		function(returnedData) {
+			checkForError(returnedData);
+
+			if (!returnedData.error) {
+				console.log("Success playlistGet");
+			}
+
+			playlist = returnedData.success.playlist;
+
+
+			console.log(playlist);
+		}
+	);
+}
+
+
+
+
+
+
 function songInsert(sessionToken, playlist_id, position, youtube_url, name) {
 	$.post(
 		constants.song_insert,
@@ -92,6 +119,12 @@ function songInsert(sessionToken, playlist_id, position, youtube_url, name) {
 	);
 }
 
+
+function songPushFront(sessionToken, playlist_id, youtube_url, name) {
+	songInsert(sessionToken, playlist_id, "1", youtube_url, name);
+}
+
+
 function songRemove(sessionToken, playlist_id, position) {
 	$.post(
 		constants.song_remove,
@@ -107,35 +140,6 @@ function songRemove(sessionToken, playlist_id, position) {
 			}
 
 			console.log(returnedData);
-		}
-	);
-}
-
-function songPushFront(sessionToken, playlist_id, youtube_url, name) {
-	songInsert(sessionToken, playlist_id, "1", youtube_url, name);
-}
-
-
-
-
-function playlistGet(sessionToken, playlistId) {
-	$.post(
-		constants.playlist_get,
-		{
-			session_token: sessionToken,
-			playlist_id : playlistId
-		},
-		function(returnedData) {
-			checkForError(returnedData);
-
-			if (!returnedData.error) {
-				console.log("Success playlistGet");
-			}
-
-			playlist = returnedData.success.playlist;
-
-
-			console.log(playlist);
 		}
 	);
 }
