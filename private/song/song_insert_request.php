@@ -30,7 +30,7 @@ class SongInsertRequest extends SessionRequest {
 			$this->playlist_id);
 
 		if (!$query) {
-			return $this->error(NULL);
+			return $this->error("1");
 		}
 		if (!$query->num_rows) {
 			return $this->error("playlist not owned by user");
@@ -45,7 +45,7 @@ class SongInsertRequest extends SessionRequest {
 			$this->position);
 
 		if (!$query) {
-			return $this->error(NULL);
+			return $this->error("2");
 		}
 
 		$query = $this->db->query("INSERT INTO music.song(playlist_id, position, youtube_url, name) VALUES (" .
@@ -54,13 +54,13 @@ class SongInsertRequest extends SessionRequest {
 			$this->youtube_url . "', '" .
 			$this->name . "')");
 		if (!$query) {
-			return $this->error(NULL);
+			return $this->error("3");
 		}
 
 		$query = $this->db->query("SELECT song_id, position, youtube_url, name FROM music.song WHERE playlist_id = " .
 			$this->playlist_id);
 		if (!$query || !$query->num_rows) {
-			return $this->error(NULL);
+			return $this->error("4";
 		}
 
 		$song_list = array();
