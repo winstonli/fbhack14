@@ -5,6 +5,7 @@ constants= {
 	"playlist_update" : "http://162.13.180.132/api/playlist/update.php",
 	"song_insert" : "http://162.13.180.132/api/song/insert.php",
 	"song_remove" : "http://162.13.180.132/api/song/remove.php",
+	"song_swap" : "http://162.13.180.132/api/song/swap.php",
 };
 
 
@@ -137,6 +138,26 @@ function songRemove(sessionToken, playlist_id, position) {
 			checkForError(returnedData);
 			if (!returnedData.error) {
 				console.log("Success songRemove");
+			}
+
+			console.log(returnedData);
+		}
+	);
+}
+
+
+function songSwap(sessionToken, playlist_id, position) {
+	$.post(
+		constants.song_swap,
+		{
+			session_token: sessionToken,
+			playlist_id: playlist_id,
+			position: position,
+		},
+		function(returnedData) {
+			checkForError(returnedData);
+			if (!returnedData.error) {
+				console.log("Success songSwap");
 			}
 
 			console.log(returnedData);
