@@ -1,6 +1,6 @@
 <?php
 
-include_once __DIR__ . "/../request.php";
+include_once __DIR__ . "/request.php";
 
 class UserCreationRequest extends Request {
 
