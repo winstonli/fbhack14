@@ -6,6 +6,7 @@
 
 <div id="fb-root"></div>
 
+<script type="text/javascript" src="js/playlisting.js"></script>
 <script type="text/javascript" src="js/jquery.js"></script>
 
 <script>
@@ -77,7 +78,7 @@ FB.init(
             access_token: access_token
           },
           function(returnedData) {
-            console.log("Finished sending the auth token")
+            console.log(returnedData)
           }
         );
 
