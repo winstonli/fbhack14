@@ -50,15 +50,6 @@ class SongRemoveRequest extends SessionRequest {
 			return $this->error("song not in playlist");
 		}
 
-		$query = $this->db->query("INSERT INTO music.song(playlist_id, position, youtube_url, name) VALUES (" .
-			$this->playlist_id . ", " .
-			$this->position . ", '" .
-			$this->youtube_url . "', '" .
-			$this->name . "')");
-		if (!$query) {
-			return $this->error("song already in playlist");
-		}
-
 		$query = $this->db->query("SELECT song_id, position, youtube_url, name FROM music.song WHERE playlist_id = " .
 			$this->playlist_id . " ORDER BY position ASC");
 		if (!$query || !$query->num_rows) {
@@ -69,6 +60,8 @@ class SongRemoveRequest extends SessionRequest {
 		while ($result = $query->fetch_assoc()) {
 			$song_list[] = $result;
 		}
+
+		$query->close();
 
 		return $this->success(array("playlist" => array("playlist_id" => $this->playlist_id),
 							        "songs" => array("list" => $song_list)));
