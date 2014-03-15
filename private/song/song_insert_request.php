@@ -29,25 +29,47 @@ class SongInsertRequest extends SessionRequest {
 			$this->user_id . " AND playlist_id = " .
 			$this->playlist_id);
 
-		if (!$query) {
-			return $this->error("1");
-		}
-		if (!$query->num_rows) {
-			return $this->error("playlist not owned by user");
+		if (!$query || !$query->num_rows) {
+			return $this->error(NULL);
 		}
 
 		$result = $query->fetch_assoc();
 
 		$query->close();
 
+		$count = $result["count(*)"];
+
+		if (!$count) {
+			return $this->error("playlist not owned by user");
+		}
+
+		/* Check position valid */
+
+		if ($this->position != 1) {
+			$query = $this->db->query("SELECT count(*) FROM music.song WHERE playlist_id = " .
+				$this->position_id);
+
+			if (!$query || !$query->num_rows) {
+				return $this->error(NULL);
+			}
+
+			$result = $query->fetch_assoc();
+
+			$query->close();
+
+			$count = $result["count(*)"];
+
+			if (!$count) {
+				return $this->error("invalid position");
+			}
+		}
+
 		$query = $this->db->query("UPDATE music.song SET position = position + 1 WHERE playlist_id = " .
 			$this->playlist_id . " AND position >= " .
 			$this->position);
 
 		if (!$query) {
-			return $this->error("UPDATE music.song SET position = position + 1 WHERE playlist_id = " .
-			$this->playlist_id . " AND position >= " .
-			$this->position);
+			return $this->error(NULL);
 		}
 
 		$query = $this->db->query("INSERT INTO music.song(playlist_id, position, youtube_url, name) VALUES (" .
@@ -62,7 +84,7 @@ class SongInsertRequest extends SessionRequest {
 		$query = $this->db->query("SELECT song_id, position, youtube_url, name FROM music.song WHERE playlist_id = " .
 			$this->playlist_id . " ORDER BY position ASC");
 		if (!$query || !$query->num_rows) {
-			return $this->error("4");
+			return $this->error(NULL);
 		}
 
 		$song_list = array();
