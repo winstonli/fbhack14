@@ -4,24 +4,28 @@ constants= {
 
 
 $(document).ready( function() {
+	getSongsForPlaylist("asd");
 	// requestJSON("12345", constants.playlists, "playlist");
 });
 
 
-$.post('test.php', 
-	{ asd: "hello", field2 : "hello2"}, 
-    function(returnedData){
-         console.log(returnedData);
-});
+// $.post('test.php', 
+// 	{ asd: "hello", field2 : "hello2"}, 
+//     function(returnedData){
+//          console.log(returnedData);
+// });
 
 
-function requestJSON(page, params) {
-	$.post(
-		page, 
-		params, 
-	    function(returnedData){
-	         console.log(returnedData);
-		});
+function getSongsForPlaylist(playlistID) {
+	$.post('test.php', 
+		{ playlist: playlistID }, 
+	    function(returnedData) {
+	    	songs = jQuery.parseJSON(returnedData);
+
+	    	console.log(songs);
+
+			console.log(returnedData);
+	});
 }
 
 
