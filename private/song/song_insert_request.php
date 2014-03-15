@@ -60,7 +60,7 @@ class SongInsertRequest extends SessionRequest {
 		}
 
 		$query = $this->db->query("SELECT song_id, position, youtube_url, name FROM music.song WHERE playlist_id = " .
-			$this->playlist_id);
+			$this->playlist_id . " ORDER BY position ASC");
 		if (!$query || !$query->num_rows) {
 			return $this->error("4");
 		}
