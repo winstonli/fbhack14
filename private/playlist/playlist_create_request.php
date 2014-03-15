@@ -27,8 +27,6 @@ class PlaylistCreateRequest extends SessionRequest {
 			$this->name . "', 0, NULL)");
 		}
 
-		return $this->success("got here3");
-
 		$query->close();
 
 		$query = $this->db->query("SELECT playlist_id FROM music.playlist WHERE user_id = " .
@@ -37,6 +35,8 @@ class PlaylistCreateRequest extends SessionRequest {
 		if (!$query || !$query->num_rows) {
 			return $this->error(NULL);
 		}
+
+		echo "got here 4\n";
 
 		$result = $query->fetch_assoc();
 
