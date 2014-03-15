@@ -17,7 +17,8 @@ class UserGetFriendsRequest extends SessionRequest {
 		$query = $this->db->query("SELECT user.user.user_id, first_name, last_name, username FROM user.user JOIN user.friend ON user.user.fb_id = user.friend.friend.fb_id WHERE user.friend.user_id = " .
 			$this->user_id);
 		if (!$query) {
-			return $this->error(NULL);
+			return $this->error("SELECT user.user.user_id, first_name, last_name, username FROM user.user JOIN user.friend ON user.user.fb_id = user.friend.friend.fb_id WHERE user.friend.user_id = " .
+			$this->user_id);
 		}
 
 		$friend_list = array();
