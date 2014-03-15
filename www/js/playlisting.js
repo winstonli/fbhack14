@@ -9,7 +9,7 @@ constants= {
 
 
 $(document).ready( function() {
-	songRemove("66d5ee2f8d75fd84f78ac62ddbb93a40", "114", "");
+	songRemove("66d5ee2f8d75fd84f78ac62ddbb93a40", "114", "2");
 });
 
 
@@ -103,7 +103,7 @@ function songRemove(sessionToken, playlist_id, position) {
 		function(returnedData) {
 			checkForError(returnedData);
 			if (!returnedData.error) {
-				console.log("Success songInsert");
+				console.log("Success songRemove");
 			}
 
 			console.log(returnedData);
