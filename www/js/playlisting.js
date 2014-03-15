@@ -11,9 +11,9 @@ constants= {
 };
 
 
-$(document).ready( function() {
-	songSwap("66d5ee2f8d75fd84f78ac62ddbb93a40", "114", "1", "2");
-});
+// $(document).ready( function() {
+// 	songSwap("66d5ee2f8d75fd84f78ac62ddbb93a40", "114", "1", "2");
+// });
 
 
 
