@@ -169,7 +169,7 @@ fieldset#body {
 }
 .column_left,.column_middle,.column_right{
 	float:left;
-	width:25%;
+	width:10%;
 }
 .column_middle{
 	margin:0 3%;
