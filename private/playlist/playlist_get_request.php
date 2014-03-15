@@ -12,7 +12,7 @@ class PlaylistGetRequest extends Request {
 	}
 
 	public function request() {
-		$query = $this->db->query("SELECT song_id, position, url FROM music.song WHERE playlist_id = " .
+		$query = $this->db->query("SELECT song_id, position, youtube_url FROM music.song WHERE playlist_id = " .
 			$this->playlist_id);
 
 		if (!$query) {
