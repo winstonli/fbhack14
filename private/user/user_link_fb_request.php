@@ -18,11 +18,16 @@ class UserLinkFBRequest extends SessionRequest {
 		}
 
 		$fb_profile = json_decode(file_get_contents("https://graph.facebook.com/me?access_token=" . $this->fb_auth_token), true);
-		
+
 		$fb_user_id = $fb_profile["id"];
 
+		if (!is_numeric($fb_user_id)) {
+			return $this->error("invalid auth token");
+		}
+
 		$query = $this->db->query("UPDATE user.user SET fb_id = " .
-			$fb_user_id . " WHERE user_id = " .
+			$fb_user_id . ", fb_auth_token = '" .
+			$this->fb_auth_token . "' WHERE user_id = " .
 			$this->user_id);
 		if (!$query) {
 			return $this->error(NULL);
