@@ -13,7 +13,20 @@ abstract class SessionRequest extends Request {
 	}
 
 	protected function valid_session() {
-		return true;
+		$query = $this->db->query(
+			"SELECT user_id, FROM user.session WHERE session_token = x'" .
+				$this->session_token
+		);
+		if (!$query) {
+			return $this->error(NULL);
+		}
+		if (!$query->num_rows) {
+			return $this->error("invalid session");
+		}
+		$result = $query->fetch_assoc();
+		$this->userID = $result["user_id"];
+		
+		$query->close();
 	}
 
 }
