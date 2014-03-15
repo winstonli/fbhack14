@@ -23,7 +23,7 @@ class PlaylistUpdateRequest extends SessionRequest {
 			$this->playlist_id);
 
 		if (!$query || !$this->db->affected_rows) {
-			return $this->error("playlist not owned by user");
+			return $this->error("name not changed or playlist not owned by user");
 		}
 
 		return $this->success(NULL);
