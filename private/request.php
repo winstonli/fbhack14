@@ -1,8 +1,6 @@
 <?php
 
-include_once(__DIR__ . "/fbhmysqli.php");
-
-echo "request to bottom\n";
+include_once __DIR__ . "/fbhmysqli.php";
 
 abstract class Request {
 
