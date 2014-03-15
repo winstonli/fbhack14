@@ -4,7 +4,7 @@ include_once __DIR__ . "/request.php";
 
 echo "got to bottom\n";
 
-public class UserCreationRequest extends Request {
+class UserCreationRequest extends Request {
 
 // 	public function request() {
 // 		$query = $this->db->request("SELECT count(*) FROM user.user");
