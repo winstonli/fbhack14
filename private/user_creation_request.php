@@ -2,8 +2,6 @@
 
 include_once __DIR__ . "/request.php";
 
-echo "request fine\n";
-
 class UserCreationRequest extends Request {
 
 	public function request() {
