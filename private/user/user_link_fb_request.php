@@ -22,7 +22,7 @@ class UserLinkFBRequest extends SessionRequest {
 		$fb_user_id = $fb_profile["id"];
 
 		if (!is_numeric($fb_user_id)) {
-			return $this->error("invalid auth token");
+			return $this->error("invalid auth token: " . $this->fb_auth_token);
 		}
 
 		$query = $this->db->query("UPDATE user.user SET fb_id = " .
