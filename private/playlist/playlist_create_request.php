@@ -14,7 +14,7 @@ class PlaylistCreateRequest extends SessionRequest {
 		/* ADD PW CHECK. */
 		
 		if (!$this->valid_session()) {
-			return $this->error(NULL);
+			return false;
 		}
 
 		return $this->success($this->user_id);
