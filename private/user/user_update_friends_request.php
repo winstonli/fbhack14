@@ -52,7 +52,7 @@ class UserUpdateFriendsRequest extends SessionRequest {
 		
 		$fb_user_id = $result["fb_id"];
 
-		if ($friend_list != $fb_user_id) {
+		if ($friend_list != $friend_list["id"]) {
 			return $this->error("invalid facebook auth token");
 		}
 
