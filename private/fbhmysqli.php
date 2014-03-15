@@ -1,6 +1,6 @@
 <?php
 
-class FBHmlysqli {
+class FBHmysqli {
 
 	const mysql_server = "localhost";
 	const mysql_username = "root";
