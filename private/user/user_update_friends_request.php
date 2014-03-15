@@ -54,13 +54,27 @@ class UserUpdateFriendsRequest extends SessionRequest {
 
 		/* do the update */
 
-		$values = "(";
-		echo "here\n";
+		$values = "";
 
 		foreach ($friend_list["friends"]["data"] as $friend) {
-			echo $friend["first_name"] . "\n";
+			$values .= ("(" . $this->user_id . ", " . $friend["id"] . "), ");
 		}
-		return $this->success("got here");
+
+		$values = rtrim($values, ", ");
+
+		$query = $this->db->query("DELETE FROM user.friend WHERE user_id = " .
+			$this->user_id);
+		if (!$query) {
+			return $this->error("DELETE FROM user.friend WHERE user_id = " .
+			$this->user_id);
+		}
+
+		$query = $this->db->query("INSERT INTO user.friend(user_id, friend_fb_id) VALUES " .
+			$values);
+		if (!$query) {
+			return $this->error("INSERT INTO user.friend(user_id, friend_fb_id) VALUES " .
+			$values);
+		}
 
 		return $this->success(NULL);
 	}
