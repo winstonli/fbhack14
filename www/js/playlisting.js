@@ -1,6 +1,5 @@
 constants= {
-	"playlists" : "test.php",
-	"songs" : "dummy.php"
+	"playlists" : "http://162.13.180.132/test.php",
 };
 
 
@@ -13,7 +12,8 @@ $(document).ready( function() {
 function requestJSON(playlistNumber, page, divID) {
 	request = new ajaxRequest();
 
-	params  = "playlist=" + playlistNumber;
+	params = "";
+	// params  = "playlist=" + playlistNumber;
 	
 	request.open ("POST", page, true);
 	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
