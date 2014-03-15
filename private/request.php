@@ -18,23 +18,23 @@ abstract class Request {
 
 	public function output() {
 		header("Content-type: application/json");
-		// echo json_encode($this->output);
-		echo json_encode($this->output, JSON_PRETTY_PRINT);
+		// echo json_encode($this->json);
+		echo json_encode($this->json, JSON_PRETTY_PRINT);
 	}
 	
 	abstract public function request();
 
 	protected function error($error) {
-		$this->output["error"] = $error;
-		$this->databaseConnection->rollback();
-		$this->databaseConnection->close();
+		$this->json["error"] = $error;
+		$this->db->rollback();
+		$this->db->close();
 		return false;
 	}
 	
 	protected function success($success) {
-		$this->output["success"] = $success;
-		$this->databaseConnection->commit();
-		$this->databaseConnection->close();
+		$this->json["success"] = $success;
+		$this->db->commit();
+		$this->db->close();
 		return true;
 	}
 	
