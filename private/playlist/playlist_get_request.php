@@ -12,11 +12,6 @@ class PlaylistGetRequest extends Request {
 	}
 
 	public function request() {
-		/* Check that it is a valid session. */
-		if (!$this->valid_session()) {
-			return false;
-		}
-
 		$query = $this->db->query("SELECT song_id, position, url FROM music.song WHERE playlist_id = " .
 			$this->playlist_id);
 
