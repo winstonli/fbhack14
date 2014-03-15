@@ -2,8 +2,6 @@
 
 include_once __DIR__ . "/request.php";
 
-echo "Session reuqeet included\n";
-
 class SessionRequest extends Request {
 
 	private $session_token;
@@ -17,5 +15,7 @@ class SessionRequest extends Request {
 	}
 
 }
+
+echo "class fine";
 
 ?>
