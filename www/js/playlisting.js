@@ -5,6 +5,7 @@ constants= {
 	"playlist_update" : "http://162.13.180.132/api/playlist/update.php",
 	"song_insert" : "http://162.13.180.132/api/song/insert.php",
 	"song_remove" : "http://162.13.180.132/api/song/remove.php",
+	"song_swap" : "http://162.13.180.132/api/song/swap.php",
 };
 
 
@@ -71,6 +72,33 @@ function playlistUpdate(sessionToken, playlistId, name) {
 }
 
 
+function playlistGet(sessionToken, playlistId) {
+	$.post(
+		constants.playlist_get,
+		{
+			session_token: sessionToken,
+			playlist_id : playlistId
+		},
+		function(returnedData) {
+			checkForError(returnedData);
+
+			if (!returnedData.error) {
+				console.log("Success playlistGet");
+			}
+
+			playlist = returnedData.success.playlist;
+
+
+			console.log(playlist);
+		}
+	);
+}
+
+
+
+
+
+
 function songInsert(sessionToken, playlist_id, position, youtube_url, name) {
 	$.post(
 		constants.song_insert,
@@ -92,6 +120,12 @@ function songInsert(sessionToken, playlist_id, position, youtube_url, name) {
 	);
 }
 
+
+function songPushFront(sessionToken, playlist_id, youtube_url, name) {
+	songInsert(sessionToken, playlist_id, "1", youtube_url, name);
+}
+
+
 function songRemove(sessionToken, playlist_id, position) {
 	$.post(
 		constants.song_remove,
@@ -111,31 +145,22 @@ function songRemove(sessionToken, playlist_id, position) {
 	);
 }
 
-function songPushFront(sessionToken, playlist_id, youtube_url, name) {
-	songInsert(sessionToken, playlist_id, "1", youtube_url, name);
-}
 
-
-
-
-function playlistGet(sessionToken, playlistId) {
+function songSwap(sessionToken, playlist_id, position) {
 	$.post(
-		constants.playlist_get,
+		constants.song_swap,
 		{
 			session_token: sessionToken,
-			playlist_id : playlistId
+			playlist_id: playlist_id,
+			position: position,
 		},
 		function(returnedData) {
 			checkForError(returnedData);
-
 			if (!returnedData.error) {
-				console.log("Success playlistGet");
+				console.log("Success songSwap");
 			}
 
-			playlist = returnedData.success.playlist;
-
-
-			console.log(playlist);
+			console.log(returnedData);
 		}
 	);
 }
