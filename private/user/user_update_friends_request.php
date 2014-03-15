@@ -76,7 +76,7 @@ class UserUpdateFriendsRequest extends SessionRequest {
 			$values);
 		}
 
-		return $this->success($values);
+		return $this->success(NULL);
 	}
 
 }
