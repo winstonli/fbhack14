@@ -22,7 +22,9 @@ class PlaylistCreateRequest extends SessionRequest {
 			$this->name . ", 0, NULL)");
 
 		if (!$query) {
-			return $this->error("playlist name taken");
+			return $this->error("INSERT INTO music.playlist(user_id, name, likes, url) VALUES (" .
+			$this->user_id . ", " .
+			$this->name . ", 0, NULL)");
 		}
 
 		$query->close();
