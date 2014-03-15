@@ -78,7 +78,7 @@ FB.init(
         $.post(
           constants.access_token,
           {
-            access_token: access_token,
+            fb_auth_token: access_token,
             session_token: session_token
           },
           function(returnedData) {
