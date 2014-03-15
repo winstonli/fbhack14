@@ -41,13 +41,11 @@ class SongInsertRequest extends SessionRequest {
 		$query->close();
 
 		$query = $this->db->query("UPDATE music.song SET position = position + 1 WHERE playlist_id = " .
-			$this->playlist_id . " AND position = " .
+			$this->playlist_id . " AND position >= " .
 			$this->position);
 
 		if (!$query) {
-			return $this->error("UPDATE music.song SET position = position + 1 WHERE playlist_id = " .
-			$this->playlist_id . " AND position = " .
-			$this->position);
+			return $this->error(NULL);
 		}
 
 		$query = $this->db->query("INSERT INTO music.song(playlist_id, position, youtube_url, name) VALUES (" .
