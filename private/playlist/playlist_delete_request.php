@@ -2,8 +2,6 @@
 
 include_once __DIR__ . "/../request/session_request.php";
 
-echo "in file\n";
-
 class PlaylistDeleteRequest extends SessionRequest {
 
 	private $playlist_id;
@@ -26,7 +24,5 @@ class PlaylistDeleteRequest extends SessionRequest {
 	}
 
 }
-
-echo "parsed class\n";
 
 ?>
