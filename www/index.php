@@ -7,5 +7,8 @@
 </head>
 <body>
 
+
+
+<script type="text/javascript" src="js/playlisting.js"></script>
 </body>
 </html>
