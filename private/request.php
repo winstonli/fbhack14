@@ -17,7 +17,7 @@ abstract class Request {
 	public function output() {
 		header("Content-type: application/json");
 		// echo json_encode($this->output);
-		echo json_encode($this->output, JSON_PRETTY_PRINT);
+		echo json_encode($this->output);
 	}
 	
 	abstract public function request();
