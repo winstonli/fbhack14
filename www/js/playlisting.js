@@ -1,10 +1,11 @@
 constants= {
 	"playlist_create" : "http://162.13.180.132/api/playlist/create.php",
+	"playlist_get" : "http://162.13.180.132/api/playlist/get.php",
 };
 
 
 $(document).ready( function() {
-	playlistCreate("66d5ee2f8d75fd84f78ac62ddbb93a40", "asdddddsads");
+	playlistGet("66d5ee2f8d75fd84f78ac62ddbb93a40", "77");
 });
 
 
@@ -18,39 +19,34 @@ function playlistCreate(sessionToken, name) {
 			name: name
 		},
 		function(returnedData) {
+			checkForError(returnedData);
 			console.log(returnedData);
 		}
 	);
 }
 
 
-// function requestJSON(playlistNumber, page, divID) {
-// 	request = new ajaxRequest();
 
-// 	params = "";
-// 	// params  = "playlist=" + playlistNumber;
-	
-// 	request.open ("POST", page, true);
-// 	request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+function playlistGet(sessionToken, playlistId) {
+	$.post(
+		constants.playlist_get,
+		{
+			session_token: sessionToken, 
+			playlist_id : playlistId
+		},
+		function(returnedData) {
+			checkForError(returnedData);
 
-// 	request.onreadystatechange = function(){
-// 		if (this.readyState == 4 && this.status == 200) {
+			playlist = returnedData.success.playlist;
 
-// 			songs = $('#' + divID);
 
-// 			response = this.responseText;
+			console.log(playlist);
+		}
+	);
+}
 
-// 			playlist = jQuery.parseJSON(response);
 
-// 			songs.html(response);
 
-// 			// populateDivWithArray(songs, playlist.error);
-
-// 		}
-// 	}
-
-// 	request.send(params);
-// }
 
 
 function populateDivWithArray(div, array) {
@@ -59,3 +55,11 @@ function populateDivWithArray(div, array) {
 	});
 }
 
+
+
+
+function checkForError(obj) {
+	if (obj.error) {
+		console.log(obj);
+	}
+}
