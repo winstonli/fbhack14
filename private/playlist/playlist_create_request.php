@@ -32,11 +32,11 @@ class PlaylistCreateRequest extends SessionRequest {
 		$query = $this->db->query("SELECT playlist_id FROM music.playlist WHERE user_id = " .
 			$this->user_id . " AND name = '" .
 			$this->name . "'");
+
+		return $this->success("got here4");
 		if (!$query || !$query->num_rows) {
 			return $this->error(NULL);
 		}
-
-		return $this->success("got here4");
 
 		$result = $query->fetch_assoc();
 
