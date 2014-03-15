@@ -7,7 +7,7 @@ abstract class Request {
 	protected $db;
 	protected $json;
 
-	function __construct {
+	public function __construct {
 		// error_reporting(0);
 		this->db = new FBHmysqli();
 		$this->json = array();
