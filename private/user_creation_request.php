@@ -24,13 +24,12 @@ class UserCreationRequest extends Request {
 			$this->password . ", " .
 			$this->first_name . ", " .
 			$this->last_name . ")");
-		echo "INSERT INTO user.user(username, password, first_name, last_name) VALUES (" .
+		if (!$query) {
+			return $this->error("INSERT INTO user.user(username, password, first_name, last_name) VALUES (" .
 			$this->username . ", " .
 			$this->password . ", " .
 			$this->first_name . ", " .
-			$this->last_name . ")";
-		if (!$query) {
-			return $this->error(NULL);
+			$this->last_name . ")");
 		}
 
 		return $this->success(NULL);
