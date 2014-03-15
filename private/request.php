@@ -1,6 +1,6 @@
 <?php
 
-include_once __DIR__ . "/fbhmysqli.php";
+include_once(__DIR__ . "/fbhmysqli.php");
 
 abstract class Request {
 
@@ -17,7 +17,7 @@ abstract class Request {
 	public function output() {
 		header("Content-type: application/json");
 		// echo json_encode($this->output);
-		echo json_encode($this->output, JSON_PRETTY_PRINT);
+		echo 'hi' . json_encode($this->output);
 	}
 	
 	abstract public function request();
@@ -86,6 +86,6 @@ abstract class Request {
 		return $result;
 	}
 
-}
+// }
 
 ?>
