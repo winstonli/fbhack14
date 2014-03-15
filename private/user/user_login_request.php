@@ -41,6 +41,7 @@ class UserLoginRequest extends Request {
 			return $this->error(NULL);
 		}
 
+		echo "nearly req\n";
 		return $this->success(array("session_token" => $session_token));
 	}
 
