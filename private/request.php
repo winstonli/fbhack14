@@ -2,14 +2,16 @@
 
 include_once(__DIR__ . "/fbhmysqli.php");
 
+echo "request to bottom\n";
+
 abstract class Request {
 
 	protected $db;
 	protected $json;
 
-	function __construct {
+	public function __construct() {
 		// error_reporting(0);
-		this->db = new FBHmysqli();
+		$this->db = new FBHmysqli();
 		$this->json = array();
 		$this->db->autocommit(false);
 	}
@@ -17,7 +19,7 @@ abstract class Request {
 	public function output() {
 		header("Content-type: application/json");
 		// echo json_encode($this->output);
-		echo 'hi' . json_encode($this->output);
+		echo json_encode($this->output, JSON_PRETTY_PRINT);
 	}
 	
 	abstract public function request();
@@ -86,6 +88,6 @@ abstract class Request {
 		return $result;
 	}
 
-// }
+}
 
 ?>
