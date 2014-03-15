@@ -4,11 +4,11 @@ include_once __DIR__ . "/../request/session_request.php";
 
 class UserUpdateFriendsRequest extends SessionRequest {
 
-	private $json;
+	private $friend_list;
 
-	public function __construct($session_token, $json) {
+	public function __construct($session_token, $friend_list) {
 		parent::__construct($session_token);
-		$this->json = $this->db->escape_string($json);
+		$this->friend_list = $this->db->escape_string($friend_list);
 	}
 
 	public function request() {
@@ -17,7 +17,7 @@ class UserUpdateFriendsRequest extends SessionRequest {
 			return false;
 		}
 
-		$friends = json_decode($json, true);
+		$friends = json_decode($friend_list, true);
 
 		/* Ensure the fb ids match. */
 
@@ -45,7 +45,7 @@ class UserUpdateFriendsRequest extends SessionRequest {
 		foreach ($friends["friends"]["data"] as $friend) {
 			echo $friend["first_name"] . "\n";
 		}
-		
+
 		return $this->success(NULL);
 	}
 
