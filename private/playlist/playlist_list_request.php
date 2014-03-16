@@ -13,7 +13,7 @@ class PlaylistListRequest extends Request {
 
 	public function request() {
 		$query = $this->db->query("SELECT playlist_id, name FROM music.playlist WHERE user_id = " .
-			$this->user_id);
+			$this->user_id . " ORDER BY name ASC");
 
 		if (!$query) {
 			return $this->error("invalid user");
