@@ -1,0 +1,2 @@
+RewriteEngine on
+RewriteRule ^(.*)/$ /profile.php?user=$1 [QSA]
