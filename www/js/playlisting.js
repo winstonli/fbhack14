@@ -32,6 +32,8 @@ function playlistCreate(sessionToken, name) {
 			if (!returnedData.error) {
 				playlistCreateSuccess();
 				console.log("Success playlistCreate");
+			} else {
+				playlistCreateSuccess();
 			}
 		}
 	);
