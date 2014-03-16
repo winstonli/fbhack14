@@ -93,10 +93,10 @@ FB.init(
 								<!-- <button>User Login</button> -->					 
 								<div class="container">
 									<input type='submit' name='User Login' value='User Login' />
+									<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 								</div>
-
 							</div>
-														<div id="div2" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
+							<div id="div2" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
 								<div id='fg_membersite'>
 									<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 									<fieldset >
@@ -122,12 +122,11 @@ FB.init(
 										<input type='submit' name='Submit' value='Submit' />
 									</div>
 									<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
-								</fieldset>
-								</form>
+									</fieldset>
+									</form>
+								</div>
 							</div>
-							<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
-
-			    		</div>
+						</div>
 		        	</div>
 	        	</div>
 		    </section>
