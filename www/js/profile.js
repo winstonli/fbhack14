@@ -174,7 +174,7 @@ function renderOwnSongs() {
 			textBox.keyup(function (e) {
 			    if (e.keyCode == 13) {
 			        // playlistCreate(getSessionToken(), e.target.value);
-			        songInsert(sessionToken, activePlaylist.id(), 1, e.target.value, "name");
+			        songInsert(session_token, activePlaylist.id(), 1, e.target.value, "name");
 			    }
 			});
 
