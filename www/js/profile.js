@@ -3,7 +3,7 @@ var session_token;
 window.onload = function() {
 	session_token = getSessionToken();
 	if (!session_token) {
-		console.log("No session token")
+		console.log("No session token");
 	}
 	initUI();
 	userPlaylists(session_token, null);
