@@ -16,6 +16,18 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+	</script>
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				
+				$("#div2").fadeIn("slow");
+				$("#div3").fadeIn(3000);
+			});
+		});
+</script>
     <style type="text/css">
 		body {
 			font-family: 'Open Sans', sans-serif;
@@ -39,7 +51,7 @@ FB.init(
   FB.Event.subscribe('auth.authResponseChange', function(response) {
     if (response.status === 'connected') {
       testAPI();
-    } else if (response.status === 'not_authorized') {
+    } else if (response.stat	us === 'not_authorized') {
       FB.login();
     } else {
       FB.login();
@@ -69,16 +81,85 @@ FB.init(
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
 				    		<h2>Login</h2>
-							<div style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
+							<div id="div1" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
+								<button>User Login</button>
+								<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+							</div>
+							<div id="div2" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
+								<div id='fg_membersite'>
+									<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+									<fieldset >
+									<legend>Login</legend>
+
+									<input type='hidden' name='submitted' id='submitted' value='1'/>
+
+									<div class='short_explanation'>* required fields</div>
+
+									<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
+									<div class='container'>
+										<label for='username' >UserName*:</label><br/>
+										<input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
+										<span id='login_username_errorloc' class='error'></span>
+									</div>
+									<div class='container'>
+										<label for='password' >Password*:</label><br/>
+										<input type='password' name='password' id='password' maxlength="50" /><br/>
+										<span id='login_password_errorloc' class='error'></span>
+									</div>
+
+									<div class='container'>
+										<input type='submit' name='Submit' value='Submit' />
+									</div>
+									<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
+								</fieldset>
+								</form>
+							</div>
+							<div id="div3" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
+								<div id='fg_membersite'>
+								<form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+								<fieldset >
+								<legend>Register</legend>
+
+								<input type='hidden' name='submitted' id='submitted' value='1'/>
+
+								<div class='short_explanation'>* required fields</div>
+								<input type='text'  class='spmhidip' name='<?php echo $fgmembersite->GetSpamTrapInputName(); ?>' />
+
+								<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
+								<div class='container'>
+									<label for='name' >Your Full Name*: </label><br/>
+									<input type='text' name='name' id='name' value='<?php echo $fgmembersite->SafeDisplay('name') ?>' maxlength="50" /><br/>
+									<span id='register_name_errorloc' class='error'></span>
+								</div>
+								<div class='container'>
+									<label for='email' >Email Address*:</label><br/>
+									<input type='text' name='email' id='email' value='<?php echo $fgmembersite->SafeDisplay('email') ?>' maxlength="50" /><br/>
+									<span id='register_email_errorloc' class='error'></span>
+								</div>
+								<div class='container'>
+									<label for='username' >UserName*:</label><br/>
+									<input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
+									<span id='register_username_errorloc' class='error'></span>
+								</div>
+								<div class='container' style='height:80px;'>
+								<label for='password' >Password*:</label><br/>
+								<div class='pwdwidgetdiv' id='thepwddiv' ></div>
+								<noscript>
+									<input type='password' name='password' id='password' maxlength="50" />
+								</noscript>    
+								<div id='register_password_errorloc' class='error' style='clear:both'></div>
+								</div>
+
 								<div class='container'>
 									<input type='submit' name='Submit' value='Submit' />
 								</div>
-								<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+
+							</fieldset>
+							</form>
 							</div>
 			    		</div>
 		        	</div>
 	        	</div>
-				
 		    </section>
 		    
 		    <section id="slide-2" class="homeSlide">
