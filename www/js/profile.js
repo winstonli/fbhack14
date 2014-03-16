@@ -65,6 +65,10 @@ function songInsertSuccess(playlist) {
 	updatePlaylist(playlist, false);
 }
 
+function songRemoveSucesss(playlist) {
+	updatePlaylist(playlist, false);
+}
+
 function Playlist(playlist_id, name) {
 	var playlist_id = playlist_id;
 	var name = name;
