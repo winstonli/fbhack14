@@ -43,10 +43,8 @@ function playlistDeleteSuccess(playlists) {
 function updatePlaylist(playlist, animated) {
 	_playlists.forEach(function(pl, index, array) {
 		if (pl.id() == playlist.playlist_id) {
-			console.log("found");
 			pl.setSongs(playlist.songs.list);
 			array[index] = pl;
-			console.log(pl.songs());
 		}
 	});
 	console.log(_playlists);
@@ -66,6 +64,7 @@ function songInsertSuccess(playlist) {
 }
 
 function songRemoveSucesss(playlist) {
+	alert('song remove succ');
 	updatePlaylist(playlist, false);
 }
 
