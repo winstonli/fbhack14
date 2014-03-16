@@ -158,7 +158,7 @@ function renderOwnPlaylist() {
 		$('#playlist_self_box_add').click(function(e) {
 			if (done) {
 				addToPlaylist = $('#playlist_self_box_add');
-				addToPlaylist.find('span').append('<input class="text" placeholder="asdf"></input>');
+				addToPlaylist.find('span').append('<input class="text" placeholder="Playlist Name"></input>');
 
 				textBox = addToPlaylist.find('input');
 				textBox.focus();
@@ -208,7 +208,7 @@ function renderOwnSongs(animated) {
 		$('#song_self_box_add').click(function(e) {
 			if (done) {
 				addToPlaylist = $('#song_self_box_add');
-				addToPlaylist.find('span').append('<input class="text"></input>');
+				addToPlaylist.find('span').append('<input class="text" placeholder="YouTube URL"></input>');
 
 				textBox = addToPlaylist.find('input');
 				textBox.focus();
