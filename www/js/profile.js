@@ -137,7 +137,7 @@ function renderOwnPlaylist() {
 }
 
 function renderOwnSongs() {
-	$('#activePlaylistSelf').html(activePlaylist.name());
+	$('#active_playlist_self').html(activePlaylist.name());
 }
 
 function initUI() {
