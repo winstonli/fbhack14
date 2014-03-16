@@ -7,13 +7,17 @@ window.onload = function() {
 	userPlaylists("fede1f5ee0d30be9e81a49f36be19de1", null);
 };
 
-var playlists;
+var _playlists;
 
 var activePlaylist;
 var activeOtherPlaylist;
 
 function userPlaylistsSuccess(playlists) {
-	console.log(playlists);
+	playlists.forEach(function(playlist) {
+		_playlists = new Array();
+		_playlists.push(new Playlist(playlist.playlist_id, playlist.name));
+	})
+	console.log(_playlists);
 }
 
 function playlistCreateSuccess() {
