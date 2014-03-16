@@ -1,10 +1,10 @@
 var session_token;
 
 window.onload = function() {
-	setSessionToken("fede1f5ee0d30be9e81a49f36be19de1");
+	setSessionToken("c45f5e999c50114fc6f9d16343c692ae");
 	
 	session_token = getSessionToken();
-	userPlaylists("fede1f5ee0d30be9e81a49f36be19de1", null);
+	userPlaylists(session_token, null);
 };
 
 var _playlists;
