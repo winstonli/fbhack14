@@ -161,6 +161,7 @@ function renderOwnPlaylist() {
 
 function renderOwnSongs() {
 	$('#active_playlist_self').html(activePlaylist.name());
+	$('#songs_self').hide();
 	$('#songs_self').empty();
 	var s = activePlaylist.songs();
 	if (s) {
@@ -172,6 +173,7 @@ function renderOwnSongs() {
 			});
 		});
 	}
+	$('#songs_self').show('normal');
 }
 
 function initUI() {
