@@ -119,16 +119,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
     	       <div class="column_right">
             	<div class="column_right_grid">
-                 <div class="newsletter">
-				   <h3>Selected Friend's Playlists</h3>
-					    <form>
-					    	<span>
-					 	     <i><img src="web/images/mail.png" alt="" /></i>
-					 	     <input type="text" value="Enter your email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Enter your email';}">
-					 	    </span>			 	    
-					 		<input type="submit" class="my_button" value="Subscribe">
-					 	</form>
-				   </div>
+<div class="menu_box">
+	    		 	 <h3>My Playlists</h3>
+	    		 	   <div class="menu_box_list">
+				      		<ul id="playlists_self">                                                    
+                                                                        <!-- My Playlists -->
+
+						  		<li><a href="#" class="account_settings"><span>Playlist 1</span></a></li>
+                                                                <li><a href="#" class="account_settings"><span>Playlist 2</span></a></li>
+                                                                <li><a href="#" class="account_settings"><span>Playlist 3</span></a></li>
+                                                                <li><a href="#" class="account_settings"><span>Playlist 4</span></a></li>
+						  								  	
+				    		</ul>
+				      </div>
+	    		 </div>	 
 			   </div>
  	    
     	    
