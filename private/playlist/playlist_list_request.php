@@ -1,17 +1,20 @@
 <?php
 
-include_once __DIR__ . "/../request/request.php";
+include_once __DIR__ . "/../request/session_request.php";
 
-class PlaylistListRequest extends Request {
+class PlaylistListRequest extends SessionRequest {
 
 	private $user_id;
 
-	public function __construct($user_id) {
-		parent::__construct();
+	public function __construct($session_token, $user_id) {
+		parent::__construct($session_token);
 		$this->user_id = $this->db->escape_string($user_id);
 	}
 
 	public function request() {
+		if (!is_numeric(user_id) && !$this->validSession()) {
+			return false;
+		}
 		$query = $this->db->query("SELECT playlist_id, name FROM music.playlist WHERE user_id = " .
 			$this->user_id . " ORDER BY name ASC");
 

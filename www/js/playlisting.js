@@ -30,7 +30,7 @@ function userPlaylists(sessionToken, user_id) {
 		function(returnedData) {
 			checkForError(returnedData);
 			if (!returnedData.error) {
-				console.log("Success userPlaylist");
+				userPlaylistsSuccess(returnedData);
 			}
 			console.log(returnedData);
 		}
