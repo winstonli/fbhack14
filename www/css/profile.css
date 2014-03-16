@@ -1,33 +1,16 @@
-#nav_bar {
-	background-color: #ff0000;
-	height: 44px;
-	position: fixed;
-	left: 0;
-	top: 0;
-	width: 100%;
+.text {
+    border: 1px solid #666;
+    border-radius: 5px;
+    padding: 3px;
+    -webkit-transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    -moz-transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    -ms-transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    -o-transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
 }
 
-html {
-	background-color: #EEEEEE;
-	height: 100%;
-}
-
-body {
-	padding-top: 50px;
-	height: 80%;
-}
-
-#content {
-	height: 80%;
-}
-
-.section {
-	background-color: #FFFFFF;
-	border-radius: 10px;
-	float: left;
-	padding-left: 20px;
-	padding-right: 20px;
-	margin-right: 20px;
-	width: 20%;
-	height: 100%;
+.text:focus {
+    border: 1px solid #09c;
+    box-shadow: 0 0 7px rgba(0, 200, 204, 0.7);
+    outline: none;
 }

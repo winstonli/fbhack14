@@ -12,6 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="web/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="web/css/nav.css" rel="stylesheet" type="text/css" media="all"/>
+<link href="css/profile.css" rel="stylesheet" type="text/css" media="all"/>
 <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="web/js/jquery.js"></script>
 <script type="text/javascript" src="web/js/login.js"></script>
@@ -92,7 +93,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="column_middle">
               <div class="column_middle_grid1">
 				<div class="menu_box1">
-	    		 	 <h3>Playlist 1</h3>
+	    		 	 <h3 id="active_playlist_self">Playlist 1</h3>
 	    		 	   <div class="menu_box_list">
 				      		<ul>                                                    
                                                                         <!-- My Playlist 1 Songs -->
