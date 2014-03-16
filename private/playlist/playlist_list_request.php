@@ -4,8 +4,6 @@ include_once __DIR__ . "/../request/session_request.php";
 
 class PlaylistListRequest extends SessionRequest {
 
-	private $user_id;
-
 	public function __construct($session_token, $user_id) {
 		parent::__construct($session_token);
 		$this->user_id = $this->db->escape_string($user_id);
