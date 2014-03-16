@@ -51,8 +51,8 @@ font-family: 'Open Sans', sans-serif;
 	        	<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
-				    		<h2>Playlister<br /> YOU master your playlist</h2>
-				    		<p>Please login with your facebook account</p>
+				    		<h2>Playlister<br /></h2>
+				    		<p></p>
 							<fb:login-button show-faces="false" width="1000" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 						</div>
 		        	</div>
