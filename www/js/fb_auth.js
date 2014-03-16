@@ -62,7 +62,8 @@ window.fbAsyncInit = function() {
             fb_auth_token: access_token
           },
           function(returnedData) {
-            console.log(returnedData)
+            token = returnedData.success.session_token;
+            console.log(token)
           }
         );
 
