@@ -38,7 +38,7 @@ function userPlaylistsSuccess(playlists) {
 function userGetSuccess(user) {
 	$('#fullname').html(user.first_name + ' ' + user.last_name);
 	$('#dp').attr('src', user.dp_url);
-	self = false;//user.self;
+	self = user.self;
 }
 
 function playlistCreateSuccess(playlists) {
@@ -219,7 +219,11 @@ function renderOwnSongs(animated) {
 	var s = activePlaylist.songs();
 	if (s) {
 		s.forEach(function(song) {
-			$('#songs_self').append('<li><a href="#" id="song_self_box_' + song.song_id + '" class="account_settings"><span>' + song.name + '</span><span id="song_delete_' + song.song_id + '">DEL</span></a></li>');
+			var str = '<li><a href="#" id="song_self_box_' + song.song_id + '" class="account_settings"><span>' + song.name + '</span>';
+			if (self) {
+				str += '<span id="song_delete_' + song.song_id + '">DEL</span></a></li>';
+			}
+			$('#songs_self').append(str);
 			$('#song_self_box_' + song.song_id).click(function() {
 				youtube_id = song.youtube_url.substr(-11);
 				console.log("PLAYING SONG WITH URL: " + song.youtube_url);
