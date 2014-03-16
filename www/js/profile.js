@@ -2,7 +2,7 @@ var session_token;
 
 window.onload = function() {
 	setSessionToken("c45f5e999c50114fc6f9d16343c692ae");
-	
+
 	session_token = getSessionToken();
 	initUI();
 	userPlaylists(session_token, null);
@@ -125,4 +125,17 @@ function initUI() {
 	$("#playlist_add_button").click(function() {
 		playlistCreate(session_token, "newplaylist");
 	});
+}
+
+
+function getCookie(cname)
+{
+var name = cname + "=";
+var ca = document.cookie.split(';');
+for(var i=0; i<ca.length; i++)
+  {
+  var c = ca[i].trim();
+  if (c.indexOf(name)==0) return c.substring(name.length,c.length);
+  }
+return "";
 }
