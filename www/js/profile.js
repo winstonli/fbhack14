@@ -45,7 +45,6 @@ function playlistGetSuccess(playlist) {
 		if (pl.id() == playlist.playlist_id) {
 			pl.setSongs(pl.songs());
 			console.log(pl.songs());
-			break;
 		}
 	});
 }
