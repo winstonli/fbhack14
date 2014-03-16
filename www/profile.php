@@ -1,7 +1,8 @@
 <!DOCTYPE HTML>
 <head>
 <title>Playlist</title>
-<link href="css/main.css" rel="stylesheet" type="text/css" media="all"/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="css/profile.css" rel="stylesheet" type="text/css" media="all"/>
 <script type="text/javascript" src="js/jquery.js" />
 
 </head>
