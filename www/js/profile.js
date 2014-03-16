@@ -15,6 +15,7 @@ var activeOtherPlaylist;
 
 function setActivePlaylist(playlist) {
 	activePlaylist = playlist;
+	alert("new active playlist: " + playlist.name());
 	renderOwnSongs();
 }
 
@@ -124,13 +125,13 @@ function renderOwnPlaylist() {
 			$('#playlist_self_box_add').find('span').append('<input class="text"></input>');
 			done = false;
 		}
+		return false;
 	});
 	_playlists.forEach(function(playlist) {
 		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span></a></li>');
-		alert('#playlist_self_box_' + playlist.id());
 		$('#playlist_self_box_' + playlist.id()).click(function() {
-			alert("click	");
 			setActivePlaylist(playlist);
+			return false;
 		});
 	});
 }
