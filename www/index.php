@@ -86,10 +86,7 @@ FB.init(
 <div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
 <h2>Login</h2>
 <div style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
-<div class='container'>
-<input type='submit' name='Submit' value='Submit' />
-</div>
-<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+
 <div id='fg_membersite'>
 <form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
@@ -117,8 +114,7 @@ FB.init(
 <div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
 </fieldset>
 </form>
-<!-- client-side Form Validations:
-Uses the excellent form validation script from JavaScript-coder.com-->
+<!-- client-side Form Validations-->
 
 <script type='text/javascript'>
 // <![CDATA[
@@ -133,6 +129,10 @@ Uses the excellent form validation script from JavaScript-coder.com-->
 
 // ]]>
 </script>
+<div class='container'>
+<input type='register' name='Register' value='Register' />
+</div>
+<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 </div>
 </div>
 </div>
