@@ -42,7 +42,7 @@ font-family: 'Open Sans', sans-serif;
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <div id="fb-root"></div>
 
-
+<script type="text/javascript" src="js/profile.js"></script>
 <script type="text/javascript" src="js/fb_auth.js"></script>
 
 
