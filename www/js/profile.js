@@ -108,7 +108,7 @@ function getSessionToken() {
 }
 
 function renderPlaylist(divID) {
-	playlists.forEach(function(playlist) {
+	_playlists.forEach(function(playlist) {
 		console.log(playlist.name());
 	});
 }
