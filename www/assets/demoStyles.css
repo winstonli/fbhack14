@@ -26,20 +26,7 @@ a:hover {
 
 
 .content {
-	width:		980px;
-	height:		420px;
-	padding:	10px;
-
-	position:		absolute;
-	top:			50%;
-	left:			50%;
-	margin-top:		-210px;
-	margin-left:	-490px;
-
-	color:			#777;
-
-	border:				1px solid #555;
-	background-color:	#ccc;
+	position:		relative;
 }
 
 #loader {
@@ -74,7 +61,7 @@ a:hover {
 #musicplayer {
 	width: 451px;
 	height: 101px;
-	background-image: url('assets/mediaplayer/musicplayer.png');
+	background-image: url('mediaplayer/musicplayer.png');
 
 	user-select: none;
 	-moz-user-select: none;
@@ -99,25 +86,25 @@ a:hover {
 	left: 324px;
 }
 .playBtn {
-	background-image: url('assets/mediaplayer/buttonPlay.png');
+	background-image: url('mediaplayer/buttonPlay.png');
 }
 .playBtn:hover {
-	background-image: url('assets/mediaplayer/buttonPlayHover.png');
+	background-image: url('mediaplayer/buttonPlayHover.png');
 }
 .pauseBtn {
-	background-image: url('assets/mediaplayer/buttonPause.png');
+	background-image: url('mediaplayer/buttonPause.png');
 }
 .pauseBtn:hover {
-	background-image: url('assets/mediaplayer/buttonPauseHover.png');
+	background-image: url('mediaplayer/buttonPauseHover.png');
 }
 #stopBtn {
 	left: 387px;
 }
 .stopBtn {
-	background-image: url('assets/mediaplayer/buttonStop.png');
+	background-image: url('mediaplayer/buttonStop.png');
 }
 .stopBtn:hover {
-	background-image: url('assets/mediaplayer/buttonStopHover.png');
+	background-image: url('mediaplayer/buttonStopHover.png');
 }
 
 #labels {
@@ -126,7 +113,7 @@ a:hover {
 	position: absolute;
 }
 #musicplayer LABEL {
-	color: #336666;
+	color: white;
 }
 #song {
 }
@@ -140,12 +127,12 @@ a:hover {
 	height: 5px;
 	top: 78px;
 	left: 40px;
-	background-image: url("assets/mediaplayer/scubberBar.png");
+	background-image: url("mediaplayer/scubberBar.png");
 }
 
 #thumb {
 	cursor: pointer;
-	background-image: url("assets/mediaplayer/scrubberPlayhead.png");
+	background-image: url("mediaplayer/scrubberPlayhead.png");
 	width: 16px;
 	height: 16px;
 	top: -5px;
