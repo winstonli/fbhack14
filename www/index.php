@@ -31,7 +31,7 @@
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" >
 							<!-- Form Code Start -->
-<div id='fg_membersite'data-center="opacity: 1" data-106-top="opacity: 0">
+<div id='fg_membersite' data-center="opacity: 1" data-106-top="opacity: 0">
 <form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 <fieldset >
 <legend>Login</legend>
