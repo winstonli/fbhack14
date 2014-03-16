@@ -1,5 +1,7 @@
 var session_token;
 
+var self;
+
 window.onload = function() {
 	session_token = getSessionToken();
 	if (!session_token) {
@@ -34,9 +36,9 @@ function userPlaylistsSuccess(playlists) {
 }
 
 function userGetSuccess(user) {
-	console.log(user);
 	$('#fullname').html(user.first_name + ' ' + user.last_name);
 	$('#dp').attr('src', user.dp_url);
+	self = user.self;
 }
 
 function playlistCreateSuccess(playlists) {
@@ -188,24 +190,26 @@ function renderOwnSongs(animated) {
 	}
 	$('#songs_self').empty();
 	var done = true;
-	$('#songs_self').append('<li><a href="#" id="song_self_box_add" class="account_settings"><span>+</span></a></li>');
-	$('#song_self_box_add').click(function(e) {
-		if (done) {
-			addToPlaylist = $('#song_self_box_add');
-			addToPlaylist.find('span').append('<input class="text"></input>');
+	if (self) {
+		$('#songs_self').append('<li><a href="#" id="song_self_box_add" class="account_settings"><span>+</span></a></li>');
+		$('#song_self_box_add').click(function(e) {
+			if (done) {
+				addToPlaylist = $('#song_self_box_add');
+				addToPlaylist.find('span').append('<input class="text"></input>');
 
-			textBox = addToPlaylist.find('input');
-			textBox.focus();
-			textBox.keyup(function (e) {
-			    if (e.keyCode == 13) {
-			    	parseYoutubeAndInsert(session_token, activePlaylist.id(), e.target.value);
-			    }
-			});
+				textBox = addToPlaylist.find('input');
+				textBox.focus();
+				textBox.keyup(function (e) {
+				    if (e.keyCode == 13) {
+				    	parseYoutubeAndInsert(session_token, activePlaylist.id(), e.target.value);
+				    }
+				});
 
-			done = false;
-		}
-		return false;
-	});
+				done = false;
+			}
+			return false;
+		});
+	}
 	var s = activePlaylist.songs();
 	if (s) {
 		s.forEach(function(song) {
