@@ -173,8 +173,8 @@ function renderOwnSongs() {
 			textBox.focus();
 			textBox.keyup(function (e) {
 			    if (e.keyCode == 13) {
-			    	alert("clicked");
 			        // playlistCreate(getSessionToken(), e.target.value);
+			        songInsert(session_token, activePlaylist.id(), 1, e.target.value, "name");
 			    }
 			});
 
