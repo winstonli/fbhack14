@@ -85,6 +85,7 @@ FB.init(
 								<button>User Login</button>
 								<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 							</div>
+							<!-- 
 							<div id="div2" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
 								<div id='fg_membersite'>
 									<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
@@ -156,7 +157,7 @@ FB.init(
 
 							</fieldset>
 							</form>
-							</div>
+							</div>-->
 			    		</div>
 		        	</div>
 	        	</div>
