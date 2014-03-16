@@ -7,7 +7,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 -->
 <!DOCTYPE HTML>
 <head>
-<title>Ui kits Website Template | Home :: w3layouts</title>
+<title>Playlister</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="web/css/style.css" rel="stylesheet" type="text/css" media="all"/>
@@ -87,7 +87,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				                </div>
 				            </div>
 				             <div class="profile_img">
-				             	<a href="#"><img id="dp" src="web/images/profile_img40x40.jpg" alt="" />	</a>
+				             	<img id="dp" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc1/t1.0-1/c34.0.113.113/s100x100/252231_1002029915278_1941483569_a.jpg" alt="" />
 				             </div>
 				             <div class="clear"></div>
 					    </div>
@@ -99,15 +99,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    <div class="wrap">
 	       <div class="column_left">
 	    		 <div class="menu_box">
-	    		 	 <h3>My Playlists</h3>
+	    		 	 <h3>Playlists</h3>
 	    		 	   <div class="menu_box_list">
 				      		<ul id="playlists_self">
                                                                         <!-- My Playlists -->
 
-						  		  <li><a href="#" class="account_settings"><span>Playlist 1ish</span></a></li>
-                    <li><a href="#" class="account_settings"><span>Playlist 2</span></a></li>
-                    <li><a href="#" class="account_settings"><span>Playlist 3</span></a></li>
-                    <li><a href="#" class="account_settings"><span>Playlist 4</span></a></li>
+						  		 
 
 				    		</ul>
 				      </div>
@@ -123,7 +120,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="column_middle">
               <div class="column_middle_grid1">
 				<div class="menu_box1">
-	    		 	 <h3 id="active_playlist_self">Playlist 1 Songs</h3>
+	    		 	 <h3 id="active_playlist_self">Choose a Playlist</h3>
 	    		 	   <div class="menu_box_list">
 				      		<ul id="songs_self">
                                                                         <!-- My Playlist 1 Songs -->
