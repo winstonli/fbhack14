@@ -14,7 +14,7 @@ html {
 
 body {
 	padding-top: 50px;
-	height: 100%;
+	height: 80%;
 }
 
 #content {
@@ -24,10 +24,9 @@ body {
 .section {
 	background-color: #FFFFFF;
 	border-radius: 10px;
-	float: left;
+	display: inline-block;
 	padding-left: 20px;
 	padding-right: 20px;
-	margin-right: 20px;
 	width: 20%;
 	height: 100%;
 }
