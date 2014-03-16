@@ -1,2 +1,2 @@
 RewriteEngine on
-RewriteRule .* profile.php?user=%1  [L]
+RewriteRule .* /profile.php?user=%1  [L]
