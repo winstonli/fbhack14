@@ -177,7 +177,8 @@ fieldset#body {
 	width:70%;
 }
 .column_middle{
-	margin:-5px 200px;
+	margin:5px 200px;
+	padding:10px 100px; 
 }
 /******** Colunm Left *************/
 .menu_box h3 {
