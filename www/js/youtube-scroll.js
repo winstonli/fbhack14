@@ -10,7 +10,7 @@
         $("#progress").css("display", "none");
         $("#position").css("display", "block");
 
-        $("#playBtn").removeClass("playBtn").addClass("pauseBtn");
+        // $("#playBtn").removeClass("playBtn").addClass("pauseBtn");
 
         $("#playBtn").click(function(event){
             if (isPlaying) {

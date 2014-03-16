@@ -14,7 +14,7 @@ function onYouTubePlayerAPIReady() {
 
 // autoplay video
 function onPlayerReady(event) {
-    player.playVideo();
+    // player.playVideo();
 }
 
 // when video ends
