@@ -11,7 +11,7 @@ window.onload = function() {
 	if (!session_token) {
 		console.log("No session token");
 	}
-	console.log(getURLParameter("user"));
+	console.log("user: " + getURLParameter("user"));
 	userGet(session_token, null);
 	initUI();
 	userPlaylists(session_token, null);
