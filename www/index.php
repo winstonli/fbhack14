@@ -30,13 +30,13 @@
 	        	<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" >
-							<div class="loginForm">dsds
-							</div>	
+							<div class="loginForm">key</div>	
+							<div id="fb-root"></div>
+							<fb:login-button show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 			    		</div>
 		        	</div>
 	        	</div>
-				<div id="fb-root"></div>
-				<fb:login-button show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+				
 		    </section>
 		    
 		    <section id="slide-2" class="homeSlide">
@@ -91,7 +91,7 @@
 		    	<div class="bcg bcg2" data-bottom-top="opacity: 0;" data--33p-top="opacity: 0;" data--66p-top="opacity: 1;" data-anchor-target="#slide-5">
 			    	<div class="hsContainer">
 				    	<div class="hsContent" data-bottom-top="opacity: 0;" data-center="opacity: 1" data-anchor-target="#slide-5">
-g				    		<h2>Fixed element fading in and out</h2>
+				    		<h2>Fixed element fading in and out</h2>
 			    		</div>
 			    	</div>
 		    	</div>
