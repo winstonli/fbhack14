@@ -1,11 +1,10 @@
+var session_token;
+
 window.onload = function() {
 	setSessionToken("fede1f5ee0d30be9e81a49f36be19de1");
 	var song = new Song(12, 1, "www", "name");
-	alert(song.name());
-	alert(song.youtube_url());
-	alert(song.song_id());
-	alert(song.position());
-
+	
+	alert(getSessionToken());
 	playlistCreate("asdf", "name");
 };
 
@@ -61,5 +60,12 @@ function setSessionToken(sessionToken) {
 }
 
 function getSessionToken() {
-
+	var parts = document.cookie.split(/;\s*/);
+	for (var i = 0; i < parts.length; i++) {
+		var part = parts[i];
+		if (part.indexOf("session_token=") == 0) {
+			return part.substring("session_token=".length)
+		}
+	}
+	return null;
 }
