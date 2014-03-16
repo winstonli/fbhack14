@@ -230,6 +230,7 @@ function renderOwnSongs(animated) {
 				console.log(youtube_id);
 				// onChangeVideo(youtube_id);
 				onChangeVideo(youtube_id);
+				$('#songs').html(song.name);
 				return false;
 			});
 			$('#song_delete_' + song.song_id).click(function() {
