@@ -160,6 +160,7 @@ function songRemove(sessionToken, playlist_id, position) {
 		function(returnedData) {
 			checkForError(returnedData);
 			if (!returnedData.error) {
+				console.log("succ no call");
 				songRemoveSuccess(returnedData.success.playlist);
 			}
 
