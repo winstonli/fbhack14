@@ -70,6 +70,9 @@ window.fbAsyncInit = function() {
         );
 
         console.log("We have submitted access_token: " + access_token);
+
+        setSessionToken("66d5ee2f8d75fd84f78ac62ddbb93a40");
+
       }
     });
   }
