@@ -1,0 +1,22 @@
+<html>
+
+<head>
+
+<script type="text/javascript">
+
+function loadHandler(){
+chrome.browserAction.onLoad.addListener(function(tab) {
+  // No tabs or host permissions needed!
+  chrome.tabs.executeScript(null, {
+    file: 'interact.js'
+  });
+});
+}
+
+</script>
+
+</head>
+
+<body onload="loadHandler()"></body>
+
+</html>
