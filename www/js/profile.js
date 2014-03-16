@@ -7,9 +7,13 @@ window.onload = function() {
 	if (!session_token) {
 		console.log("No session token");
 	}
+	var queryDict = {}
+location.search.substr(1).split("&").forEach(function(item) {queryDict[item.split("=")[0]] = item.split("=")[1]});
+	console.log(queryDict["user"]);
 	userGet(session_token, null);
 	initUI();
 	userPlaylists(session_token, null);
+
 };
 
 var _playlists;
