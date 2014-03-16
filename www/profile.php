@@ -87,7 +87,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				                </div>
 				            </div>
 				             <div class="profile_img">
-				             	<img id="dp" src="https://fbcdn-profile-a.akamaihd.net/hprofile-ak-frc1/t1.0-1/c34.0.113.113/s100x100/252231_1002029915278_1941483569_a.jpg" alt="" />
+				             	<img id="dp" src="" alt="" />
 				             </div>
 				             <div class="clear"></div>
 					    </div>
