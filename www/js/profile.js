@@ -19,7 +19,8 @@ function updatePlaylists(playlists) {
 		console.log("adding");
 		console.log(playlist);
 		_playlists.push(new Playlist(playlist.playlist_id, playlist.name));
-	})
+	});
+	renderPlaylist("f");
 }
 
 function userPlaylistsSuccess(playlists) {
@@ -118,6 +119,6 @@ function renderSongs(divID) {
 
 function initUI() {
 	$("#playlist_add_button").click(function() {
-		alert( "Handler for .click() called." );
+		playlistCreate(session_token, "newplaylist");
 	});
 }
