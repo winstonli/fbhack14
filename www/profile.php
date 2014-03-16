@@ -19,6 +19,9 @@
 	</div>
 </div>
 <div id="playlists_self">
+	<div id="playlists_self_add">
+		<span id="playlist_add_button">Add</span>
+	</div>
 </div>
 <div id="songs_self">
 </div>

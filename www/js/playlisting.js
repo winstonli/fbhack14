@@ -47,8 +47,7 @@ function playlistCreate(sessionToken, name) {
 		function(returnedData) {
 			checkForError(returnedData);
 			if (!returnedData.error) {
-				playlistCreateSuccess();
-				console.log("Success playlistCreate");
+				playlistCreateSuccess(returnedData.success.playlists);
 			}
 		}
 	);
@@ -65,7 +64,7 @@ function playlistDelete(sessionToken, playlistId) {
 		function(returnedData) {
 			checkForError(returnedData);
 			if (!returnedData.error) {
-				console.log("Success playlistDelete");
+				playlistDeleteSuccess(returnedData.success.playlists);
 			}
 
 			console.log(returnedData);
@@ -85,7 +84,7 @@ function playlistUpdate(sessionToken, playlistId, name) {
 		function(returnedData) {
 			checkForError(returnedData);
 			if (!returnedData.error) {
-				console.log("Success playlistUpdate");
+				playlistUpdateSuccess(returnedData.success.playlists);
 			}
 
 			console.log(returnedData);
@@ -105,7 +104,7 @@ function playlistGet(sessionToken, playlistId) {
 			checkForError(returnedData);
 
 			if (!returnedData.error) {
-				console.log("Success playlistGet");
+				playlistGetSuccess(returnedData.sucess.playlists);
 			}
 
 			playlist = returnedData.success.playlist;

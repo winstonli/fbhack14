@@ -4,6 +4,7 @@ window.onload = function() {
 	setSessionToken("c45f5e999c50114fc6f9d16343c692ae");
 	
 	session_token = getSessionToken();
+	initUI();
 	userPlaylists(session_token, null);
 };
 
@@ -12,19 +13,33 @@ var _playlists;
 var activePlaylist;
 var activeOtherPlaylist;
 
-function userPlaylistsSuccess(playlists) {
+function updatePlaylists(playlists) {
 	_playlists = new Array();
 	playlists.list.forEach(function(playlist) {
 		console.log("adding");
 		console.log(playlist);
 		_playlists.push(new Playlist(playlist.playlist_id, playlist.name));
 	})
-	console.log("PLAYLISTS: ");
-	console.log(_playlists);
 }
 
-function playlistCreateSuccess() {
-	console.log("CALLBACK SUCC");
+function userPlaylistsSuccess(playlists) {
+	updatePlaylists(playlists);
+}
+
+function playlistCreateSuccess(playlists) {
+	updatePlaylists(playlists);
+}
+
+function playlistDeleteSuccess(playlists) {
+	updatePlaylists(playlists);
+}
+
+function playlistGetSuccess(playlists) {
+	updatePlaylists(playlists);
+}
+
+function playlistUpdateSuccess(playlists) {
+	updatePlaylists(playlists);
 }
 
 function Playlist(playlist_id, name) {
@@ -99,4 +114,10 @@ function renderPlaylist(divID) {
 
 function renderSongs(divID) {
 
+}
+
+function initUI() {
+	$("#playlist_add_button").click(function() {
+		alert( "Handler for .click() called." );
+	});
 }
