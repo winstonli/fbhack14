@@ -2,7 +2,7 @@
         var positionInterval;
         var seeking = false;
 
-        var isPlaying = false;
+        isPlaying = false;
 
 
         $("#track").css("display", "block");
@@ -19,8 +19,8 @@
             	isPlaying = false;
             } else {
                 $("#playBtn").removeClass("playBtn").addClass("pauseBtn");
-            	onPlay();
             	isPlaying = true;
+                onPlay();
             }
         });
 

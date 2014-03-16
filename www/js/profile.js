@@ -228,9 +228,14 @@ function renderOwnSongs(animated) {
 				youtube_id = song.youtube_url.substr(-11);
 				console.log("PLAYING SONG WITH URL: " + song.youtube_url);
 				console.log(youtube_id);
-				// onChangeVideo(youtube_id);
 				onChangeVideo(youtube_id);
+
+				// Update the player
 				$('#song').html(song.name);
+                $("#playBtn").removeClass("playBtn").addClass("pauseBtn");
+            	isPlaying = true;
+
+
 				return false;
 			});
 			$('#song_delete_' + song.song_id).click(function() {
