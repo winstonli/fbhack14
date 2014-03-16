@@ -174,10 +174,10 @@ fieldset#body {
 
 .column_middle{
 	float: right;
-	width:60%;
+	width:70%;
 }
 .column_middle{
-	margin:0 3%;
+	margin:-5px 15px;
 }
 /******** Colunm Left *************/
 .menu_box h3 {
