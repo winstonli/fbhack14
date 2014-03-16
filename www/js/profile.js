@@ -181,6 +181,26 @@ function renderOwnSongs(animated) {
 	}
 	$('#songs_self').empty();
 	var done = true;
+	$('#songs_self').append('<li><a href="#" class="account_settings"><span>
+					                 	<div id="player"></div>
+
+					                 	<div class="content">
+															<div id="musicplayer">
+																<div id="playBtn" class="button playBtn"></div>
+																<div id="labels">
+																	<label id="song">Song: <strong>Pirates Love Daisies</strong></label><br />
+																	<label id="loading">Waiting...</label>
+																</div>
+																<div id="track">
+																	<div id="progress"></div>
+																	<div id="thumb"></div>
+																</div>
+															</div>
+
+					                 	</div>
+
+
+						  						</span></a></li>');
 	$('#songs_self').append('<li><a href="#" id="song_self_box_add" class="account_settings"><span>+</span></a></li>');
 	$('#song_self_box_add').click(function(e) {
 		if (done) {
