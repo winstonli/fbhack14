@@ -41,9 +41,10 @@ function playlistDeleteSuccess(playlists) {
 }
 
 function playlistGetSuccess(playlist) {
-	_playlists.forEach(function(pl) {
+	_playlists.forEach(function(pl, index, array) {
 		if (pl.id() == playlist.playlist_id) {
 			pl.setSongs(pl.songs());
+			array[index] = pl;
 			console.log(pl.songs());
 		}
 	});
