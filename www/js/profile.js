@@ -40,7 +40,7 @@ function playlistDeleteSuccess(playlists) {
 	updatePlaylists(playlists);
 }
 
-function playlistGetSuccess(playlist) {
+function updatePlaylist(playlist) {
 	_playlists.forEach(function(pl, index, array) {
 		if (pl.id() == playlist.playlist_id) {
 			console.log("found");
@@ -53,8 +53,16 @@ function playlistGetSuccess(playlist) {
 	renderOwnSongs();
 }
 
+function playlistGetSuccess(playlist) {
+	updatePlaylist(playlist);
+}
+
 function playlistUpdateSuccess(playlists) {
 	updatePlaylists(playlists);
+}
+
+function songInsertSuccess(playlist) {
+	updatePlaylist(playlist);
 }
 
 function Playlist(playlist_id, name) {
