@@ -1,3 +1,15 @@
+<?PHP
+require_once("./include/membersite_config.php");
+
+if(isset($_POST['submitted']))
+{
+   if($fgmembersite->Login())
+   {
+        $fgmembersite->RedirectToURL("login-home.php");
+   }
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -124,6 +136,19 @@ FB.init(
 									<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
 									</fieldset>
 									</form>
+									<script type='text/javascript'>
+// <![CDATA[
+
+    var frmvalidator  = new Validator("login");
+    frmvalidator.EnableOnPageErrorDisplay();
+    frmvalidator.EnableMsgsTogether();
+
+    frmvalidator.addValidation("username","req","Please provide your username");
+    
+    frmvalidator.addValidation("password","req","Please provide the password");
+
+// ]]>
+</script>
 								</div>
 							</div>
 						</div>
