@@ -14,11 +14,11 @@ class UserLoginFBRequest extends Request {
 	public function request() {
 		$fb_profile = json_decode(file_get_contents("https://graph.facebook.com/me?access_token=" . $this->fb_auth_token), true);
 
-		$fb_user_id = $this->db->escape_string($fb_profile["id"]);
-
-		if (!is_numeric($fb_user_id)) {
+		if ($fb_profile["error"]) {
 			return $this->error("invalid auth token");
 		}
+
+		$fb_user_id = $this->db->escape_string($fb_profile["id"]);
 
 		$query = $this->db->query("SELECT user_id FROM user.user WHERE fb_id = " .
 			$fb_user_id);
