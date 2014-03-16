@@ -165,7 +165,6 @@ data-anchor-target="#slide-3"
 </section>
 
 </main>
-=======
 
 <script type="text/javascript" src="js/fb_auth.js"></script>
 
@@ -297,7 +296,6 @@ data-anchor-target="#slide-3"
 		    </section>
 
 		</main>
->>>>>>> 420ca7b1661776eb53938a16f92bf66bcd63dbbd
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
