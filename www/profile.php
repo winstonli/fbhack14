@@ -31,7 +31,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <body>
 	    <div class="wrap">
 	      <div class="header">
-	      	  <div class="header_top">
+	      	  <div class="header_top" style="max-width:1190px">
 					  <div class="menu">
 
 						  <a class="toggleMenu" href="#"><img src="web/images/nav.png" alt="" /></a>
