@@ -84,9 +84,10 @@ FB.init(
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
 				    		<h2>Login</h2>
 							<div id="div1" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
-								<button>User Login</button>
-								<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+								<!-- <button>User Login</button> -->
+								<input type='submit' name='User Login' value='Submit' />
 							</div>
+<<<<<<< HEAD
 							 
 							<div id="div2" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
 								<div id='fg_membersite'>
@@ -118,6 +119,9 @@ FB.init(
 								</form>
 							</div>
 							
+=======
+							<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+>>>>>>> 760fe61a0a347bafa9872f95db403c41aba1dd69
 			    		</div>
 		        	</div>
 	        	</div>

@@ -18,8 +18,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript" src="web/js/Chart.js"></script>
  <script type="text/javascript" src="web/js/jquery.easing.js"></script>
  <script type="text/javascript" src="web/js/jquery.ulslide.js"></script>
- <script type="text/javascript" src="js/profile.js"></script>
- <script type="text/javascript" src="js/playlisting.js"></script>
+
 </head>
 <body>			       
 	    <div class="wrap">	 
@@ -70,7 +69,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    		 <div class="menu_box">
 	    		 	 <h3>My Playlists</h3>
 	    		 	   <div class="menu_box_list">
-				      		<ul id="playlists_self">                                                    
+				      		<ul>                                                    
                                                                         <!-- My Playlists -->
 
 						  		<li><a href="#" class="account_settings"><span>Playlist 1</span></a></li>
