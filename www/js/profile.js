@@ -17,7 +17,7 @@ function userPlaylistsSuccess(playlists) {
 		console.log("adding");
 		console.log(playlist);
 		_playlists = new Array();
-		_playlists.push(new Playlist(playlist.playlist_id, playlist.name()));
+		_playlists.push(new Playlist(playlist.playlist_id, playlist.name));
 	})
 	console.log("PLAYLISTS: ");
 	console.log(_playlists);
