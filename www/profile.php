@@ -19,6 +19,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
  <script type="text/javascript" src="web/js/jquery.easing.js"></script>
  <script type="text/javascript" src="web/js/jquery.ulslide.js"></script>
  <script type="text/javascript" src="js/profile.js"></script>
+ <script type="text/javascript" src="js/playlisting.js"></script>
 </head>
 <body>			       
 	    <div class="wrap">	 
