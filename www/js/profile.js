@@ -47,6 +47,7 @@ function playlistGetSuccess(playlist) {
 			console.log(pl.songs());
 		}
 	});
+	console.log(_playlists);
 	renderOwnSongs();
 }
 
