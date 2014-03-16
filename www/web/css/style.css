@@ -173,12 +173,12 @@ fieldset#body {
 }
 
 .column_middle{
-	float: none;
+	float: left;
 	width:70%;
 }
-.column_middle{
+/*.column_middle{
 	margin:0 3%;
-}
+}*/
 /******** Colunm Left *************/
 .menu_box h3 {
 	color: #FFF;
