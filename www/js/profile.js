@@ -110,7 +110,7 @@ function getSessionToken() {
 function renderPlaylist(divID) {
 	$(divID).empty();
 	_playlists.forEach(function(playlist) {
-		$(divID).append('<li><a href="#" id="playlist_box_' + playlist.id() + ' class="account_settings"><span>' + playlist.name() + '</span></a></li>');
+		$(divID).append('<li><a href="#" id="playlist_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span></a></li>');
 	});
 }
 
