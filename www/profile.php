@@ -12,6 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="web/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="web/css/nav.css" rel="stylesheet" type="text/css" media="all"/>
+
 <link href="css/profile.css" rel="stylesheet" type="text/css" media="all"/>
 <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="assets/demoStyles.css">
@@ -20,6 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript" src="web/js/Chart.js"></script>
  <script type="text/javascript" src="web/js/jquery.easing.js"></script>
  <script type="text/javascript" src="web/js/jquery.ulslide.js"></script>
+ <script type="text/javascript" src="js/youtube.js"></script>
  <script type="text/javascript" src="js/profile.js"></script>
  <script type="text/javascript" src="js/playlisting.js"></script>
 </head>
@@ -33,6 +35,26 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<ul class="nav">
 								<li><a href="#"><i><img src="web/images/settings.png" alt="" /></i>Settings</a></li>
 								<li class="active"><a href="#"><i><img src="web/images/user.png" alt="" /></i>Account</a></li>
+
+								<li>
+					                 	<div id="player"></div>
+
+					                 	<div class="content">
+															<div id="musicplayer">
+																<div id="playBtn" class="button playBtn"></div>
+																<div id="labels">
+																	<label id="song">Song: <strong>Pirates Love Daisies</strong></label><br />
+																	<label id="loading">Waiting...</label>
+																</div>
+																<div id="track">
+																	<div id="progress"></div>
+																	<div id="thumb"></div>
+																</div>
+															</div>
+
+					                 	</div>
+
+								</li>
 
 
 							<div class="clear"></div>
@@ -100,22 +122,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                                         <!-- My Playlist 1 Songs -->
 
 						  						<li><a href="#" class="account_settings"><span>
-					                 	<div id="player"></div>
 
-					                 	<div class="content">
-															<div id="musicplayer">
-																<div id="playBtn" class="button playBtn"></div>
-																<div id="labels">
-																	<label id="song">Song: <strong>Pirates Love Daisies</strong></label><br />
-																	<label id="loading">Waiting...</label>
-																</div>
-																<div id="track">
-																	<div id="progress"></div>
-																	<div id="thumb"></div>
-																</div>
-															</div>
-
-					                 	</div>
 
 
 						  						</span></a></li>

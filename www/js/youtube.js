@@ -45,6 +45,10 @@ function onChangeVideo(videoID) {
 	player.loadVideoById(videoID);
 }
 
+function testingYoutubeJS() {
+  console.log("DA");
+}
+
 var modelPlaylist = {
 	nextVideo : "JBJ1VPBrCl0",
 
