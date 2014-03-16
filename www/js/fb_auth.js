@@ -67,7 +67,7 @@ window.fbAsyncInit = function() {
             console.log("Session token " + token)
             console.log(window.location.pathname.substr(-10))
             console.log(window.location.pathname.substr(-10) == "index.php")
-            if (window.location.pathname.substr(-10) == "index.php") {
+            if (window.location.pathname.substr(-10) == "/index.php") {
               window.location = "profile.php"
             }
           }
