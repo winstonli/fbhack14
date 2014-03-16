@@ -167,7 +167,11 @@ function renderOwnPlaylist() {
 		});
 	}
 	_playlists.forEach(function(playlist) {
-		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span><span id="playlist_delete_' + playlist.id() + '">DEL</span></a></li>');
+		var str = '<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span>';
+		if (self) {
+			str += '<span id="playlist_delete_' + playlist.id() + '">DEL</span></a></li>'
+		}
+		$('#playlists_self').append(str);
 		$('#playlist_self_box_' + playlist.id()).click(function() {
 			setActivePlaylist(playlist);
 			return false;
