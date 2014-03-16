@@ -1,9 +1,10 @@
 var session_token;
 
 window.onload = function() {
-	setSessionToken("c45f5e999c50114fc6f9d16343c692ae");
-
 	session_token = getSessionToken();
+	if (!session_token) {
+		console.log("No session token")
+	}
 	initUI();
 	userPlaylists(session_token, null);
 };
