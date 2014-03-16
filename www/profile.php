@@ -18,16 +18,18 @@
 		</div>
 	</div>
 </div>
-<div id="playlists_self">
-	<div id="playlists_self_add">
-		<span id="playlist_add_button">Add</span>
+<div id="content">
+	<div id="playlists_self">
+		<div id="playlists_self_add">
+			<span id="playlist_add_button">Add</span>
+		</div>
 	</div>
-</div>
-<div id="songs_self">
-</div>
-<div id="songs_other">
-</div>
-<div id="playlists_other">
+	<div id="songs_self">
+	</div>
+	<div id="songs_other">
+	</div>
+	<div id="playlists_other">
+	</div>
 </div>
 <div id="friends">
 </div>
