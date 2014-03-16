@@ -17,7 +17,7 @@ function userPlaylistsSuccess(playlists) {
 		_playlists = new Array();
 		_playlists.push(new Playlist(playlist.playlist_id, playlist.name));
 	})
-	console.log(_playlists);
+	console.log("PLAYLISTS: " + _playlists);
 }
 
 function playlistCreateSuccess() {
