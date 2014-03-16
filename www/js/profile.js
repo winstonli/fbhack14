@@ -4,8 +4,7 @@ window.onload = function() {
 	setSessionToken("fede1f5ee0d30be9e81a49f36be19de1");
 	var song = new Song(12, 1, "www", "name");
 	
-	alert(getSessionToken());
-	playlistCreate("asdf", "name");
+	session_token = getSessionToken();
 };
 
 var playlists;
