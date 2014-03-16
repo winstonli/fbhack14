@@ -5,6 +5,8 @@ window.onload = function() {
 	alert(song.youtube_url());
 	alert(song.song_id());
 	alert(song.position());
+
+	playlistCreate("asdf", "name");
 };
 
 var playlists;
