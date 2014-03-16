@@ -47,6 +47,7 @@ function playlistGetSuccess(playlist) {
 			console.log(pl.songs());
 		}
 	});
+	renderOwnSongs();
 }
 
 function playlistUpdateSuccess(playlists) {
@@ -141,7 +142,7 @@ function renderOwnPlaylist() {
 function renderOwnSongs() {
 	$('#active_playlist_self').html(activePlaylist.name());
 	$('#songs_self').empty();
-	activePlaylist.songs.forEach(function(song) {
+	activePlaylist.songs().forEach(function(song) {
 		$('#songs_self').append('<li><a href="#" id="song_self_box_' + song.song_id() + '" class="account_settings"><span>' + song.name() + '</span></a></li>');
 		$('#song_self_box_' + song.song_id()).click(function() {
 			alert("PLAYING SONG WITH URL: " + song.youtube_url());
