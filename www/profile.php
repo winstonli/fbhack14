@@ -98,11 +98,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				      		<ul id="songs_self">
                                                                         <!-- My Playlist 1 Songs -->
 
-						  										<li><a href="#" class="account_settings"><span>
-					                 <div id="player">
-
-					                 </div>
-						  										</span></a></li>
+						  						<li><a href="#" class="account_settings"><span>
+					                 	<div id="player"></div>
+						  						</span></a></li>
                           <li><a href="#" class="account_settings"><span>Song 2</span></a></li>
                           <li><a href="#" class="account_settings"><span>Song 3</span></a></li>
                           <li><a href="#" class="account_settings"><span>Song 4</span></a></li>
