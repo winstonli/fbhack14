@@ -109,7 +109,9 @@ function getSessionToken() {
 
 function renderOwnPlaylist() {
 	$('#playlists_self').empty();
-	$('#playlists_self').append('<li><a href="#" id="playlist_self_box_add" class="account_settings"><span>+</span></a></li>');
+	$('#playlists_self').append('<li><a href="#" id="playlist_self_box_add" class="account_settings"><span>+</span></a></li>').click(function(e) {
+		$('#playlist_self_box_add span').append('<input></input>');
+	});
 	_playlists.forEach(function(playlist) {
 		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span></a></li>');
 	});
