@@ -11,6 +11,10 @@ window.onload = function() {
 
 var playlists;
 
+function playlistCreateSuccess() {
+	console.log("CALLBACK SUCC");
+}
+
 function Playlist(playlist_id, name) {
 	var playlist_id = playlist_id;
 	var name = name;

@@ -30,6 +30,7 @@ function playlistCreate(sessionToken, name) {
 		function(returnedData) {
 			checkForError(returnedData);
 			if (!returnedData.error) {
+				playlistCreateSuccess();
 				console.log("Success playlistCreate");
 			}
 		}
