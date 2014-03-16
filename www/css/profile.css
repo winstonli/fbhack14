@@ -1,4 +1,16 @@
+.text {
+    border: 1px solid #666;
+    border-radius: 5px;
+    padding: 3px;
+    -webkit-transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    -moz-transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    -ms-transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    -o-transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+    transition: border 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
 .text:focus {
-    border: 1px solid #07c;
-    box-shadow: 0 0 10px #07c;
+    border: 1px solid #09c;
+    box-shadow: 0 0 7px rgba(0, 200, 204, 0.7);
+    outline: none;
 }
