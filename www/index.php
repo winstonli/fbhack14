@@ -52,7 +52,7 @@ font-family: 'Open Sans', sans-serif;
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
 				    		<h2>Playlister<br /></h2>
-				    		<p>A simple way to manage your YouTube music.</p>
+				    		<p>A simple way to manage your YouTube music.</p></br>
 							<fb:login-button show-faces="false" width="1000" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 						</div>
 		        	</div>
