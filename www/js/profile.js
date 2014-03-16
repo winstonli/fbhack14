@@ -11,10 +11,11 @@ window.onload = function() {
 	if (!session_token) {
 		console.log("No session token");
 	}
-	console.log("user: " + getURLParameter("user"));
-	userGet(session_token, null);
+	var user = getURLParameter("user");
+	console.log("user: " + user);
+	userGet(session_token, user);
 	initUI();
-	userPlaylists(session_token, null);
+	userPlaylists(session_token, user);
 
 };
 
