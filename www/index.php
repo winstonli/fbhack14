@@ -19,7 +19,7 @@ Welcome to playlister
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-       
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
@@ -29,10 +29,10 @@ Welcome to playlister
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.7.1.min.js"></script>
     <style type="text/css">
-	
+
 	<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
     <script type='text/javascript' src='js/gen_validatorv31.js'></script>
-	
+
 body {
 font-family: 'Open Sans', sans-serif;
 }
@@ -42,101 +42,23 @@ font-family: 'Open Sans', sans-serif;
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <div id="fb-root"></div>
 
-<script>
-  window.fbAsyncInit = function() {
-FB.init(
-{
-    appId : 641083209274716,
-    status : true, // check login status
-    cookie : true, // enable cookies to allow the server to access the session
-    xfbml : true // parse XFBML
-});
+<script type="text/javascript" src="js/playlister.js"></script>
+<script type="text/javascript" src="js/profile.js"></script>
+<script type="text/javascript" src="js/fb_auth.js"></script>
 
-  FB.Event.subscribe('auth.authResponseChange', function(response) {
-    if (response.status === 'connected') {
-      testAPI();
-    } else if (response.status === 'not_authorized') {
-      FB.login();
-    } else {
-      FB.login();
-    }
-  });
-  };
-
-  (function(d){
-   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-   if (d.getElementById(id)) {return;}
-   js = d.createElement('script'); js.id = id; js.async = true;
-   js.src = "//connect.facebook.net/en_US/all.js";
-   ref.parentNode.insertBefore(js, ref);
-  }(document));
-
-  function testAPI() {
-    console.log('Welcome! Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Good to see you, ' + response.name + '.');
-    });
-}
-</script>
-
-        <main>	
+        <main>
 		<section id="slide-1" class="homeSlide">
-		<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
-			<div class="hsContainer">
-				<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
-					<h2>Login</h2>
-					<div style = "border:2px solid #a1a1a1;background:#404040;border-radius:25px;width:500px">
+	        	<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
+		        	<div class="hsContainer">
+			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
+				    		<h2>Fade out elements before<br />they leave viewport</h2>
+				    		<p>Please login with your facebook account</p>
+							<fb:login-button show-faces="false" width="1000" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+						</div>
+		        	</div>
+	        	</div>
+		</section>
 
-					<div id='fg_membersite'>
-					<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-					<fieldset>
-					
-					<input type='hidden' name='submitted' id='submitted' value='1'/>
-
-					<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
-					<div class='container'>
-						<label for='username' >UserName*:</label><br/>
-						<input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
-						<span id='login_username_errorloc' class='error'></span>
-					</div>
-					<div class='container'>
-						<label for='password' >Password*:</label><br/>
-						<input type='password' name='password' id='password' maxlength="50" /><br/>
-						<span id='login_password_errorloc' class='error'></span>
-					</div>
-					
-					<div class='short_explanation'>* required fields</div>
-					
-					<div class='container'>
-						<input type='submit' name='Submit' value='Submit' />
-					</div>
-					<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
-					</fieldset>
-					</form>
-					<!-- client-side Form Validations-->
-
-					<script type='text/javascript'>
-					// <![CDATA[
-
-						var frmvalidator  = new Validator("login");
-						frmvalidator.EnableOnPageErrorDisplay();
-						frmvalidator.EnableMsgsTogether();
-
-						frmvalidator.addValidation("username","req","Please provide your username");
-    
-						frmvalidator.addValidation("password","req","Please provide the password");
-
-						// ]]>
-					</script>
-					<a href='register.php'>Register</a>
-					<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
-
-</section>
 
 <section id="slide-2" class="homeSlide">
 <div class="bcg" data-0="background-color:rgb(1,27,59);" data--25p-bottom="background-color:rgb(1,27,59);" data--90p-bottom="background-color:(0,0,0);" data-anchor-target="#slide-2">

@@ -65,6 +65,7 @@ window.fbAsyncInit = function() {
             token = returnedData.success.session_token;
             setSessionToken(token);
             console.log("Session token " + token)
+            window.location = "profile.php"
           }
         );
 
