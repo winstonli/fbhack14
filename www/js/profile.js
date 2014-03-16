@@ -13,7 +13,7 @@ var activePlaylist;
 var activeOtherPlaylist;
 
 function userPlaylistsSuccess(playlists) {
-	playlists.forEach(function(playlist) {
+	playlists.list.forEach(function(playlist) {
 		_playlists = new Array();
 		_playlists.push(new Playlist(playlist.playlist_id, playlist.name));
 	})
