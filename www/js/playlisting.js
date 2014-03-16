@@ -14,9 +14,9 @@ constants= {
 };
 
 
-$(document).ready( function() {
-	friendsGet("66d5ee2f8d75fd84f78ac62ddbb93a40", "77");
-});
+// $(document).ready( function() {
+// 	userPlaylists("66d5ee2f8d75fd84f78ac62ddbb93a40", "29");
+// });
 
 
 
@@ -30,9 +30,9 @@ function userPlaylists(sessionToken, user_id) {
 		function(returnedData) {
 			checkForError(returnedData);
 			if (!returnedData.error) {
-				playlistCreateSuccess();
-				console.log("Success playlistCreate");
+				console.log("Success userPlaylist");
 			}
+			console.log(returnedData);
 		}
 	);
 }
