@@ -16,7 +16,7 @@ var activeOtherPlaylist;
 
 function setActivePlaylist(playlist) {
 	activePlaylist = playlist;
-
+	playlistGet(session_token, playlist.id());
 	renderOwnSongs();
 }
 
@@ -40,8 +40,17 @@ function playlistDeleteSuccess(playlists) {
 	updatePlaylists(playlists);
 }
 
-function playlistGetSuccess(playlists) {
-	updatePlaylists(playlists);
+function playlistGetSuccess(playlist) {
+	_playlists.forEach(function(pl, index, array) {
+		if (pl.id() == playlist.playlist_id) {
+			console.log("found");
+			pl.setSongs(playlist.songs.list);
+			array[index] = pl;
+			console.log(pl.songs());
+		}
+	});
+	console.log(_playlists);
+	renderOwnSongs();
 }
 
 function playlistUpdateSuccess(playlists) {
@@ -59,6 +68,10 @@ function Playlist(playlist_id, name) {
 
 	this.name = function() {
 		return name;
+	}
+
+	this.setSongs = function(s) {
+		songs = s;
 	}
 
 	this.songs = function() {
@@ -144,13 +157,16 @@ function renderOwnPlaylist() {
 function renderOwnSongs() {
 	$('#active_playlist_self').html(activePlaylist.name());
 	$('#songs_self').empty();
-	activePlaylist.songs.forEach(function(song) {
-		$('#songs_self').append('<li><a href="#" id="song_self_box_' + song.song_id() + '" class="account_settings"><span>' + song.name() + '</span></a></li>');
-		$('#song_self_box_' + song.song_id()).click(function() {
-			alert("PLAYING SONG WITH URL: " + song.youtube_url());
-			return false;
+	var s = activePlaylist.songs();
+	if (s) {
+		s.forEach(function(song) {
+			$('#songs_self').append('<li><a href="#" id="song_self_box_' + song.song_id + '" class="account_settings"><span>' + song.name + '</span></a></li>');
+			$('#song_self_box_' + song.song_id).click(function() {
+				alert("PLAYING SONG WITH URL: " + song.youtube_url);
+				return false;
+			});
 		});
-	});
+	}
 }
 
 function initUI() {
