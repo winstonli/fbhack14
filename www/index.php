@@ -60,7 +60,7 @@ FB.init(
     FB.api('/me', function(response) {
       console.log('Good to see you, ' + response.name + '.');
     });
-
+}
 </script>
 			
        	<main>	
@@ -73,9 +73,8 @@ FB.init(
 								<div class='container'>
 									<input type='submit' name='Submit' value='Submit' />
 								</div>
-								<fb:login-button show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+								<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 							</div>
-							<fb:login-button show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 			    		</div>
 		        	</div>
 	        	</div>
