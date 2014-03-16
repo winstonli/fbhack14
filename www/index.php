@@ -51,7 +51,7 @@ font-family: 'Open Sans', sans-serif;
 	        	<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
-				    		<h2>Fade out elements before<br />they leave viewport</h2>
+				    		<h2>Playlister<br /> YOU master your playlist</h2>
 				    		<p>Please login with your facebook account</p>
 							<fb:login-button show-faces="false" width="1000" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 						</div>
@@ -65,7 +65,7 @@ font-family: 'Open Sans', sans-serif;
 <!-- <div class="bcg" data-0="background-color:rgb(1,27,59);" data-top="background-color:(0,0,0);" data-anchor-target="#slide-2"> -->
 <div class="hsContainer">
 <div class="hsContent">
-<h2 data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-2 h2">Fade me in and out</h2>
+<h2 data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-2 h2">asd</h2>
 <p data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-2 h2">Text is fading in at 206 pixels from the bottom and fading out 106 pixels from the top. <br />Next slide fades in from black.</p>
 </div>
 </div>
