@@ -206,7 +206,7 @@ function renderOwnSongs(animated) {
 				return false;
 			});
 			$('#song_delete_' + song.song_id).click(function() {
-				songRemove(session_token, playlist.id());
+				songRemove(session_token, song.song_id);
 				return false;
 			});
 		});
