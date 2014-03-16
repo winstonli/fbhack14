@@ -24,4 +24,5 @@ body {
 .section {
 	background-color: #FFFFFF;
 	border-radius: 15px;
+	display: inline-block;
 }
