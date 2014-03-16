@@ -47,8 +47,8 @@ class UserLoginFBRequest extends Request {
 			$query = $this->db->query("INSERT INTO user.user(username, first_name, last_name, fb_id) VALUES ('" .
 			$this->db->escape_string($fb_profile["email"]) . "', '" .
 			$this->db->escape_string($fb_profile["first_name"]) . "', '" .
-			$this->db->escape_string($fb_profile["last_name"]) . "', 
-			$fb_user_id . )");
+			$this->db->escape_string($fb_profile["last_name"]) . "', " .
+			$fb_user_id . ")");
 
 			$query = $this->db->query("SELECT user_id FROM user.user WHERE fb_id = " .
 				$fb_user_id);
