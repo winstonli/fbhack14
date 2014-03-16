@@ -32,7 +32,12 @@
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
 				    		<h2>Login</h2>
-							<div style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">key</div>
+							<div style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
+								<div class='container'>
+									<input type='submit' name='Submit' value='Submit' />
+								</div>
+								<fb:login-button show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+							</div>
 							<fb:login-button show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 			    		</div>
 		        	</div>
