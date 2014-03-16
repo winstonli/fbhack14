@@ -2,7 +2,7 @@
         var positionInterval;
         var seeking = false;
 
-        var isPlaying = true;
+        var isPlaying = false;
 
 
         $("#track").css("display", "block");
