@@ -24,9 +24,10 @@
 </head>
 <body class="loading">
 <script src="http://connect.facebook.net/en_US/all.js"></script>
+<div id="fb-root"></div>
+			
        	<main>
-			<div style="border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">key</div>	
-			<div id="fb-root"></div>
+			<div class = "loginForm">key</div>	
 			<fb:login-button show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 	        <section id="slide-1" class="homeSlide">
 	        	<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
