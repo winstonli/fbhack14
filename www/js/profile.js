@@ -2,12 +2,19 @@ var session_token;
 
 window.onload = function() {
 	setSessionToken("fede1f5ee0d30be9e81a49f36be19de1");
-	var song = new Song(12, 1, "www", "name");
 	
 	session_token = getSessionToken();
+	userPlaylists("fede1f5ee0d30be9e81a49f36be19de1", null);
 };
 
 var playlists;
+
+var activePlaylist;
+var activeOtherPlaylist;
+
+function userPlaylistsSuccess(playlists) {
+	console.log(playlists);
+}
 
 function playlistCreateSuccess() {
 	console.log("CALLBACK SUCC");
@@ -17,6 +24,10 @@ function Playlist(playlist_id, name) {
 	var playlist_id = playlist_id;
 	var name = name;
 	var songs = new Array();
+
+	this.name = function() {
+		return name;
+	}
 
 	this.setSongAtPosition = function(position, song) {
 		songs[position] = song;
@@ -67,4 +78,14 @@ function getSessionToken() {
 		}
 	}
 	return null;
+}
+
+function renderPlaylist(divID) {
+	playlists.forEach(function(playlist) {
+		console.log(playlist.name());
+	});
+}
+
+function renderSongs(divID) {
+
 }
