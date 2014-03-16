@@ -102,18 +102,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						  						<li><a href="#" class="account_settings"><span>
 					                 	<div id="player"></div>
 
-														<div id="musicplayer">
-															<div id="playBtn" class="button playBtn"></div>
-															<div id="labels">
-																<label id="song">Song: <strong>Pirates Love Daisies</strong></label><br />
-																<label id="artist">Artist: <strong>Washingtron</strong></label><br /><br />
-																<label id="loading">Waiting...</label>
+					                 	<div class="content">
+															<div id="musicplayer">
+																<div id="playBtn" class="button playBtn"></div>
+																<div id="labels">
+																	<label id="song">Song: <strong>Pirates Love Daisies</strong></label><br />
+																	<label id="artist">Artist: <strong>Washingtron</strong></label><br /><br />
+																	<label id="loading">Waiting...</label>
+																</div>
+																<div id="track">
+																	<div id="progress"></div>
+																	<div id="thumb"></div>
+																</div>
 															</div>
-															<div id="track">
-																<div id="progress"></div>
-																<div id="thumb"></div>
-															</div>
-														</div>
+
+					                 	</div>
 
 
 						  						</span></a></li>
