@@ -7,6 +7,10 @@
 	width: 100%;
 }
 
+body {
+	padding-top: 50px;
+}
+
 #content {
 	background-color: #555555;
 	top: 64px;
