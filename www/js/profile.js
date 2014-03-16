@@ -22,7 +22,7 @@ function setActivePlaylist(playlist) {
 function updatePlaylists(playlists) {
 	_playlists = new Array();
 	playlists.list.forEach(function(playlist) {
-		_playlists.push(new Playlist(playlist.playlist_id, playlist.name));
+		_playlists.push(new Playlist(playlist.playlist_id, playlist.name, playlist.songs.list));
 	});
 	renderOwnPlaylist();
 }
