@@ -27,7 +27,7 @@
 				$("#div3").fadeIn(3000);
 			});
 		});
-</script>
+	</script>
     <style type="text/css">
 		body {
 			font-family: 'Open Sans', sans-serif;
@@ -85,79 +85,7 @@ FB.init(
 								<button>User Login</button>
 								<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 							</div>
-							<!-- 
-							<div id="div2" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
-								<div id='fg_membersite'>
-									<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-									<fieldset >
-									<legend>Login</legend>
-
-									<input type='hidden' name='submitted' id='submitted' value='1'/>
-
-									<div class='short_explanation'>* required fields</div>
-
-									<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
-									<div class='container'>
-										<label for='username' >UserName*:</label><br/>
-										<input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
-										<span id='login_username_errorloc' class='error'></span>
-									</div>
-									<div class='container'>
-										<label for='password' >Password*:</label><br/>
-										<input type='password' name='password' id='password' maxlength="50" /><br/>
-										<span id='login_password_errorloc' class='error'></span>
-									</div>
-
-									<div class='container'>
-										<input type='submit' name='Submit' value='Submit' />
-									</div>
-									<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
-								</fieldset>
-								</form>
-							</div>
-							<div id="div3" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
-								<div id='fg_membersite'>
-								<form id='register' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-								<fieldset >
-								<legend>Register</legend>
-
-								<input type='hidden' name='submitted' id='submitted' value='1'/>
-
-								<div class='short_explanation'>* required fields</div>
-								<input type='text'  class='spmhidip' name='<?php echo $fgmembersite->GetSpamTrapInputName(); ?>' />
-
-								<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
-								<div class='container'>
-									<label for='name' >Your Full Name*: </label><br/>
-									<input type='text' name='name' id='name' value='<?php echo $fgmembersite->SafeDisplay('name') ?>' maxlength="50" /><br/>
-									<span id='register_name_errorloc' class='error'></span>
-								</div>
-								<div class='container'>
-									<label for='email' >Email Address*:</label><br/>
-									<input type='text' name='email' id='email' value='<?php echo $fgmembersite->SafeDisplay('email') ?>' maxlength="50" /><br/>
-									<span id='register_email_errorloc' class='error'></span>
-								</div>
-								<div class='container'>
-									<label for='username' >UserName*:</label><br/>
-									<input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
-									<span id='register_username_errorloc' class='error'></span>
-								</div>
-								<div class='container' style='height:80px;'>
-								<label for='password' >Password*:</label><br/>
-								<div class='pwdwidgetdiv' id='thepwddiv' ></div>
-								<noscript>
-									<input type='password' name='password' id='password' maxlength="50" />
-								</noscript>    
-								<div id='register_password_errorloc' class='error' style='clear:both'></div>
-								</div>
-
-								<div class='container'>
-									<input type='submit' name='Submit' value='Submit' />
-								</div>
-
-							</fieldset>
-							</form>
-							</div>-->
+							
 			    		</div>
 		        	</div>
 	        	</div>
