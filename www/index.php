@@ -72,9 +72,9 @@ FB.init(
 							<div style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
 								<div class='container'>
 									<input type='submit' name='Submit' value='Submit' />
-								</div>								
+								</div>
+								<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 							</div>
-							<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 			    		</div>
 		        	</div>
 	        	</div>
