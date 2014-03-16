@@ -1,4 +1,5 @@
 constants= {
+	"user_playlists" : "http://162.13.180.132/api/playlist/list.php",
 	"playlist_create" : "http://162.13.180.132/api/playlist/create.php",
 	"playlist_get" : "http://162.13.180.132/api/playlist/get.php",
 	"playlist_delete" : "http://162.13.180.132/api/playlist/delete.php",
@@ -19,6 +20,22 @@ $(document).ready( function() {
 
 
 
+function userPlaylists(sessionToken, user_id) {
+	$.post(
+		constants.user_playlists,
+		{
+			session_token: sessionToken,
+			user_id: user_id
+		},
+		function(returnedData) {
+			checkForError(returnedData);
+			if (!returnedData.error) {
+				playlistCreateSuccess();
+				console.log("Success playlistCreate");
+			}
+		}
+	);
+}
 
 function playlistCreate(sessionToken, name) {
 	$.post(
