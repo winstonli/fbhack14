@@ -63,13 +63,12 @@ window.fbAsyncInit = function() {
           },
           function(returnedData) {
             token = returnedData.success.session_token;
+            setSessionToken(token);
             console.log(token)
           }
         );
 
         console.log("We have submitted access_token: " + access_token);
-
-        setSessionToken("66d5ee2f8d75fd84f78ac62ddbb93a40");
 
       }
     });
