@@ -3,6 +3,7 @@
 <title>Playlist</title>
 <link href="css/profile.css" rel="stylesheet" type="text/css" media="all"/>
 <script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/profile.js"></script>
 
 </head>
 <body>
