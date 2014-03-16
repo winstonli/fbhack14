@@ -146,24 +146,26 @@ textBox = 0;
 function renderOwnPlaylist() {
 	$('#playlists_self').empty();
 	var done = true;
-	$('#playlists_self').append('<li><a href="#" id="playlist_self_box_add" class="account_settings"><span>+</span></a></li>');
-	$('#playlist_self_box_add').click(function(e) {
-		if (done) {
-			addToPlaylist = $('#playlist_self_box_add');
-			addToPlaylist.find('span').append('<input class="text"></input>');
+	if (self) {
+		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_add" class="account_settings"><span>+</span></a></li>');
+		$('#playlist_self_box_add').click(function(e) {
+			if (done) {
+				addToPlaylist = $('#playlist_self_box_add');
+				addToPlaylist.find('span').append('<input class="text"></input>');
 
-			textBox = addToPlaylist.find('input');
-			textBox.focus();
-			textBox.keyup(function (e) {
-			    if (e.keyCode == 13) {
-			        playlistCreate(getSessionToken(), e.target.value);
-			    }
-			});
+				textBox = addToPlaylist.find('input');
+				textBox.focus();
+				textBox.keyup(function (e) {
+				    if (e.keyCode == 13) {
+				        playlistCreate(getSessionToken(), e.target.value);
+				    }
+				});
 
-			done = false;
-		}
-		return false;
-	});
+				done = false;
+			}
+			return false;
+		});
+	}
 	_playlists.forEach(function(playlist) {
 		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span><span id="playlist_delete_' + playlist.id() + '">DEL</span></a></li>');
 		$('#playlist_self_box_' + playlist.id()).click(function() {
