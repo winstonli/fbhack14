@@ -173,7 +173,7 @@ fieldset#body {
 }
 
 .column_middle{
-	float: left;
+	float: right;
 	width:70%;
 }
 /*.column_middle{
