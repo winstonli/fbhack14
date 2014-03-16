@@ -277,7 +277,7 @@ margin-left:5px;
 	background-position:30px  13px;
 }
 .menu_box_list li a.account_settings:hover{
-	background-image:url(../images/playlist.png);
+	background-image:url(../images/playlistWhite.png);
 }
 .menu_box_list li a.statistics{
 	background-image:url(../images/statistics.png);
