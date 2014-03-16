@@ -116,31 +116,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	    		 </div>	                  	
 		       </div>   
     	    </div>               <!-- end of column middle -->
+ 	     	
+ 	     	<div class="clear"></div>
 
-    	       <div class="column_right">
-            	<div class="column_right_grid">
-<div class="menu_box">
-	    		 	 <h3>My Playlists</h3>
-	    		 	   <div class="menu_box_list">
-				      		<ul id="playlists_self">                                                    
-                                                                        <!-- My Playlists -->
-
-						  		<li><a href="#" class="account_settings"><span>Playlist 1</span></a></li>
-                                                                <li><a href="#" class="account_settings"><span>Playlist 2</span></a></li>
-                                                                <li><a href="#" class="account_settings"><span>Playlist 3</span></a></li>
-                                                                <li><a href="#" class="account_settings"><span>Playlist 4</span></a></li>
-						  								  	
-				    		</ul>
-				      </div>
-	    		 </div>	 
-			   </div>
- 	    
-    	    
-            <div class="column_right">
-
-             </div>                                   <!-- end of column right -->
-    	<div class="clear"></div>
- 	 </div>
    </div>     
 </body>
 </html>
