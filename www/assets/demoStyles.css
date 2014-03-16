@@ -114,6 +114,7 @@ a:hover {
 }
 #musicplayer LABEL {
 	color: white;
+	background-color:inherit ;
 }
 #song {
 }
