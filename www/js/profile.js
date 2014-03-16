@@ -204,7 +204,10 @@ function renderOwnSongs(animated) {
 		s.forEach(function(song) {
 			$('#songs_self').append('<li><a href="#" id="song_self_box_' + song.song_id + '" class="account_settings"><span>' + song.name + '</span><span id="song_delete_' + song.song_id + '">DEL</span></a></li>');
 			$('#song_self_box_' + song.song_id).click(function() {
-				alert("PLAYING SONG WITH URL: " + song.youtube_url);
+				youtube_id = song.youtube_url.substr(-11);
+				console.log("PLAYING SONG WITH URL: " + song.youtube_url);
+				console.log(youtube_id);
+				// onChangeVideo(youtube_id);
 				return false;
 			});
 			$('#song_delete_' + song.song_id).click(function() {
