@@ -43,6 +43,7 @@ function playlistDeleteSuccess(playlists) {
 function playlistGetSuccess(playlist) {
 	_playlists.forEach(function(pl, index, array) {
 		if (pl.id() == playlist.playlist_id) {
+			console.log("found");
 			pl.setSongs(playlist.songs.list);
 			array[index] = pl;
 			console.log(pl.songs());
@@ -147,9 +148,9 @@ function renderOwnSongs() {
 	var s = activePlaylist.songs();
 	if (s) {
 		s.forEach(function(song) {
-			$('#songs_self').append('<li><a href="#" id="song_self_box_' + song.song_id() + '" class="account_settings"><span>' + song.name() + '</span></a></li>');
-			$('#song_self_box_' + song.song_id()).click(function() {
-				alert("PLAYING SONG WITH URL: " + song.youtube_url());
+			$('#songs_self').append('<li><a href="#" id="song_self_box_' + song.song_id + '" class="account_settings"><span>' + song.name + '</span></a></li>');
+			$('#song_self_box_' + song.song_id).click(function() {
+				alert("PLAYING SONG WITH URL: " + song.youtube_url);
 				return false;
 			});
 		});
