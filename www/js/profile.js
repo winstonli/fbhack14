@@ -137,7 +137,6 @@ function renderOwnPlaylist() {
 			textBox.focus();
 			textBox.keyup(function (e) {
 			    if (e.keyCode == 13) {
-			        console.log(e.target.value)
 			        playlistCreate(getSessionToken(), e.target.value);
 			    }
 			});
@@ -163,6 +162,26 @@ function renderOwnSongs() {
 	$('#active_playlist_self').html(activePlaylist.name());
 	$('#songs_self').hide();
 	$('#songs_self').empty();
+	var done = true;
+	$('#songs_self').append('<li><a href="#" id="song_self_box_add" class="account_settings"><span>+</span></a></li>');
+	$('#song_self_box_add').click(function(e) {
+		if (done) {
+			addToPlaylist = $('#song_self_box_add');
+			addToPlaylist.find('span').append('<input class="text"></input>');
+
+			textBox = addToPlaylist.find('input');
+			textBox.focus();
+			textBox.keyup(function (e) {
+			    if (e.keyCode == 13) {
+			    	alert("clicked");
+			        // playlistCreate(getSessionToken(), e.target.value);
+			    }
+			});
+
+			done = false;
+		}
+		return false;
+	});
 	var s = activePlaylist.songs();
 	if (s) {
 		s.forEach(function(song) {
