@@ -29,7 +29,7 @@ class PlaylistGetRequest extends Request {
 		$playlist_name = $result["name"];
 
 		$query = $this->db->query("SELECT song_id, position, youtube_url, name FROM music.song WHERE playlist_id = " .
-			$this->playlist_id . " ORDER BY position ASC");
+			$this->playlist_id . " ORDER BY name ASC");
 
 		if (!$query) {
 			return $this->error(NULL);
