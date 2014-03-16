@@ -168,7 +168,9 @@ function renderOwnPlaylist() {
 
 function renderOwnSongs(animated) {
 	$('#active_playlist_self').html(activePlaylist.name());
-	$('#songs_self').hide();
+	if (animated) {
+		$('#songs_self').hide();
+	}
 	$('#songs_self').empty();
 	var done = true;
 	$('#songs_self').append('<li><a href="#" id="song_self_box_add" class="account_settings"><span>+</span></a></li>');
@@ -200,7 +202,9 @@ function renderOwnSongs(animated) {
 			});
 		});
 	}
-	$('#songs_self').show('fast');
+	if (animated) {
+		$('#songs_self').show('fast');
+	}
 }
 
 function initUI() {
