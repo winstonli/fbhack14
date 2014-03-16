@@ -20,7 +20,7 @@ function updatePlaylists(playlists) {
 		console.log(playlist);
 		_playlists.push(new Playlist(playlist.playlist_id, playlist.name));
 	});
-	renderPlaylist("f");
+	renderOwnPlaylist();
 }
 
 function userPlaylistsSuccess(playlists) {
@@ -107,9 +107,13 @@ function getSessionToken() {
 	return null;
 }
 
-function renderPlaylist(divID) {
+function renderOwnPlaylist() {
+	$('#playlists_self').empty();
+	$('#playlists_self').append('<li><a href="#" id="playlist_self_box_add" class="account_settings"><span>+</span></a></li>').click(function(e) {
+		$('#playlist_self_box_add span').append('<input></input>');
+	});
 	_playlists.forEach(function(playlist) {
-		$('#playlists_self').append('<id="playlist_box_' + playlist.id() + ' class="account_settings"><span>' + playlist.name() + '</span></a>');
+		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span></a></li>');
 	});
 }
 

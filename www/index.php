@@ -1,3 +1,15 @@
+<?PHP
+require_once("./include/membersite_config.php");
+
+if(isset($_POST['submitted']))
+{
+   if($fgmembersite->Login())
+   {
+        $fgmembersite->RedirectToURL("login-home.php");
+   }
+}
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,26 +29,19 @@
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.7.1.min.js"></script>
 	
+	<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
+    <script type='text/javascript' src='js/gen_validatorv31.js'></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 	</script>
+
 	<script>
 		$(document).ready(function(){
 			$("button").click(function(){
-				
 				$("#div2").fadeIn("slow");
 				$("#div3").fadeIn(3000);
 			});
 		});
 	</script>
-    <style type="text/css">
-		body {
-			font-family: 'Open Sans', sans-serif;
-		}
-	</style>
-</head>
-<body class="loading">
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-<div id="fb-root"></div>
 
 <script>
   window.fbAsyncInit = function() {
@@ -74,6 +79,20 @@ FB.init(
     });
 }
 </script>
+
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+
+    <style type="text/css">
+		body {
+			font-family: 'Open Sans', sans-serif;
+		}
+	</style>
+</head>
+
+<body class="loading">
+
+<div id="fb-root"></div>
 			
        	<main>	
 	        <section id="slide-1" class="homeSlide">
@@ -81,12 +100,56 @@ FB.init(
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
 				    		<h2>Login</h2>
-							<!-- <div id="div1" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;"> -->
-								<!-- <button>User Login</button> -->
-								<input type='submit' name='User Login' value='User Login' />
-							<!-- </div> -->
-							<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
-			    		</div>
+							<div id="div1" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
+								<button>User Login</button>					 
+								<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+								<button>Register</button>	
+							</div>
+							<div id="div2" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
+								<div id='fg_membersite'>
+									<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+									<fieldset>
+
+									<input type='hidden' name='submitted' id='submitted' value='1'/>
+
+									<div class='short_explanation'>* required fields</div>
+
+									<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
+									<div class='container'>
+										<label for='username' >UserName*:</label><br/>
+										<input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
+										<span id='login_username_errorloc' class='error'></span>
+									</div>
+									<div class='container'>
+										<label for='password' >Password*:</label><br/>
+										<input type='password' name='password' id='password' maxlength="50" /><br/>
+										<span id='login_password_errorloc' class='error'></span>
+									</div>
+
+									<div class='container'>
+										<input type='submit' name='Submit' value='Submit' />
+									</div>
+									<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
+									</fieldset>
+									</form>
+									<script type='text/javascript'>
+									// <![CDATA[
+
+										var frmvalidator  = new Validator("login");
+										frmvalidator.EnableOnPageErrorDisplay();
+										frmvalidator.EnableMsgsTogether();
+
+										frmvalidator.addValidation("username","req","Please provide your username");
+    
+										frmvalidator.addValidation("password","req","Please provide the password");
+
+									// ]]>
+									</script>
+								</div>
+	
+								
+							</div>
+						</div>
 		        	</div>
 	        	</div>
 		    </section>
