@@ -17,7 +17,7 @@ var activeOtherPlaylist;
 function setActivePlaylist(playlist) {
 	activePlaylist = playlist;
 	playlistGet(session_token, playlist.id());
-	renderOwnSongs();
+	renderOwnSongs(true);
 }
 
 function updatePlaylists(playlists) {
@@ -40,7 +40,7 @@ function playlistDeleteSuccess(playlists) {
 	updatePlaylists(playlists);
 }
 
-function updatePlaylist(playlist) {
+function updatePlaylist(playlist, animated) {
 	_playlists.forEach(function(pl, index, array) {
 		if (pl.id() == playlist.playlist_id) {
 			console.log("found");
@@ -50,11 +50,11 @@ function updatePlaylist(playlist) {
 		}
 	});
 	console.log(_playlists);
-	renderOwnSongs();
+	renderOwnSongs(animated);
 }
 
 function playlistGetSuccess(playlist) {
-	updatePlaylist(playlist);
+	updatePlaylist(playlist, true);
 }
 
 function playlistUpdateSuccess(playlists) {
@@ -62,7 +62,7 @@ function playlistUpdateSuccess(playlists) {
 }
 
 function songInsertSuccess(playlist) {
-	updatePlaylist(playlist);
+	updatePlaylist(playlist, false);
 }
 
 function Playlist(playlist_id, name) {
@@ -166,7 +166,7 @@ function renderOwnPlaylist() {
 	});
 }
 
-function renderOwnSongs() {
+function renderOwnSongs(animated) {
 	$('#active_playlist_self').html(activePlaylist.name());
 	$('#songs_self').hide();
 	$('#songs_self').empty();
