@@ -49,6 +49,8 @@ function playlistCreate(sessionToken, name) {
 			if (!returnedData.error) {
 				playlistCreateSuccess(returnedData.success.playlists);
 			}
+
+			console.log(returnedData)
 		}
 	);
 }
