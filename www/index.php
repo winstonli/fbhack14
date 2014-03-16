@@ -13,13 +13,13 @@ if(isset($_POST['submitted']))
 <!DOCTYPE html>
 <html>
 <head>
-	<title>
-		Welcome to playlister
-	</title>
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<meta charset="utf-8">
+<title>
+Welcome to playlister
+</title>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
+       
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
@@ -28,35 +28,34 @@ if(isset($_POST['submitted']))
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.7.1.min.js"></script>
-
+    <style type="text/css">
+	
 	<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
     <script type='text/javascript' src='js/gen_validatorv31.js'></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
-	</script>
-
-	<script>
-		$(document).ready(function(){
-			$("button").click(function(){
-				$("#div2").fadeIn("slow");
-				$("#div3").fadeIn(3000);
-			});
-		});
-	</script>
+	
+body {
+font-family: 'Open Sans', sans-serif;
+}
+</style>
+</head>
+<body class="loading">
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+<div id="fb-root"></div>
 
 <script>
   window.fbAsyncInit = function() {
 FB.init(
 {
-    appId  : 641083209274716,
+    appId : 641083209274716,
     status : true, // check login status
     cookie : true, // enable cookies to allow the server to access the session
-    xfbml  : true  // parse XFBML
+    xfbml : true // parse XFBML
 });
 
   FB.Event.subscribe('auth.authResponseChange', function(response) {
     if (response.status === 'connected') {
       testAPI();
-    } else if (response.stat	us === 'not_authorized') {
+    } else if (response.status === 'not_authorized') {
       FB.login();
     } else {
       FB.login();
@@ -73,156 +72,141 @@ FB.init(
   }(document));
 
   function testAPI() {
-    console.log('Welcome!  Fetching your information.... ');
+    console.log('Welcome! Fetching your information.... ');
     FB.api('/me', function(response) {
       console.log('Good to see you, ' + response.name + '.');
     });
 }
 </script>
 
+        <main>	
+<section id="slide-1" class="homeSlide">
+<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
+<div class="hsContainer">
+<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
+<h2>Login</h2>
+<div style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
+<div class='container'>
+<input type='submit' name='Submit' value='Submit' />
+</div>
+<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+<div id='fg_membersite'>
+<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
+<fieldset >
+<legend>Login</legend>
 
-<script src="http://connect.facebook.net/en_US/all.js"></script>
+<input type='hidden' name='submitted' id='submitted' value='1'/>
 
-    <style type="text/css">
-		body {
-			font-family: 'Open Sans', sans-serif;
-		}
-	</style>
-</head>
+<div class='short_explanation'>* required fields</div>
 
-<body class="loading">
+<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
+<div class='container'>
+    <label for='username' >UserName*:</label><br/>
+    <input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
+    <span id='login_username_errorloc' class='error'></span>
+</div>
+<div class='container'>
+    <label for='password' >Password*:</label><br/>
+    <input type='password' name='password' id='password' maxlength="50" /><br/>
+    <span id='login_password_errorloc' class='error'></span>
+</div>
 
+<div class='container'>
+    <input type='submit' name='Submit' value='Submit' />
+</div>
+<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
+</fieldset>
+</form>
+<!-- client-side Form Validations:
+Uses the excellent form validation script from JavaScript-coder.com-->
 
-<script type="text/javascript" src="js/fb_auth.js"></script>
+<script type='text/javascript'>
+// <![CDATA[
 
-<div id="fb-root"></div>
+    var frmvalidator  = new Validator("login");
+    frmvalidator.EnableOnPageErrorDisplay();
+    frmvalidator.EnableMsgsTogether();
 
-       	<main>
-	        <section id="slide-1" class="homeSlide">
-	        	<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
-		        	<div class="hsContainer">
-			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
-				    		<h2>Login</h2>
-							<div id="div1" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
-								<button>User Login</button>
-								<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
-								<button>Register</button>
-							</div>
-							<div id="div2" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
-								<div id='fg_membersite'>
-									<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-									<fieldset>
+    frmvalidator.addValidation("username","req","Please provide your username");
+    
+    frmvalidator.addValidation("password","req","Please provide the password");
 
-									<input type='hidden' name='submitted' id='submitted' value='1'/>
+// ]]>
+</script>
+</div>
+</div>
+</div>
+</div>
+</div>
 
-									<div class='short_explanation'>* required fields</div>
+</section>
 
-									<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
-									<div class='container'>
-										<label for='username' >UserName*:</label><br/>
-										<input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
-										<span id='login_username_errorloc' class='error'></span>
-									</div>
-									<div class='container'>
-										<label for='password' >Password*:</label><br/>
-										<input type='password' name='password' id='password' maxlength="50" /><br/>
-										<span id='login_password_errorloc' class='error'></span>
-									</div>
+<section id="slide-2" class="homeSlide">
+<div class="bcg" data-0="background-color:rgb(1,27,59);" data--25p-bottom="background-color:rgb(1,27,59);" data--90p-bottom="background-color:(0,0,0);" data-anchor-target="#slide-2">
+<!-- <div class="bcg" data-0="background-color:rgb(1,27,59);" data-top="background-color:(0,0,0);" data-anchor-target="#slide-2"> -->
+<div class="hsContainer">
+<div class="hsContent">
+<h2 data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-2 h2">Fade me in and out</h2>
+<p data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-2 h2">Text is fading in at 206 pixels from the bottom and fading out 106 pixels from the top. <br />Next slide fades in from black.</p>
+</div>
+</div>
+</div>
+</section>
 
-									<div class='container'>
-										<input type='submit' name='Submit' value='Submit' />
-									</div>
-									<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
-									</fieldset>
-									</form>
-									<script type='text/javascript'>
-									// <![CDATA[
+<section id="slide-3" data-content-offset="50p" class="homeSlide homeSlideTall2">
+<div class="bcg"
+data-center="background-position: 0px 50%;"
+data-bottom-top="background-position: 0px 40%;"
+data-top-bottom="background-position: -40px 50%;"
+data-anchor-target="#slide-3"
+>
+<div class="hsContainer">
+<div class="bcg bcg2" data-bottom-top="opacity: 1" data-top="opacity: 1;" data--150-top="opacity: 0" data-anchor-target="#slide-3">&nbsp;</div>
+<div class="hsContent">
+<div class="plaxEl" data-bottom-top="opacity: 0" data-top="opacity: 0" data--50p-top="opacity: 1; position: fixed; top: 206px; width: 100%; left: 0;" data--25p-bottom="opacity: 1;" data--50p-bottom="opacity: 0;" data-anchor-target="#slide-3">
+<h2>Fixed element fading in and out</h2>
+</div>
+</div>
+</div>
 
-										var frmvalidator  = new Validator("login");
-										frmvalidator.EnableOnPageErrorDisplay();
-										frmvalidator.EnableMsgsTogether();
+</div>
+</section>
 
-										frmvalidator.addValidation("username","req","Please provide your username");
+<section id="slide-4" data-content-offset="90p" class="homeSlide homeSlideTall">
+<div class="bcg" data-bottom-top="background-position: 50% 100px" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-4">
+<div class="curtainContainer">
 
-										frmvalidator.addValidation("password","req","Please provide the password");
+<div class="curtain" data-bottom-top="opacity: 0; height: 1%;" data-106-top="height: 1%; opacity: 0; top: -10%;" data-center="height: 100%; opacity: 0.5; top: 0%;" data-top-bottom="height: 100%; opacity: 0.5; top: 0%;" data-anchor-target="#slide-4"></div>
+<div class="copy" data-bottom-top="opacity: 0" data--100-bottom="opacity: 0" data--280-bottom="opacity: 1;" data-280-top="opacity: 1;" data-106-top="opacity: 0;" data-anchor-target="#slide-4 .copy">
+<h2>Curtain effect while you scroll</h2>
+</div>
 
-									// ]]>
-									</script>
-								</div>
-
-
-							</div>
-						</div>
-		        	</div>
-	        	</div>
-		    </section>
-
-		    <section id="slide-2" class="homeSlide">
-		    	<div class="bcg" data-0="background-color:rgb(1,27,59);" data--25p-bottom="background-color:rgb(1,27,59);" data--90p-bottom="background-color:(0,0,0);"  data-anchor-target="#slide-2">
-		    	<!-- <div class="bcg" data-0="background-color:rgb(1,27,59);" data-top="background-color:(0,0,0);"  data-anchor-target="#slide-2"> -->
-			    	<div class="hsContainer">
-			    		<div class="hsContent">
-				    		<h2 data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-2 h2">Fade me in and out</h2>
-				    		<p data-center="opacity: 1" data--200-bottom="opacity: 0" data-206-top="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-2 h2">Text is fading in at 206 pixels from the bottom and fading out 106 pixels from the top. <br />Next slide fades in from black.</p>
-			    		</div>
-		        	</div>
-		    	</div>
-		    </section>
-
-			<section id="slide-3" data-content-offset="50p" class="homeSlide homeSlideTall2">
-				<div class="bcg"
-					data-center="background-position: 0px 50%;"
-					data-bottom-top="background-position: 0px 40%;"
-					data-top-bottom="background-position: -40px 50%;"
-					data-anchor-target="#slide-3"
-				>
-			    	<div class="hsContainer">
-			    		<div class="bcg bcg2" data-bottom-top="opacity: 1" data-top="opacity: 1;" data--150-top="opacity: 0" data-anchor-target="#slide-3">&nbsp;</div>
-			    		<div class="hsContent">
-			    			<div class="plaxEl" data-bottom-top="opacity: 0" data-top="opacity: 0" data--50p-top="opacity: 1; position: fixed; top: 206px; width: 100%; left: 0;" data--25p-bottom="opacity: 1;" data--50p-bottom="opacity: 0;" data-anchor-target="#slide-3">
-					    		<h2>Fixed element fading in and out</h2>
-				    		</div>
-			    		</div>
-			    	</div>
-
-			    </div>
-			</section>
-
-			<section id="slide-4" data-content-offset="90p" class="homeSlide homeSlideTall">
-				<div class="bcg" data-bottom-top="background-position: 50% 100px" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-4">
-					<div class="curtainContainer">
-
-						<div class="curtain" data-bottom-top="opacity: 0; height: 1%;" data-106-top="height: 1%; opacity: 0; top: -10%;" data-center="height: 100%; opacity: 0.5; top: 0%;" data-top-bottom="height: 100%; opacity: 0.5; top: 0%;" data-anchor-target="#slide-4"></div>
-						<div class="copy" data-bottom-top="opacity: 0" data--100-bottom="opacity: 0" data--280-bottom="opacity: 1;" data-280-top="opacity: 1;" data-106-top="opacity: 0;" data-anchor-target="#slide-4 .copy">
-							<h2>Curtain effect while you scroll</h2>
-						</div>
-
-					</div>
-				</div>
-			</section>
+</div>
+</div>
+</section>
 
 
-		    <section id="slide-5" data-content-offset="66p" class="homeSlide homeSlideTall2">
-		    	<div class="bcg">
-			    	&nbsp;
-		    	</div>
-		    	<div class="bcg bcg2" data-bottom-top="opacity: 0;" data--33p-top="opacity: 0;" data--66p-top="opacity: 1;" data-anchor-target="#slide-5">
-			    	<div class="hsContainer">
-				    	<div class="hsContent" data-bottom-top="opacity: 0;" data-center="opacity: 1" data-anchor-target="#slide-5">
-				    		<h2>Fixed element fading in and out</h2>
-			    		</div>
-			    	</div>
-		    	</div>
-		    	<div class="bcg bcg3" data-300-bottom="opacity: 0;" data-100-bottom="opacity: 1;" data-anchor-target="#slide-5">
-			    	<div class="hsContainer">
-				    	<div class="hsContent" data-100-bottom="opacity: 0;" data-bottom="opacity: 1;" data-anchor-target="#slide-5">
-				    		<h2>The End</h2>
-			    		</div>
-			    	</div>
-		    	</div>
-		    </section>
+<section id="slide-5" data-content-offset="66p" class="homeSlide homeSlideTall2">
+<div class="bcg">
+&nbsp;
+</div>
+<div class="bcg bcg2" data-bottom-top="opacity: 0;" data--33p-top="opacity: 0;" data--66p-top="opacity: 1;" data-anchor-target="#slide-5">
+<div class="hsContainer">
+<div class="hsContent" data-bottom-top="opacity: 0;" data-center="opacity: 1" data-anchor-target="#slide-5">
+<h2>Fixed element fading in and out</h2>
+</div>
+</div>
+</div>
+<div class="bcg bcg3" data-300-bottom="opacity: 0;" data-100-bottom="opacity: 1;" data-anchor-target="#slide-5">
+<div class="hsContainer">
+<div class="hsContent" data-100-bottom="opacity: 0;" data-bottom="opacity: 1;" data-anchor-target="#slide-5">
+<h2>The End</h2>
+</div>
+</div>
+</div>
+</section>
 
-		</main>
+</main>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
@@ -230,8 +214,8 @@ FB.init(
         <script src="js/waypoints.min.js"></script>
         <script src="js/skrollr.js"></script>
         <!--[if lt IE 9]>
-		<script type="text/javascript" src="js/skrollr.ie.min.js"></script>
-		<![endif]-->
+<script type="text/javascript" src="js/skrollr.ie.min.js"></script>
+<![endif]-->
         <script src="js/_main.js"></script>
 
 <div id="playlist" class="left">
