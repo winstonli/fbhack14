@@ -13,6 +13,11 @@ var _playlists;
 var activePlaylist;
 var activeOtherPlaylist;
 
+function setActivePlaylist(playlist) {
+	activePlaylist = playlist;
+	renderOwnSongs();
+}
+
 function updatePlaylists(playlists) {
 	_playlists = new Array();
 	playlists.list.forEach(function(playlist) {
@@ -118,11 +123,14 @@ function renderOwnPlaylist() {
 	});
 	_playlists.forEach(function(playlist) {
 		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span></a></li>');
+		$('#playlist_self_box_' + playlist.id()).click(function() {
+			setActivePlaylist(playlist);
+		});
 	});
 }
 
-function renderSongs(divID) {
-
+function renderOwnSongs() {
+	$('#activePlaylistSelf').html(activePlaylist.name());
 }
 
 function initUI() {
