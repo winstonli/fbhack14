@@ -63,8 +63,7 @@ function songInsertSuccess(playlist) {
 	updatePlaylist(playlist, false);
 }
 
-function songRemoveSucesss(playlist) {
-	alert('song remove succ');
+function songRemoveSuccess(playlist) {
 	updatePlaylist(playlist, false);
 }
 
