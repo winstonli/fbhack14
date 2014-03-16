@@ -43,6 +43,7 @@ function playlistDeleteSuccess(playlists) {
 function playlistGetSuccess(playlist) {
 	_playlists.forEach(function(pl, index, array) {
 		if (pl.id() == playlist.playlist_id) {
+			console.log("found");
 			pl.setSongs(playlist.songs.list);
 			array[index] = pl;
 			console.log(pl.songs());
