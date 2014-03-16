@@ -134,6 +134,7 @@ function renderOwnPlaylist() {
 			addToPlaylist.find('span').append('<input class="text"></input>');
 
 			textBox = addToPlaylist.find('input');
+			textBox.focus();
 			textBox.keyup(function (e) {
 			    if (e.keyCode == 13) {
 			        console.log(e.target.value)
@@ -148,7 +149,6 @@ function renderOwnPlaylist() {
 	_playlists.forEach(function(playlist) {
 		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span><span id="playlist_delete_' + playlist.id() + '">DEL</span></a></li>');
 		$('#playlist_self_box_' + playlist.id()).click(function() {
-			$('#playlist_self_box_' + playlist.id()).focus();
 			setActivePlaylist(playlist);
 			return false;
 		});
