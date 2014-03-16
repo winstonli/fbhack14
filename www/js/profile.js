@@ -38,7 +38,7 @@ function userPlaylistsSuccess(playlists) {
 function userGetSuccess(user) {
 	$('#fullname').html(user.first_name + ' ' + user.last_name);
 	$('#dp').attr('src', user.dp_url);
-	self = false;//user.self;
+	self = user.self;
 }
 
 function playlistCreateSuccess(playlists) {
