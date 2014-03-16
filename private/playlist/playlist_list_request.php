@@ -31,7 +31,8 @@ class PlaylistListRequest extends Request {
 
 		$query->close();
 
-		return $this->success(array("playlists" => array("list" => $playlist_list)));
+		return $this->success(array("playlists" => array("list" => "SELECT playlist_id, name FROM music.playlist WHERE user_id = " .
+			$this->user_id)));
 	}
 
 }
