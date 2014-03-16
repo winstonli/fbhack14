@@ -41,7 +41,7 @@ class SongRemoveRequest extends SessionRequest {
 
 		/* Do remove */
 		$query = $this->db->query("DELETE FROM music.song WHERE playlist_id = " .
-			$this->playlist_id . " AND position = " .
+			$this->playlist_id . " AND song_id = " .
 			$this->position);
 		if (!$query) {
 			return $this->error(NULL);
@@ -50,14 +50,14 @@ class SongRemoveRequest extends SessionRequest {
 			return $this->error("song not in playlist");
 		}
 
-		/* update positions */
-		$query = $this->db->query("UPDATE music.song SET position = position - 1 WHERE playlist_id = " .
-			$this->playlist_id . " AND position > " .
-			$this->position);
+		// /* update positions */
+		// $query = $this->db->query("UPDATE music.song SET position = position - 1 WHERE playlist_id = " .
+		// 	$this->playlist_id . " AND position > " .
+		// 	$this->position);
 
-		if (!$query) {
-			return $this->error(NULL);
-		}
+		// if (!$query) {
+		// 	return $this->error(NULL);
+		// }
 
 		/* get new list for output */
 		$query = $this->db->query("SELECT song_id, position, youtube_url, name FROM music.song WHERE playlist_id = " .

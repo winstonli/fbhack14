@@ -168,9 +168,8 @@ function renderOwnPlaylist() {
 
 function parseYoutubeAndInsert(session_token, playlist_id, url) {
 	$.get("http://162.13.180.132/api/parse_page.php?url=" + url, function(data) {
-		console.log(data);
+		songInsert(session_token, playlist_id, 1, url, $(data).find("#eow-title").html());
 	});
-	// songInsert(session_token, playlist_id, 1, url, "name");
 }
 
 function renderOwnSongs(animated) {
@@ -201,9 +200,13 @@ function renderOwnSongs(animated) {
 	var s = activePlaylist.songs();
 	if (s) {
 		s.forEach(function(song) {
-			$('#songs_self').append('<li><a href="#" id="song_self_box_' + song.song_id + '" class="account_settings"><span>' + song.name + '</span></a></li>');
+			$('#songs_self').append('<li><a href="#" id="song_self_box_' + song.song_id + '" class="account_settings"><span>' + song.name + '</span><span id="song_delete_' + song.song_id + '">DEL</span></a></li>');
 			$('#song_self_box_' + song.song_id).click(function() {
 				alert("PLAYING SONG WITH URL: " + song.youtube_url);
+				return false;
+			});
+			$('#song_delete_' + song.song_id).click(function() {
+				songRemove(session_token, activePlaylist.id(), song.song_id);
 				return false;
 			});
 		});
