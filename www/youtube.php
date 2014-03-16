@@ -14,18 +14,20 @@
 <div id="player"></div>
 
 
+<div class="content">
+	<div id="musicplayer">
+		<div id="playBtn" class="button playBtn"></div>
+		<div id="labels">
+			<label id="song">Song: <strong>Pirates Love Daisies</strong></label><br />
+			<label id="artist">Artist: <strong>Washingtron</strong></label><br /><br />
+			<label id="loading">Waiting...</label>
+		</div>
+		<div id="track">
+			<div id="progress"></div>
+			<div id="thumb"></div>
+		</div>
+	</div>
 
-<div id="musicplayer">
-	<div id="playBtn" class="button playBtn"></div>
-	<div id="labels">
-		<label id="song">Song: <strong>Pirates Love Daisies</strong></label><br />
-		<label id="artist">Artist: <strong>Washingtron</strong></label><br /><br />
-		<label id="loading">Waiting...</label>
-	</div>
-	<div id="track">
-		<div id="progress"></div>
-		<div id="thumb"></div>
-	</div>
 </div>
 
 
