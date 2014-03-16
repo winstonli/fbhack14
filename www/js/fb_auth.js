@@ -54,15 +54,12 @@ window.fbAsyncInit = function() {
     FB.getLoginStatus(function(response) {
       if (response.status === 'connected') {
 
-        //Hack
-        session_token = "66d5ee2f8d75fd84f78ac62ddbb93a40";
         access_token = response.authResponse.accessToken;
 
         $.post(
           constants.access_token,
           {
-            fb_auth_token: access_token,
-            session_token: session_token
+            fb_auth_token: access_token
           },
           function(returnedData) {
             console.log(returnedData)
