@@ -46,7 +46,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 															<div id="musicplayer">
 																<div id="playBtn" class="button playBtn"></div>
 																<div id="labels">
-																	<label id="song">Song: <strong>Pirates Love Daisies</strong></label><br />
+																	<label id="song"><label><br />
 																	<label id="loading">Waiting...</label>
 																</div>
 																<div id="track">
@@ -104,7 +104,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				      		<ul id="playlists_self">
                                                                         <!-- My Playlists -->
 
-						  		 
+
 
 				    		</ul>
 				      </div>
@@ -125,7 +125,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				      		<ul id="songs_self">
                                                                         <!-- My Playlist 1 Songs -->
 
-						  						
+
 
 				    		</ul>
 				      </div>
