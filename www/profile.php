@@ -94,7 +94,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="column_middle">
               <div class="column_middle_grid1">
 				<div class="menu_box1">
-	    		 	 <h3 id="active_playlist_self">Playlist 1</h3>
+	    		 	 <h3 id="active_playlist_self">Playlist 1 Songs</h3>
 	    		 	   <div class="menu_box_list">
 				      		<ul id="songs_self">
                                                                         <!-- My Playlist 1 Songs -->
