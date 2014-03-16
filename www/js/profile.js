@@ -14,6 +14,8 @@ var activeOtherPlaylist;
 
 function userPlaylistsSuccess(playlists) {
 	playlists.list.forEach(function(playlist) {
+		console.log("adding");
+		console.log(playlist);
 		_playlists = new Array();
 		_playlists.push(new Playlist(playlist.playlist_id, playlist.name));
 	})
