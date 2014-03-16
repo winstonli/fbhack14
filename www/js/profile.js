@@ -1,9 +1,10 @@
 var session_token;
 
 window.onload = function() {
-	setSessionToken("c45f5e999c50114fc6f9d16343c692ae");
-
 	session_token = getSessionToken();
+	if (!session_token) {
+		console.log("No session token")
+	}
 	initUI();
 	userPlaylists(session_token, null);
 };
@@ -22,7 +23,7 @@ function setActivePlaylist(playlist) {
 function updatePlaylists(playlists) {
 	_playlists = new Array();
 	playlists.list.forEach(function(playlist) {
-		_playlists.push(new Playlist(playlist.playlist_id, playlist.name, playlist.songs.list));
+		_playlists.push(new Playlist(playlist.playlist_id, playlist.name));
 	});
 	renderOwnPlaylist();
 }
@@ -47,10 +48,10 @@ function playlistUpdateSuccess(playlists) {
 	updatePlaylists(playlists);
 }
 
-function Playlist(playlist_id, name, songs) {
+function Playlist(playlist_id, name) {
 	var playlist_id = playlist_id;
 	var name = name;
-	var songs = songs;
+	var songs;
 
 	this.id = function() {
 		return playlist_id;

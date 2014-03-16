@@ -47,7 +47,7 @@ class UserLoginFBRequest extends Request {
 			$query = $this->db->query("INSERT INTO user.user(username, first_name, last_name, fb_auth_token, fb_id) VALUES ('" .
 			$this->db->escape_string($fb_profile["username"]) . "', '" .
 			$this->db->escape_string($fb_profile["first_name"]) . "', '" .
-			$this->db->escape_string($fb_profile["last_name"]) . "', " .
+			$this->db->escape_string($fb_profile["last_name"]) . "', '" .
 			$this->fb_auth_token . "', " .
 			$fb_user_id . ")");
 
