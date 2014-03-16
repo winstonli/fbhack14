@@ -80,5 +80,12 @@ var modelPlaylist = {
 <button onclick="onPlay()"> Play </button>
 <button onclick="onPause()"> Pause </button>
 
+
+ <br> <br> <br> <br> <br> <br>
+
+
+
+
+
 </body>
 </html>
