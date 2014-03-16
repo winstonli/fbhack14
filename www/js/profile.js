@@ -176,7 +176,7 @@ function renderOwnPlaylist() {
 	_playlists.forEach(function(playlist) {
 		var str = '<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span>';
 		if (self) {
-			str += '<span id="playlist_delete_' + playlist.id() + '">DEL</span></a></li>'
+			str += '<span id="playlist_delete_' + playlist.id() + '" class="delete">Delete</span></a></li>'
 		}
 		$('#playlists_self').append(str);
 		$('#playlist_self_box_' + playlist.id()).click(function() {
@@ -228,7 +228,7 @@ function renderOwnSongs(animated) {
 		s.forEach(function(song) {
 			var str = '<li><a href="#" id="song_self_box_' + song.song_id + '" class="account_settings"><span>' + song.name + '</span>';
 			if (self) {
-				str += '<span id="song_delete_' + song.song_id + '">DEL</span></a></li>';
+				str += '<span id="song_delete_' + song.song_id + '" class="delete">Delete</span></a></li>';
 			}
 			$('#songs_self').append(str);
 			$('#song_self_box_' + song.song_id).click(function() {
