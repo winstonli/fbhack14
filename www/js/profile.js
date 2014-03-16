@@ -5,6 +5,7 @@ window.onload = function() {
 	if (!session_token) {
 		console.log("No session token");
 	}
+	userGet(session_token, null);
 	initUI();
 	userPlaylists(session_token, null);
 };
@@ -30,6 +31,10 @@ function updatePlaylists(playlists) {
 
 function userPlaylistsSuccess(playlists) {
 	updatePlaylists(playlists);
+}
+
+function userGetSuccess(user) {
+	console.log(user);
 }
 
 function playlistCreateSuccess(playlists) {
@@ -205,7 +210,9 @@ function renderOwnSongs(animated) {
 			$('#songs_self').append('<li><a href="#" id="song_self_box_' + song.song_id + '" class="account_settings"><span>' + song.name + '</span><span id="song_delete_' + song.song_id + '">DEL</span></a></li>');
 			$('#song_self_box_' + song.song_id).click(function() {
 				youtube_id = song.youtube_url.substr(-11);
+				console.log("PLAYING SONG WITH URL: " + song.youtube_url);
 				console.log(youtube_id);
+				// onChangeVideo(youtube_id);
 				onChangeVideo(youtube_id);
 				return false;
 			});
