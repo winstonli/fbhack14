@@ -51,5 +51,6 @@ var modelPlaylist = {
 	getNextVideo : function() {
 		return this.nextVideo;
 	}
-
 }
+
+
