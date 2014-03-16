@@ -173,7 +173,7 @@ function renderOwnSongs() {
 			});
 		});
 	}
-	$('#songs_self').show('normal');
+	$('#songs_self').show('fast');
 }
 
 function initUI() {
