@@ -103,7 +103,7 @@ function setSessionToken(sessionToken) {
 
 function getSessionToken() {
 
-	return getCookie(session_token);
+	return getCookie('session_token');
 
 	// var parts = document.cookie.split(/;\s*/);
 	// for (var i = 0; i < parts.length; i++) {
