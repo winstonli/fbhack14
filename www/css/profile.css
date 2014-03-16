@@ -6,3 +6,8 @@
 	top: 0;
 	width: 100%;
 }
+
+#content {
+	background-color: #555555;
+	top: 64px;
+}
