@@ -168,9 +168,8 @@ function renderOwnPlaylist() {
 
 function parseYoutubeAndInsert(session_token, playlist_id, url) {
 	$.get("http://162.13.180.132/api/parse_page.php?url=" + url, function(data) {
-		console.log($(data).find("#eow-title").html());
+		songInsert(session_token, playlist_id, 1, url, $(data).find("#eow-title").html());
 	});
-	// songInsert(session_token, playlist_id, 1, url, "name");
 }
 
 function renderOwnSongs(animated) {
