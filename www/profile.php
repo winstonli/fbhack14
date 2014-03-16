@@ -117,12 +117,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		       </div>
     	    </div>               <!-- end of column middle -->
 
+ 	     	<div class="clear"></div>
 
-            <div class="column_right">
-
-             </div>                                   <!-- end of column right -->
-    	<div class="clear"></div>
- 	 </div>
    </div>
 </body>
 </html>
