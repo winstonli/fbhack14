@@ -19,10 +19,6 @@ class PlaylistListRequest extends Request {
 			return $this->error("invalid user");
 		}
 
-		$result = $query->fetch_assoc();
-
-		$query->close();
-
 		$playlist_list = array();
 
 		while ($result = $query->fetch_assoc()) {
