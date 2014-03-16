@@ -64,7 +64,7 @@ window.fbAsyncInit = function() {
           function(returnedData) {
             token = returnedData.success.session_token;
             setSessionToken(token);
-            console.log(token)
+            console.log("Session token " + token)
           }
         );
 
