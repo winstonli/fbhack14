@@ -10,7 +10,7 @@ class PlaylistListRequest extends SessionRequest {
 	}
 
 	public function request() {
-		if (!is_numeric(user_id) && !$this->valid_session()) {
+		if (!is_numeric($this->user_id) && !$this->valid_session()) {
 			return false;
 		}
 		$query = $this->db->query("SELECT playlist_id, name FROM music.playlist WHERE user_id = " .
