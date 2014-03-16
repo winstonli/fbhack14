@@ -32,6 +32,10 @@ function userPlaylistsSuccess(playlists) {
 	updatePlaylists(playlists);
 }
 
+function userGetSuccess(user) {
+	console.log(user);
+}
+
 function playlistCreateSuccess(playlists) {
 	updatePlaylists(playlists);
 }

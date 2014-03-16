@@ -10,6 +10,7 @@ constants= {
 	"access_token" : "http://162.13.180.132/api/user/login_fb.php",
 	"friends_update" : "http://162.13.180.132/api/user/update_friends.php",
 	"friends_get" : "http://162.13.180.132/api/user/get_friends.php",
+	"user_get" : "http://162.13.180.132/api/user/get.php",
 
 };
 
@@ -148,6 +149,22 @@ function songPushFront(sessionToken, playlist_id, youtube_url, name) {
 	songInsert(sessionToken, playlist_id, "1", youtube_url, name);
 }
 
+function userGet(sessionToken, target_user_id) {
+	$.post(
+		constants.user_get,
+		{
+			session_token: sessionToken,
+			target_user_id: target_user_id,
+		},
+		function(returnedData) {
+			checkForError(returnedData);
+			if (!returnedData.error) {
+				userGetSuccess(returnedData.success.user);
+			}
+
+		}
+	);
+}
 
 function songRemove(sessionToken, playlist_id, position) {
 	$.post(
