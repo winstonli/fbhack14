@@ -99,9 +99,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                                                         <!-- My Playlist 1 Songs -->
 
 						  										<li><a href="#" class="account_settings"><span>
-						  													                 <div class="video_palyer">
-								<iframe src="//player.vimeo.com/video/24363983" width="20%" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen=""></iframe>
-		                </div>
+					                 <div id="player">
+
+					                 </div>
 						  										</span></a></li>
                           <li><a href="#" class="account_settings"><span>Song 2</span></a></li>
                           <li><a href="#" class="account_settings"><span>Song 3</span></a></li>
@@ -118,6 +118,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     	    </div>               <!-- end of column middle -->
 
  	     	<div class="clear"></div>
+
+				<script src="http://www.youtube.com/player_api"></script>
+ 	     	<script type="text/javascript" src="js/youtube.js"></script>
 
    </div>
 </body>
