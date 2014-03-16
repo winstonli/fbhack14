@@ -15,7 +15,6 @@ var activeOtherPlaylist;
 
 function setActivePlaylist(playlist) {
 	activePlaylist = playlist;
-	alert("new active playlist: " + playlist.name());
 	renderOwnSongs();
 }
 
