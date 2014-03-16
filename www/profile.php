@@ -14,6 +14,7 @@
 		<div id="profile_pic">
 		</div>
 		<div id="name">
+			Name
 		</div>
 	</div>
 </div>
