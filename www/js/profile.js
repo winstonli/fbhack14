@@ -131,7 +131,6 @@ function renderOwnPlaylist() {
 function renderOwnSongs() {
 	$('#active_playlist_self').html(activePlaylist.name());
 	$('#songs_self').empty();
-	<li><a href="#" class="account_settings"><span>Song 2</span></a></li>
 	activePlaylist.songs.forEach(function(song) {
 		$('#songs_self').append('<li><a href="#" id="song_self_box_' + song.song_id() + '" class="account_settings"><span>' + song.name() + '</span></a></li>');
 		$('#song_self_box_' + song.song_id()).click(function() {
