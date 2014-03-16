@@ -167,7 +167,10 @@ function renderOwnPlaylist() {
 }
 
 function parseYoutubeAndInsert(session_token, playlist_id, url) {
-	songInsert(session_token, playlist_id, 1, url, "name");
+	$.get(url, function(data) {
+		console.log(data);
+	});
+	// songInsert(session_token, playlist_id, 1, url, "name");
 }
 
 function renderOwnSongs(animated) {
