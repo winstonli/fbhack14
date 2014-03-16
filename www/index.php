@@ -19,6 +19,7 @@
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 	</script>
+
 	<script>
 		$(document).ready(function(){
 			$("button").click(function(){
@@ -28,15 +29,6 @@
 			});
 		});
 	</script>
-    <style type="text/css">
-		body {
-			font-family: 'Open Sans', sans-serif;
-		}
-	</style>
-</head>
-<body class="loading">
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-<div id="fb-root"></div>
 
 <script>
   window.fbAsyncInit = function() {
@@ -74,6 +66,20 @@ FB.init(
     });
 }
 </script>
+
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+
+    <style type="text/css">
+		body {
+			font-family: 'Open Sans', sans-serif;
+		}
+	</style>
+</head>
+
+<body class="loading">
+
+<div id="fb-root"></div>
 			
        	<main>	
 	        <section id="slide-1" class="homeSlide">
