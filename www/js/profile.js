@@ -125,6 +125,7 @@ function renderOwnPlaylist() {
 	_playlists.forEach(function(playlist) {
 		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span></a></li>');
 		$('#playlist_self_box_' + playlist.id()).click(function() {
+			alert("click	");
 			setActivePlaylist(playlist);
 		});
 	});
