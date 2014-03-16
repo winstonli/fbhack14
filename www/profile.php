@@ -12,6 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link href="web/css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="web/css/nav.css" rel="stylesheet" type="text/css" media="all"/>
+
 <link href="css/profile.css" rel="stylesheet" type="text/css" media="all"/>
 <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="assets/demoStyles.css">
@@ -20,6 +21,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <script type="text/javascript" src="web/js/Chart.js"></script>
  <script type="text/javascript" src="web/js/jquery.easing.js"></script>
  <script type="text/javascript" src="web/js/jquery.ulslide.js"></script>
+ <script type="text/javascript" src="js/youtube.js"></script>
  <script type="text/javascript" src="js/profile.js"></script>
  <script type="text/javascript" src="js/playlisting.js"></script>
 </head>

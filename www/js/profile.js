@@ -208,6 +208,7 @@ function renderOwnSongs(animated) {
 				console.log("PLAYING SONG WITH URL: " + song.youtube_url);
 				console.log(youtube_id);
 				// onChangeVideo(youtube_id);
+				onChangeVideo(youtube_id);
 				return false;
 			});
 			$('#song_delete_' + song.song_id).click(function() {
