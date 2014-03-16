@@ -61,8 +61,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 
 								<li>
-									<fb:login-button show-faces="false" width="1000" max-rows="1" data-auto-logout-link="true"></fb:login-button>
-
+									<fb:login-button id="fb_button" onclick="deleteAllCookies()" show-faces="false" width="1000" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 								</li>
 
 							<div class="clear"></div>

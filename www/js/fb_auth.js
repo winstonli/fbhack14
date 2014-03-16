@@ -78,3 +78,8 @@ window.fbAsyncInit = function() {
       }
     });
   }
+
+
+  function deleteAllCookies() {
+    console.log("called")
+  }
