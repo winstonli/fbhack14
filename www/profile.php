@@ -1,9 +1,9 @@
 <!DOCTYPE HTML>
 <head>
 <title>Playlist</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="css/main.css" rel="stylesheet" type="text/css" media="all"/>
-<script type="text/javascript" src="js/jquery.js" />
+<link href="css/profile.css" rel="stylesheet" type="text/css" media="all"/>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/profile.js"></script>
 
 </head>
 <body>
@@ -14,7 +14,6 @@
 		<div id="profile_pic">
 		</div>
 		<div id="name">
-			Name
 		</div>
 	</div>
 </div>
