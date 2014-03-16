@@ -174,10 +174,13 @@ fieldset#body {
 
 .column_middle{
 	float: right;
-	width:70%;
+	width:63%;
 }
 .column_middle{
-	margin:5px 100px;
+	margin-top:0px;
+margin-bottom:100px;
+margin-right:100px;
+margin-left:5px;
 }
 /******** Colunm Left *************/
 .menu_box h3 {
@@ -269,12 +272,12 @@ fieldset#body {
 	background-image:url(../images/events-hover.png);
 }
 .menu_box_list li a.account_settings{
-	background-image:url(../images/settings.png);
+	/*background-image:url(../images/settings.png);*/
 	background-repeat:no-repeat;
 	background-position:30px  13px;
 }
 .menu_box_list li a.account_settings:hover{
-	background-image:url(../images/settings-hover.png);
+	/*background-image:url(../images/settings-hover.png);*/
 }
 .menu_box_list li a.statistics{
 	background-image:url(../images/statistics.png);
