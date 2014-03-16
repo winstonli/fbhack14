@@ -63,7 +63,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				        </div>
 					  <div class="profile_details">
 				    		   <div id="loginContainer">
-				                  <a id="loginButton" class=""><span>Me</span></a>
+				                  <a id="loginButton" class=""><span id="fullname">Me</span></a>
 				                    <div id="loginBox">
 				                      <form id="loginForm">
 				                        <fieldset id="body">
@@ -80,7 +80,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				                </div>
 				            </div>
 				             <div class="profile_img">
-				             	<a href="#"><img src="web/images/profile_img40x40.jpg" alt="" />	</a>
+				             	<a href="#"><img id="dp" src="web/images/profile_img40x40.jpg" alt="" />	</a>
 				             </div>
 				             <div class="clear"></div>
 					    </div>
