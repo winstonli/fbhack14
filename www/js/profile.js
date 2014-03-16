@@ -112,7 +112,7 @@ function renderOwnPlaylist() {
 	var done = true;
 	$('#playlists_self').append('<li><a href="#" id="playlist_self_box_add" class="account_settings"><span>+</span></a></li>').click(function(e) {
 		if (done) {
-			$('#playlist_self_box_add span').append('<input></input>');
+			$('#playlist_self_box_add span').append('<input class="text"></input>');
 			done = false;
 		}
 	});
