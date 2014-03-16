@@ -25,20 +25,22 @@ class PlaylistCreateRequest extends SessionRequest {
 			return $this->error("playlist name already used");
 		}
 
-		$query = $this->db->query("SELECT playlist_id FROM music.playlist WHERE user_id = " .
-			$this->user_id . " AND name = '" .
-			$this->name . "'");
-		if (!$query || !$query->num_rows) {
-			return $this->error(NULL);
+		$query = $this->db->query("SELECT playlist_id, name FROM music.playlist WHERE user_id = " .
+			$this->user_id . " ORDER BY name ASC");
+
+		if (!$query) {
+			return $this->error("invalid user");
 		}
 
-		$result = $query->fetch_assoc();
+		$playlist_list = array();
+
+		while ($result = $query->fetch_assoc()) {
+			$playlist_list[] = $result;
+		}
 
 		$query->close();
 
-		$playlist_id = $result["playlist_id"];
-
-		return $this->success(array("playlist" => array("playlist_id" => $playlist_id)));
+		return $this->success(array("playlists" => array("list" => $playlist_list)));
 	}
 
 }
