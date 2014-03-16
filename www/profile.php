@@ -24,6 +24,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
  <script type="text/javascript" src="js/youtube.js"></script>
  <script type="text/javascript" src="js/profile.js"></script>
  <script type="text/javascript" src="js/playlisting.js"></script>
+ <script src="http://connect.facebook.net/en_US/all.js"></script>
+<script type="text/javascript" src="js/fb_auth.js"></script>
+
 </head>
 <body>
 	    <div class="wrap">
@@ -56,6 +59,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 								</li>
 
+
+								<li>
+									<fb:login-button show-faces="false" width="1000" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+
+								</li>
 
 							<div class="clear"></div>
 						    </ul>
