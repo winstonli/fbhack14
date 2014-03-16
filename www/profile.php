@@ -36,8 +36,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 						  <a class="toggleMenu" href="#"><img src="web/images/nav.png" alt="" /></a>
 							<ul class="nav">
-								<li><a href="#"><i><img src="web/images/settings.png" alt="" /></i>Settings</a></li>
-								<li class="active"><a href="#"><i><img src="web/images/user.png" alt="" /></i>Account</a></li>
+								<li style="padding-top:6px">
+									<fb:login-button id="fb_button" onclick="deleteAllCookies()" show-faces="false" width="1000" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+								</li>
+								<li style="visibility:hidden"><a href="#"><i><img src="web/images/settings.png" alt="" /></i>Settings</a></li>
+								<li style="visibility:hidden; width:100px" ><a href="#"><i><img src="web/images/user.png" alt="" /></i>Account</a></li>
 
 								<li>
 					                 	<div id="player"></div>
@@ -46,7 +49,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 															<div id="musicplayer">
 																<div id="playBtn" class="button playBtn"></div>
 																<div id="labels">
-																	<label id="song"><label><br />
+																	<label id="song"> Select a song... <label><br />
 																	<label id="loading">Waiting...</label>
 																</div>
 																<div id="track">
@@ -60,9 +63,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								</li>
 
 
-								<li>
-									<fb:login-button id="fb_button" onclick="deleteAllCookies()" show-faces="false" width="1000" max-rows="1" data-auto-logout-link="true"></fb:login-button>
-								</li>
 
 							<div class="clear"></div>
 						    </ul>
