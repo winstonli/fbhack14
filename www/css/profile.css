@@ -25,4 +25,7 @@ body {
 	background-color: #FFFFFF;
 	border-radius: 15px;
 	display: inline-block;
+	padding-left: 20px;
+	padding-right: 20px;
+	width: 25%;
 }
