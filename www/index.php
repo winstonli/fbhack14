@@ -85,15 +85,13 @@ FB.init(
 			<div class="hsContainer">
 				<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
 					<h2>Login</h2>
-					<div style = "border:2px solid #a1a1a1;background:#909090;border-radius:25px;">
+					<div style = "border:2px solid #a1a1a1;background:#404040;border-radius:25px;">
 
 					<div id='fg_membersite'>
 					<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
 					<fieldset>
 					
 					<input type='hidden' name='submitted' id='submitted' value='1'/>
-
-					<div class='short_explanation'>* required fields</div>
 
 					<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
 					<div class='container'>
@@ -106,7 +104,9 @@ FB.init(
 						<input type='password' name='password' id='password' maxlength="50" /><br/>
 						<span id='login_password_errorloc' class='error'></span>
 					</div>
-
+					
+					<div class='short_explanation'>* required fields</div>
+					
 					<div class='container'>
 						<input type='submit' name='Submit' value='Submit' />
 					</div>
