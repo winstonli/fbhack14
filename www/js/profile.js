@@ -16,7 +16,7 @@ var activeOtherPlaylist;
 
 function setActivePlaylist(playlist) {
 	activePlaylist = playlist;
-
+	playlistGet(session_token, playlist.id());
 	renderOwnSongs();
 }
 
@@ -40,8 +40,14 @@ function playlistDeleteSuccess(playlists) {
 	updatePlaylists(playlists);
 }
 
-function playlistGetSuccess(playlists) {
-	updatePlaylists(playlists);
+function playlistGetSuccess(playlist) {
+	_playlists.forEach(function(pl) {
+		if (pl.id() == playlist.playlist_id) {
+			pl.setSongs(pl.songs());
+			console.log(pl.songs());
+			break;
+		}
+	});
 }
 
 function playlistUpdateSuccess(playlists) {
@@ -59,6 +65,10 @@ function Playlist(playlist_id, name) {
 
 	this.name = function() {
 		return name;
+	}
+
+	this.setSongs = function(s) {
+		songs = s;
 	}
 
 	this.songs = function() {

@@ -104,7 +104,7 @@ function playlistGet(sessionToken, playlistId) {
 			checkForError(returnedData);
 
 			if (!returnedData.error) {
-				playlistGetSuccess(returnedData.sucess.playlists);
+				playlistGetSuccess(returnedData.success.playlist);
 			}
 
 			playlist = returnedData.success.playlist;
