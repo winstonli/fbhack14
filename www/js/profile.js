@@ -97,14 +97,17 @@ function setSessionToken(sessionToken) {
 }
 
 function getSessionToken() {
-	var parts = document.cookie.split(/;\s*/);
-	for (var i = 0; i < parts.length; i++) {
-		var part = parts[i];
-		if (part.indexOf("session_token=") == 0) {
-			return part.substring("session_token=".length)
-		}
-	}
-	return null;
+
+	return getCookie(session_token);
+
+	// var parts = document.cookie.split(/;\s*/);
+	// for (var i = 0; i < parts.length; i++) {
+	// 	var part = parts[i];
+	// 	if (part.indexOf("session_token=") == 0) {
+	// 		return part.substring("session_token=".length)
+	// 	}
+	// }
+	// return null;
 }
 
 function renderOwnPlaylist() {
