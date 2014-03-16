@@ -19,16 +19,16 @@
 	</div>
 </div>
 <div id="content">
-	<div id="playlists_self">
+	<div id="playlists_self" class="section">
 		<div id="playlists_self_add">
 			<span id="playlist_add_button">Add</span>
 		</div>
 	</div>
-	<div id="songs_self">
+	<div id="songs_self" class="section">
 	</div>
-	<div id="songs_other">
+	<div id="songs_other" class="section">
 	</div>
-	<div id="playlists_other">
+	<div id="playlists_other" class="section">
 	</div>
 </div>
 <div id="friends">

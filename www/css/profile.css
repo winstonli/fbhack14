@@ -20,3 +20,8 @@ body {
 #content {
 	height: 80%;
 }
+
+.section {
+	background-color: #FFFFFF;
+	border-radius: 15px;
+}
