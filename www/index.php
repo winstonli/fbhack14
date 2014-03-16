@@ -19,7 +19,7 @@ Welcome to playlister
 <link rel="stylesheet" type="text/css" href="css/style.css">
 <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-       
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
@@ -29,10 +29,10 @@ Welcome to playlister
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.7.1.min.js"></script>
     <style type="text/css">
-	
+
 	<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
     <script type='text/javascript' src='js/gen_validatorv31.js'></script>
-	
+
 body {
 font-family: 'Open Sans', sans-serif;
 }
@@ -42,51 +42,16 @@ font-family: 'Open Sans', sans-serif;
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <div id="fb-root"></div>
 
-<script>
-  window.fbAsyncInit = function() {
-FB.init(
-{
-    appId : 641083209274716,
-    status : true, // check login status
-    cookie : true, // enable cookies to allow the server to access the session
-    xfbml : true // parse XFBML
-});
+<script type="text/javascript" src="js/fb_auth.js"></script>
 
-  FB.Event.subscribe('auth.authResponseChange', function(response) {
-    if (response.status === 'connected') {
-      testAPI();
-    } else if (response.status === 'not_authorized') {
-      FB.login();
-    } else {
-      FB.login();
-    }
-  });
-  };
-
-  (function(d){
-   var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
-   if (d.getElementById(id)) {return;}
-   js = d.createElement('script'); js.id = id; js.async = true;
-   js.src = "//connect.facebook.net/en_US/all.js";
-   ref.parentNode.insertBefore(js, ref);
-  }(document));
-
-  function testAPI() {
-    console.log('Welcome! Fetching your information.... ');
-    FB.api('/me', function(response) {
-      console.log('Good to see you, ' + response.name + '.');
-    });
-}
-</script>
-
-        <main>	
+        <main>
 		<section id="slide-1" class="homeSlide">
 	        	<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
 				    		<h2>Fade out elements before<br />they leave viewport</h2>
-				    		<p>This slide moves background image at a slower speed then the page scroll. Text is fading out to opacity 0 at 106 pixels from the top.</p>
-							<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+				    		<p>Please login with your facebook account</p>
+							<fb:login-button show-faces="false" width="1000" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 						</div>
 		        	</div>
 	        	</div>
