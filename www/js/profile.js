@@ -208,7 +208,7 @@ function renderOwnSongs(animated) {
 		$('#song_self_box_add').click(function(e) {
 			if (done) {
 				addToPlaylist = $('#song_self_box_add');
-				addToPlaylist.find('span').append('<input class="text" placeholder="YouTube URL" size="35"></input>');
+				addToPlaylist.find('span').append('<input class="text" placeholder="YouTube URL" size="50"></input>');
 
 				textBox = addToPlaylist.find('input');
 				textBox.focus();
