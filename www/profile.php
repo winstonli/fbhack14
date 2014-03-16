@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <head>
 <title>Playlist</title>
-<link href="css/profile.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- <link href="css/profile.css" rel="stylesheet" type="text/css" media="all"/> -->
 <script type="text/javascript" src="js/jquery.js" />
 
 </head>
