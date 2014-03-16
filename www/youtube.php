@@ -8,6 +8,13 @@
 <body>
 
 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
 <div id="player"></div>
 
 <script src="http://www.youtube.com/player_api"></script>
@@ -18,7 +25,7 @@
 var player;
 function onYouTubePlayerAPIReady() {
     player = new YT.Player('player', {
-      height: '530',
+      height: '130',
       width: '640',
       videoId: '0Bmhjf0rKe8',
       events: {
@@ -42,8 +49,19 @@ function onPlayerStateChange(event) {
     }
 }
 
-function goNext() {
-	player.loadVideoById('JBJ1VPBrCl0', 0, 'default');
+
+function onPlay() {
+	player.playVideo();
+}
+
+function onPause() {
+	player.pauseVideo();
+}
+
+// Percentage goes from 0 to 100, where 100 is the end of the video
+function onSeek(percentage) {
+	jumpTime = player.getDuration() / 100 * percentage;
+	player.seekTo(Math.floor(jumpTime));
 }
 
 var modelPlaylist = {
@@ -57,6 +75,10 @@ var modelPlaylist = {
 
 </script>
 
+
+<br>
+<button onclick="onPlay()"> Play </button>
+<button onclick="onPause()"> Pause </button>
 
 </body>
 </html>
