@@ -152,7 +152,7 @@ function renderOwnPlaylist() {
 			return false;
 		});
 		$('#playlist_delete_' + playlist.id()).click(function() {
-			alert("DELETING playlist_delete_'" + playlist.id());
+			playlistDelete(session_token, playlist.id());
 			return false;
 		});
 	});
