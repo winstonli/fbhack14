@@ -135,7 +135,7 @@ function songInsert(sessionToken, playlist_id, position, youtube_url, name) {
 		function(returnedData) {
 			checkForError(returnedData);
 			if (!returnedData.error) {
-				console.log("Success songInsert");
+				songInsertSuccess(returnedData.success.playlist);
 			}
 
 			console.log(returnedData);
