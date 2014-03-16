@@ -26,15 +26,14 @@
 <script src="http://connect.facebook.net/en_US/all.js"></script>
 <div id="fb-root"></div>
 			
-       	<main>
-			<div class = "loginForm">key</div>	
-			<fb:login-button show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
+       	<main>	
 	        <section id="slide-1" class="homeSlide">
 	        	<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
 				    		<h2>Login</h2>
-							
+							<div style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">key</div>
+							<fb:login-button show-faces="true" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 			    		</div>
 		        	</div>
 	        	</div>
