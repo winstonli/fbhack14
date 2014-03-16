@@ -30,7 +30,7 @@ class UserGetRequest extends SessionRequest {
 
 		$query->close();
 
-		$self = $target_user_id == $this->user_id;
+		$self = $this->target_user_id == $this->user_id;
 
 		$result["self"] = $self;
 
