@@ -134,9 +134,13 @@ function renderOwnPlaylist() {
 		return false;
 	});
 	_playlists.forEach(function(playlist) {
-		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span></a></li>');
+		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span><span id="playlist_delete_' + playlist.id() + '">DEL</span></a></li>');
 		$('#playlist_self_box_' + playlist.id()).click(function() {
 			setActivePlaylist(playlist);
+			return false;
+		});
+		$('#playlist_delete_' + playlist.id()).click(function() {
+			alert("DELETING playlist_delete_'" + playlist.id());
 			return false;
 		});
 	});
