@@ -19,7 +19,6 @@ class UserGetRequest extends SessionRequest {
 
 		if (!is_numeric($this->target_user_id)) {
 			$this->target_user_id = $this->user_id;
-			$this->user_id = -1;
 		}
 
 		$query = $this->db->query("SELECT user_id, username, first_name, last_name, dp_url FROM user.user WHERE user_id = " .
