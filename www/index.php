@@ -83,45 +83,15 @@ FB.init(
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
 				    		<h2>Login</h2>
-							<div id="div1" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
+							<!-- <div id="div1" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;"> -->
 								<!-- <button>User Login</button> -->
 								<input type='submit' name='User Login' value='Submit' />
-							</div>
-<<<<<<< HEAD
+			
 							 
-							<div id="div2" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
-								<div id='fg_membersite'>
-									<form id='login' action='<?php echo $fgmembersite->GetSelfScript(); ?>' method='post' accept-charset='UTF-8'>
-									<fieldset >
-									<legend>Login</legend>
+							<!-- </div> -->
 
-									<input type='hidden' name='submitted' id='submitted' value='1'/>
-
-									<div class='short_explanation'>* required fields</div>
-
-									<div><span class='error'><?php echo $fgmembersite->GetErrorMessage(); ?></span></div>
-									<div class='container'>
-										<label for='username' >UserName*:</label><br/>
-										<input type='text' name='username' id='username' value='<?php echo $fgmembersite->SafeDisplay('username') ?>' maxlength="50" /><br/>
-										<span id='login_username_errorloc' class='error'></span>
-									</div>
-									<div class='container'>
-										<label for='password' >Password*:</label><br/>
-										<input type='password' name='password' id='password' maxlength="50" /><br/>
-										<span id='login_password_errorloc' class='error'></span>
-									</div>
-
-									<div class='container'>
-										<input type='submit' name='Submit' value='Submit' />
-									</div>
-									<div class='short_explanation'><a href='reset-pwd-req.php'>Forgot Password?</a></div>
-								</fieldset>
-								</form>
-							</div>
-							
-=======
 							<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
->>>>>>> 760fe61a0a347bafa9872f95db403c41aba1dd69
+
 			    		</div>
 		        	</div>
 	        	</div>
