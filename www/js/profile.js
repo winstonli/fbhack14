@@ -29,7 +29,7 @@ function updatePlaylists(playlists) {
 }
 
 function userPlaylistsSuccess(playlists) {
-	updatePlaylists(playlists);
+	updatePlaylists(playlists, true);
 }
 
 function playlistCreateSuccess(playlists) {
@@ -40,7 +40,7 @@ function playlistDeleteSuccess(playlists) {
 	updatePlaylists(playlists);
 }
 
-function updatePlaylist(playlist) {
+function updatePlaylist(playlist, animated) {
 	_playlists.forEach(function(pl, index, array) {
 		if (pl.id() == playlist.playlist_id) {
 			console.log("found");
@@ -49,8 +49,7 @@ function updatePlaylist(playlist) {
 			console.log(pl.songs());
 		}
 	});
-	console.log(_playlists);
-	renderOwnSongs();
+	renderOwnSongs(animated);
 }
 
 function playlistGetSuccess(playlist) {
@@ -62,7 +61,7 @@ function playlistUpdateSuccess(playlists) {
 }
 
 function songInsertSuccess(playlist) {
-	updatePlaylist(playlist);
+	updatePlaylist(playlist, false);
 }
 
 function Playlist(playlist_id, name) {
@@ -166,9 +165,11 @@ function renderOwnPlaylist() {
 	});
 }
 
-function renderOwnSongs() {
+function renderOwnSongs(animated) {
 	$('#active_playlist_self').html(activePlaylist.name());
-	$('#songs_self').hide();
+	if (animated) {
+		$('#songs_self').hide();
+	}
 	$('#songs_self').empty();
 	var done = true;
 	$('#songs_self').append('<li><a href="#" id="song_self_box_add" class="account_settings"><span>+</span></a></li>');
@@ -200,7 +201,9 @@ function renderOwnSongs() {
 			});
 		});
 	}
-	$('#songs_self').show('fast');
+	if (animated) {
+		$('#songs_self').show('fast');
+	}
 }
 
 function initUI() {
