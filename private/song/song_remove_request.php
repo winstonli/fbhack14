@@ -73,8 +73,8 @@ class SongRemoveRequest extends SessionRequest {
 
 		$query->close();
 
-		return $this->success(array("playlist" => array("playlist_id" => $this->playlist_id),
-							        "songs" => array("list" => $song_list)));
+		return $this->success(array("playlist" => array("playlist_id" => $this->playlist_id,
+												        "songs" => array("list" => $song_list))));
 	}
 
 }

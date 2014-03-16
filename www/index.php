@@ -16,6 +16,18 @@
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.7.1.min.js"></script>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
+	</script>
+	<script>
+		$(document).ready(function(){
+			$("button").click(function(){
+				
+				$("#div2").fadeIn("slow");
+				$("#div3").fadeIn(3000);
+			});
+		});
+	</script>
     <style type="text/css">
 		body {
 			font-family: 'Open Sans', sans-serif;
@@ -39,7 +51,7 @@ FB.init(
   FB.Event.subscribe('auth.authResponseChange', function(response) {
     if (response.status === 'connected') {
       testAPI();
-    } else if (response.status === 'not_authorized') {
+    } else if (response.stat	us === 'not_authorized') {
       FB.login();
     } else {
       FB.login();
@@ -69,16 +81,14 @@ FB.init(
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
 				    		<h2>Login</h2>
-							<div style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
-								<div class='container'>
-									<input type='submit' name='Submit' value='Submit' />
-								</div>
-								<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
-							</div>
+							<!-- <div id="div1" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;"> -->
+								<!-- <button>User Login</button> -->
+								<input type='submit' name='User Login' value='User Login' />
+							<!-- </div> -->
+							<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 			    		</div>
 		        	</div>
 	        	</div>
-				
 		    </section>
 		    
 		    <section id="slide-2" class="homeSlide">

@@ -25,8 +25,23 @@ class PlaylistUpdateRequest extends SessionRequest {
 		if (!$query || !$this->db->affected_rows) {
 			return $this->error("name not changed or playlist not owned by user");
 		}
+		
+		$query = $this->db->query("SELECT playlist_id, name FROM music.playlist WHERE user_id = " .
+			$this->user_id . " ORDER BY name ASC");
 
-		return $this->success(NULL);
+		if (!$query) {
+			return $this->error("invalid user");
+		}
+
+		$playlist_list = array();
+
+		while ($result = $query->fetch_assoc()) {
+			$playlist_list[] = $result;
+		}
+
+		$query->close();
+
+		return $this->success(array("playlists" => array("list" => $playlist_list)));
 	}
 
 }
