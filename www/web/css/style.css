@@ -155,6 +155,9 @@ fieldset#body {
 .profile_img{
 	float:right;
 }
+.delete {
+	float:right;
+}
 .profile_img img{
 	display:block;
 	border-radius:3em;
