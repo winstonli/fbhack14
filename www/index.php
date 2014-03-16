@@ -19,16 +19,16 @@ if(isset($_POST['submitted']))
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-       
+
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-	
+
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/vendor/modernizr-2.7.1.min.js"></script>
-	
+
 	<link rel="STYLESHEET" type="text/css" href="css/fg_membersite.css" />
     <script type='text/javascript' src='js/gen_validatorv31.js'></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
@@ -92,18 +92,21 @@ FB.init(
 
 <body class="loading">
 
+
+<script type="text/javascript" src="js/fb_auth.js"></script>
+
 <div id="fb-root"></div>
-			
-       	<main>	
+
+       	<main>
 	        <section id="slide-1" class="homeSlide">
 	        	<div class="bcg" data-center="background-position: 50% 0px;" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-1">
 		        	<div class="hsContainer">
 			    		<div class="hsContent" data-center="opacity: 1" data-106-top="opacity: 0" data-anchor-target="#slide-1 h2">
 				    		<h2>Login</h2>
 							<div id="div1" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
-								<button>User Login</button>					 
+								<button>User Login</button>
 								<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
-								<button>Register</button>	
+								<button>Register</button>
 							</div>
 							<div id="div2" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;">
 								<div id='fg_membersite'>
@@ -140,20 +143,20 @@ FB.init(
 										frmvalidator.EnableMsgsTogether();
 
 										frmvalidator.addValidation("username","req","Please provide your username");
-    
+
 										frmvalidator.addValidation("password","req","Please provide the password");
 
 									// ]]>
 									</script>
 								</div>
-	
-								
+
+
 							</div>
 						</div>
 		        	</div>
 	        	</div>
 		    </section>
-		    
+
 		    <section id="slide-2" class="homeSlide">
 		    	<div class="bcg" data-0="background-color:rgb(1,27,59);" data--25p-bottom="background-color:rgb(1,27,59);" data--90p-bottom="background-color:(0,0,0);"  data-anchor-target="#slide-2">
 		    	<!-- <div class="bcg" data-0="background-color:rgb(1,27,59);" data-top="background-color:(0,0,0);"  data-anchor-target="#slide-2"> -->
@@ -165,12 +168,12 @@ FB.init(
 		        	</div>
 		    	</div>
 		    </section>
-		    
+
 			<section id="slide-3" data-content-offset="50p" class="homeSlide homeSlideTall2">
-				<div class="bcg" 
-					data-center="background-position: 0px 50%;" 
-					data-bottom-top="background-position: 0px 40%;" 
-					data-top-bottom="background-position: -40px 50%;" 
+				<div class="bcg"
+					data-center="background-position: 0px 50%;"
+					data-bottom-top="background-position: 0px 40%;"
+					data-top-bottom="background-position: -40px 50%;"
 					data-anchor-target="#slide-3"
 				>
 			    	<div class="hsContainer">
@@ -181,23 +184,23 @@ FB.init(
 				    		</div>
 			    		</div>
 			    	</div>
-			    	
+
 			    </div>
 			</section>
-		    
+
 			<section id="slide-4" data-content-offset="90p" class="homeSlide homeSlideTall">
 				<div class="bcg" data-bottom-top="background-position: 50% 100px" data-top-bottom="background-position: 50% -100px;" data-anchor-target="#slide-4">
 					<div class="curtainContainer">
-			
+
 						<div class="curtain" data-bottom-top="opacity: 0; height: 1%;" data-106-top="height: 1%; opacity: 0; top: -10%;" data-center="height: 100%; opacity: 0.5; top: 0%;" data-top-bottom="height: 100%; opacity: 0.5; top: 0%;" data-anchor-target="#slide-4"></div>
 						<div class="copy" data-bottom-top="opacity: 0" data--100-bottom="opacity: 0" data--280-bottom="opacity: 1;" data-280-top="opacity: 1;" data-106-top="opacity: 0;" data-anchor-target="#slide-4 .copy">
 							<h2>Curtain effect while you scroll</h2>
 						</div>
-						
+
 					</div>
 				</div>
 			</section>
-		    
+
 
 		    <section id="slide-5" data-content-offset="66p" class="homeSlide homeSlideTall2">
 		    	<div class="bcg">
@@ -218,7 +221,7 @@ FB.init(
 			    	</div>
 		    	</div>
 		    </section>
-		    
+
 		</main>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -230,7 +233,7 @@ FB.init(
 		<script type="text/javascript" src="js/skrollr.ie.min.js"></script>
 		<![endif]-->
         <script src="js/_main.js"></script>
-	
+
 <div id="playlist" class="left">
 
 </div>
