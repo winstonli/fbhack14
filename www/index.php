@@ -19,6 +19,7 @@
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js">
 	</script>
+
 	<script>
 		$(document).ready(function(){
 			$("button").click(function(){
@@ -28,15 +29,6 @@
 			});
 		});
 	</script>
-    <style type="text/css">
-		body {
-			font-family: 'Open Sans', sans-serif;
-		}
-	</style>
-</head>
-<body class="loading">
-<script src="http://connect.facebook.net/en_US/all.js"></script>
-<div id="fb-root"></div>
 
 <script>
   window.fbAsyncInit = function() {
@@ -74,6 +66,20 @@ FB.init(
     });
 }
 </script>
+
+
+<script src="http://connect.facebook.net/en_US/all.js"></script>
+
+    <style type="text/css">
+		body {
+			font-family: 'Open Sans', sans-serif;
+		}
+	</style>
+</head>
+
+<body class="loading">
+
+<div id="fb-root"></div>
 			
        	<main>	
 	        <section id="slide-1" class="homeSlide">
@@ -83,7 +89,9 @@ FB.init(
 				    		<h2>Login</h2>
 							<!-- <div id="div1" style = "border:2px solid #a1a1a1;background:#dddddd;border-radius:25px;"> -->
 								<!-- <button>User Login</button> -->
+								<div class="container">
 								<input type='submit' name='User Login' value='User Login' />
+							</div>
 							<!-- </div> -->
 							<fb:login-button show-faces="false" width="200" max-rows="1" data-auto-logout-link="true"></fb:login-button>
 			    		</div>
