@@ -122,21 +122,38 @@ function getSessionToken() {
 	return getCookie('session_token');
 }
 
+textBox = 0;
+
 function renderOwnPlaylist() {
 	$('#playlists_self').empty();
 	var done = true;
 	$('#playlists_self').append('<li><a href="#" id="playlist_self_box_add" class="account_settings"><span>+</span></a></li>');
 	$('#playlist_self_box_add').click(function(e) {
 		if (done) {
-			$('#playlist_self_box_add').find('span').append('<input class="text"></input>');
+			addToPlaylist = $('#playlist_self_box_add');
+			addToPlaylist.find('span').append('<input class="text"></input>');
+
+			textBox = addToPlaylist.find('input');
+			textBox.keyup(function (e) {
+			    if (e.keyCode == 13) {
+			        console.log(e.target.value)
+			        playlistCreate(getSessionToken(), e.target.value);
+			    }
+			});
+
 			done = false;
 		}
 		return false;
 	});
 	_playlists.forEach(function(playlist) {
-		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span></a></li>');
+		$('#playlists_self').append('<li><a href="#" id="playlist_self_box_' + playlist.id() + '" class="account_settings"><span>' + playlist.name() + '</span><span id="playlist_delete_' + playlist.id() + '">DEL</span></a></li>');
 		$('#playlist_self_box_' + playlist.id()).click(function() {
+			$('#playlist_self_box_' + playlist.id()).focus();
 			setActivePlaylist(playlist);
+			return false;
+		});
+		$('#playlist_delete_' + playlist.id()).click(function() {
+			playlistDelete(session_token, playlist.id());
 			return false;
 		});
 	});
