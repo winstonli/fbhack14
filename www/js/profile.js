@@ -166,6 +166,13 @@ function renderOwnPlaylist() {
 	});
 }
 
+function parseYoutubeAndInsert(session_token, playlist_id, url) {
+	$.get(url, function(data) {
+		console.log(data);
+	});
+	// songInsert(session_token, playlist_id, 1, url, "name");
+}
+
 function renderOwnSongs(animated) {
 	$('#active_playlist_self').html(activePlaylist.name());
 	if (animated) {
@@ -183,8 +190,7 @@ function renderOwnSongs(animated) {
 			textBox.focus();
 			textBox.keyup(function (e) {
 			    if (e.keyCode == 13) {
-			        // playlistCreate(getSessionToken(), e.target.value);
-			        songInsert(session_token, activePlaylist.id(), 1, e.target.value, "name");
+			    	parseYoutubeAndInsert(session_token, activePlaylist.id(), e.target.value);
 			    }
 			});
 

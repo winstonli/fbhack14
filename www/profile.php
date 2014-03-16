@@ -14,6 +14,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <link href="web/css/nav.css" rel="stylesheet" type="text/css" media="all"/>
 <link href="css/profile.css" rel="stylesheet" type="text/css" media="all"/>
 <link href='http://fonts.googleapis.com/css?family=Carrois+Gothic+SC' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="assets/demoStyles.css">
 <script type="text/javascript" src="web/js/jquery.js"></script>
 <script type="text/javascript" src="web/js/login.js"></script>
 <script type="text/javascript" src="web/js/Chart.js"></script>
@@ -100,6 +101,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 						  						<li><a href="#" class="account_settings"><span>
 					                 	<div id="player"></div>
+
+														<div id="musicplayer">
+															<div id="playBtn" class="button playBtn"></div>
+															<div id="labels">
+																<label id="song">Song: <strong>Pirates Love Daisies</strong></label><br />
+																<label id="artist">Artist: <strong>Washingtron</strong></label><br /><br />
+																<label id="loading">Waiting...</label>
+															</div>
+															<div id="track">
+																<div id="progress"></div>
+																<div id="thumb"></div>
+															</div>
+														</div>
+
+
 						  						</span></a></li>
                           <li><a href="#" class="account_settings"><span>Song 2</span></a></li>
                           <li><a href="#" class="account_settings"><span>Song 3</span></a></li>
@@ -119,6 +135,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
 				<script src="http://www.youtube.com/player_api"></script>
  	     	<script type="text/javascript" src="js/youtube.js"></script>
+
+				<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+				<script type="text/javascript" src="js/youtube-scroll.js"></script>
 
    </div>
 </body>
